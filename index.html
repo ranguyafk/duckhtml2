@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuckHTML</title>
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #D5b60a;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #363636;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: #363636;
+    }
+
+    nav a.active {
+      background-color: #ffd700;
+      color: #363636;
+      border-color: #363636;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      color: #363636;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #cookieNotice {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    #cookieNotice button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #playNowButton {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #playNowButton img {
+      width: 20px;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    .bottom {
+      postion: bottom-right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+      <span>DuckHTML</span>
+    </div>
+    <a href="/index.html" class="active">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="settings.html">Settings</a>
+    <a href="/game-files/basket.html">Discord</a>
+  </nav>
+
+  <br>
+
+  <h1>DuckHTML</h1>
+
+  <p id="dynamicText">Welcome to DuckHTML!</p>
+
+  <div id="cookieNotice">
+    This website uses cookies. By using this site, you agree to our use of cookies.
+    <button onclick="acceptCookies()">Accept</button>
+    <button onclick="declineCookies()">Decline</button>
+  </div>
+
+  <button id="playNowButton" onclick="redirectToGamePage()">
+    Play Now
+    <img src="https://img.icons8.com/material-outlined/24/000000/play--v1.png" alt="Play Icon">
+  </button>
+
+
+  <script>
+    var messages = [
+      "underi was here",
+      "`omg` - ProudParrot2",
+      "We try",
+      "i hate school, real",
+      "stop brusting on people",
+      "Duck's are very cool",
+      "go to school, dont be a loser"
+    ];
+
+    function changeText() {
+      var randomNumber = Math.floor(Math.random() * messages.length);
+      document.getElementById("dynamicText").innerHTML = messages[randomNumber];
+    }
+
+    changeText();
+
+    function showCookieNotice() {
+      document.getElementById("cookieNotice").style.display = "block";
+    }
+
+    function acceptCookies() {
+      document.getElementById("cookieNotice").style.display = "none";
+      localStorage.setItem("cookiesAccepted", "true");
+    }
+
+    function declineCookies() {
+      document.getElementById("cookieNotice").style.display = "none";
+    }
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+      showCookieNotice();
+    }
+
+    function redirectToGamePage() {
+      window.location.href = 'games.html';
+    }
+
+
+
+  </script>
+</body>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="bottom">
+  <a style="font-size:20px" ; href="/credits.html"> ‎ ‎ Credits</a>
+</div>
+
+</html>
+
+
+
+<!-- Add this script at the end of each HTML page -->
+<script>
+  // Run this function on page load
+  window.onload = function () {
+    // Retrieve the saved title, favicon, and theme or use the defaults
+    var savedTitle = localStorage.getItem('pageTitle') || document.title;
+    var savedFavicon = localStorage.getItem('faviconUrl') || '';
+    var savedTheme = localStorage.getItem('theme') || 'default';
+
+    // Set the retrieved title, favicon, and theme
+    document.title = savedTitle;
+    applyTheme(savedTheme);
+    changeFavicon(savedFavicon);
+  };
+
+  function applyTheme(theme) {
+    switch (theme) {
+      case 'default':
+        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        break;
+      case 'white':
+        setThemeStyles('#ffffff', '#000000', '#ffffff');
+        break;
+      case 'ocean':
+        setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
+        break;
+      case 'leaf':
+        setThemeStyles('#90EE90', '#013220', '#00ff00');
+        break;
+      case 'beach':
+        setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
+        break;
+      default:
+        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        break;
+    }
+    // Save the selected theme in local storage
+    localStorage.setItem('theme', theme);
+  }
+
+  function setThemeStyles(bodyColor, navColor, buttonColor) {
+    document.body.style.backgroundColor = bodyColor;
+    document.querySelector('nav').style.backgroundColor = navColor;
+
+    var buttons = document.querySelectorAll('nav a');
+    buttons.forEach(function (button) {
+      button.style.color = buttonColor;
+      button.style.borderColor = buttonColor;
+    });
+
+    // Apply styles to other elements as needed
+  }
+
+  function changeFavicon(newFavicon) {
+    var favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.href = newFavicon;
+    }
+    // Save the updated favicon in local storage
+    localStorage.setItem('faviconUrl', newFavicon);
+  }
+
+  // Rest of your existing script...
+</script>

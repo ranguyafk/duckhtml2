@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuckHTML</title>
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=CoolFont&display=swap">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      min-height: 100vh;
+      transition: background-color 0.5s ease;
+    }
+
+    nav {
+      background-color: #363636;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: #363636;
+    }
+
+    nav a.active {
+      background-color: #ffd700;
+      color: #363636;
+      border-color: #363636;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      color: #363636;
+    }
+
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .game {
+      text-align: center;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      width: calc(10% - 5px);
+      /* 4 games per row, adjust as needed */
+    }
+
+    .game img {
+      width: 150px;
+      /* Set the width to 600px */
+      height: 150px;
+      /* Set the height to 600px */
+      object-fit: cover;
+      /* Maintain aspect ratio and cover the container */
+      border-radius: 10px;
+      /* Make the image rounded */
+      margin-bottom: 10px;
+    }
+
+    .game-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #363636;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #D5b60a;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .game-title {
+      text-decoration: none;
+      /* Remove underline */
+      color: #363636;
+      /* Set the text color */
+    }
+
+    .game-title:hover {
+      color: #ffd700;
+      /* Change color on hover */
+    }
+
+    .yellow-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .container-item {
+      text-align: center;
+      background-color: #ffd700;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      width: calc(30% - 40px);
+      /* Adjust as needed */
+    }
+
+    .container-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #363636;
+    }
+
+    .item-text {
+      font-size: 16px;
+      color: #363636;
+    }
+
+    /* Add this style to your existing CSS */
+    .discord-button {
+      display: inline-block;
+      margin: 0 15px;
+      background-color: #9b870c;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out;
+      border: 2px solid #C7BD08;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    .discord-button:hover {
+      color: #363636;
+      border-color: #363636;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+      <span>Creidts:</span>
+    </div>
+    <a href="/index.html" class="active">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="settings.html">Settings</a>
+    <a href="https://discord.gg/xfPsv2Rs6j">Discord</a>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Credits:</h1>
+
+  <div class="yellow-container">
+    <div class="container-item">
+      <img src="https://ucarecdn.com/65581bdd-0bb2-4ab9-8fe8-84750d9c4dea/d2a51574e01c674617011ffbe1e4a07e.png"
+        alt="Item 1">
+      <div class="item-title">Underi</div>
+      <div class="item-text">Underi, the owner of DuckHTML is well the owner of duckhtml, for this website I made all by
+        myself with the help of some game files supplied by others.<br><br>
+        <a href="https://discord.gg/xfPsv2Rs6j" class="discord-button">Discord</a>
+      </div>
+
+    </div>
+    <div class="container-item">
+      <img src="https://ucarecdn.com/3b0f99c9-47eb-4c9e-ab1c-d4d847f45c58/2d859995d17266d2db5a35eaf8787361.png"
+        alt="Item 2">
+      <div class="item-title">Galactic Network</div>
+      <div class="item-text">I give a really big thanks to Galactic Network for almost every game file there is on this
+        website. They prob won't even read this, but yea I love you guys.<br><br>
+        <a href="https://discord.gg/d3SP9wfJSv" class="discord-button">Discord</a>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="https://ucarecdn.com/1dccaac8-1c8e-4841-b99c-2a1b8072b320/124a4f4602321a4179ddbe6f389972cf.png"
+        alt="Item 3">
+      <div class="item-title">3kh0</div>
+      <div class="item-text">Another BIG thanks to 3kh0, again for game files, I say again because Galactic Network also
+        uses him. Some of the games acutally have his name embedded somewhere on them, so thanks again.<Br><br>
+        <a href="https://discord.com/invite/wv6huJAwEv" class="discord-button">Discord</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Add this script at the end of each HTML page -->
+  <script>
+    // Run this function on page load
+    window.onload = function () {
+      // Retrieve the saved title, favicon, and theme or use the defaults
+      var savedTitle = localStorage.getItem('pageTitle') || document.title;
+      var savedFavicon = localStorage.getItem('faviconUrl') || '';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      // Set the retrieved title, favicon, and theme
+      document.title = savedTitle;
+      applyTheme(savedTheme);
+      changeFavicon(savedFavicon);
+    };
+
+    function applyTheme(theme) {
+      switch (theme) {
+        case 'default':
+          setThemeStyles('#D5b60a', '#363636', '#ffd700');
+          break;
+        case 'white':
+          setThemeStyles('#ffffff', '#000000', '#ffffff');
+          break;
+        case 'ocean':
+          setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
+          break;
+        case 'leaf':
+          setThemeStyles('#90EE90', '#013220', '#00ff00');
+          break;
+        case 'beach':
+          setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
+          break;
+        default:
+          setThemeStyles('#D5b60a', '#363636', '#ffd700');
+          break;
+      }
+      // Save the selected theme in local storage
+      localStorage.setItem('theme', theme);
+    }
+
+    function setThemeStyles(bodyColor, navColor, buttonColor) {
+      document.body.style.backgroundColor = bodyColor;
+      document.querySelector('nav').style.backgroundColor = navColor;
+
+      var buttons = document.querySelectorAll('nav a');
+      buttons.forEach(function (button) {
+        button.style.color = buttonColor;
+        button.style.borderColor = buttonColor;
+      });
+
+      // Apply styles to other elements as needed
+    }
+
+    function changeFavicon(newFavicon) {
+      var favicon = document.querySelector("link[rel='icon']");
+      if (favicon) {
+        favicon.href = newFavicon;
+      }
+      // Save the updated favicon in local storage
+      localStorage.setItem('faviconUrl', newFavicon);
+    }
+
+    // Rest of your existing script...
+  </script>
