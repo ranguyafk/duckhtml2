@@ -87,14 +87,12 @@
       padding: 10px;
       margin: 10px;
       width: calc(10% - 5px);
-      /* 4 games per row, adjust as needed */
+
     }
 
     .game img {
       width: 150px;
-      /* Set the width to 600px */
       height: 150px;
-      /* Set the height to 600px */
       object-fit: cover;
       /* Maintain aspect ratio and cover the container */
       border-radius: 10px;
@@ -119,9 +117,7 @@
 
     .game-title {
       text-decoration: none;
-      /* Remove underline */
       color: #363636;
-      /* Set the text color */
     }
 
     .game-title:hover {
@@ -143,7 +139,6 @@
       padding: 20px;
       margin: 20px;
       width: calc(30% - 40px);
-      /* Adjust as needed */
     }
 
     .container-item img {
@@ -164,8 +159,6 @@
       font-size: 16px;
       color: #363636;
     }
-
-    /* Add this style to your existing CSS */
     .discord-button {
       display: inline-block;
       margin: 0 15px;
@@ -238,7 +231,6 @@
   </div>
   </div>
 
-  <!-- Add this script at the end of each HTML page -->
   <script>
     // Run this function on page load
     window.onload = function () {
@@ -288,7 +280,6 @@
         button.style.borderColor = buttonColor;
       });
 
-      // Apply styles to other elements as needed
     }
 
     function changeFavicon(newFavicon) {
@@ -299,6 +290,4 @@
       // Save the updated favicon in local storage
       localStorage.setItem('faviconUrl', newFavicon);
     }
-
-    // Rest of your existing script...
   </script>
