@@ -8,7 +8,6 @@
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
 
 <body style="background-color:#D5b60a;">
-  <!-- Add link to the desired font (replace 'CoolFont' with the actual font name) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=CoolFont&display=swap">
 
   <style>
@@ -152,17 +151,14 @@
 
     #titleFaviconChanger button:hover {
       background-color: #ffe44d;
-      /* Darker yellow on hover */
     }
 
-    /* Added styles for the color selector */
     #colorSelectorContainer {
       text-align: center;
       padding: 20px;
       border-radius: 15px;
       /* Rounded corners */
       margin-top: 20px;
-      /* Added margin to separate from the navigation bar */
     }
 
     #colorSelectorHeader {
@@ -175,23 +171,16 @@
       margin-top: 10px;
       background-color: yellow;
       border-radius: 10px;
-      /* Rounded corners */
       font-family: 'CoolFont', sans-serif;
-      /* Replace 'CoolFont' with the desired font */
       font-size: 16px;
       border: 2px solid #ffd700;
-      /* Border color */
       color: #363636;
-      /* Text color */
       padding: 8px 16px;
-      /* Adjust padding as needed */
       cursor: pointer;
     }
 
-    /* Optional: Hover effect */
     #colorSelect:hover {
       background-color: #ffe44d;
-      /* Darker yellow on hover */
     }
   </style>
   </head>
@@ -216,7 +205,6 @@
     <center>
       <h2>Tab Cloaking</h2>
     </center>
-    <!-- Title and Favicon Section -->
     <div id="titleFaviconContainer">
       <div class="setting-item">
         <label for="pageTitle">Title:</label>
@@ -288,8 +276,6 @@
           button.style.color = buttonColor;
           button.style.borderColor = buttonColor;
         });
-
-        // Apply styles to other elements as needed
       }
 
       function changeBackgroundColor() {
@@ -339,7 +325,6 @@
     var newTitle = document.getElementById("pageTitle").value;
     var newFavicon = document.getElementById("faviconUrl").value;
 
-    // Change the title
     if (newTitle !== "") {
       document.title = newTitle;
       // Save the updated title in local storage
@@ -360,7 +345,6 @@
 
 </script>
 
-<!-- Add this script at the end of each HTML page -->
 <script>
   // Run this function on page load
   window.onload = function () {
@@ -422,5 +406,5 @@
     localStorage.setItem('faviconUrl', newFavicon);
   }
 
-  // Rest of your existing script...
+
 </script>
