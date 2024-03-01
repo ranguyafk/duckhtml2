@@ -104,8 +104,8 @@
 
     .game-title {
       font-size: 18px;
+	  color: white;
       font-weight: bold;
-      color: #363636;
     }
 
 
@@ -120,7 +120,7 @@
     .game-title {
       text-decoration: none;
       /* Remove underline */
-      color: #363636;
+	  font-color: white;
       /* Set the text color */
     }
 
@@ -147,8 +147,8 @@
   <br>
   <br>
   <br>
+  <h1 style="color:white;">Games</h1>
 
-  <h1>Games</h1>
   <div style="text-align: center; margin-bottom: 20px;">
     <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games..." style="border: 2px solid #000000; border-radius: 8px; padding: 8px 16px; font-size: 16px; margin-bottom: 10px;
            background-color: #ffd700; color: #000000;">
@@ -450,69 +450,70 @@
 
 
 
-  <script>
-    // Run this function on page load
-    window.onload = function () {
-      // Retrieve the saved title, favicon, and theme or use the defaults
-      var savedTitle = localStorage.getItem('pageTitle') || document.title;
-      var savedFavicon = localStorage.getItem('faviconUrl') || '';
-      var savedTheme = localStorage.getItem('theme') || 'default';
+ 
 
-      // Set the retrieved title, favicon, and theme
-      document.title = savedTitle;
-      applyTheme(savedTheme);
-      changeFavicon(savedFavicon);
-    };
+<script>
+  // Run this function on page load
+  window.onload = function () {
+    // Retrieve the saved title, favicon, and theme or use the defaults
+    var savedTitle = localStorage.getItem('pageTitle') || document.title;
+    var savedFavicon = localStorage.getItem('faviconUrl') || '';
+    var savedTheme = localStorage.getItem('theme') || 'default';
 
-    function applyTheme(theme) {
-      switch (theme) {
-        case 'default':
-          setThemeStyles('#D5b60a', '#363636', '#ffd700');
-          break;
-        case 'white':
-          setThemeStyles('#ffffff', '#000000', '#ffffff');
-          break;
-        case 'ocean':
-          setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
-          break;
-        case 'leaf':
-          setThemeStyles('#90EE90', '#013220', '#00ff00');
-          break;
-        case 'beach':
-          setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
-          break;
-        default:
-          setThemeStyles('#D5b60a', '#363636', '#ffd700');
-          break;
-      }
-      // Save the selected theme in local storage
-      localStorage.setItem('theme', theme);
+    // Set the retrieved title, favicon, and theme
+    document.title = savedTitle;
+    applyTheme(savedTheme);
+    changeFavicon(savedFavicon);
+  };
+
+  function applyTheme(theme) {
+    switch (theme) {
+      case 'default':
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
+        break;
+      case 'white':
+        setThemeStyles('#ffffff', '#000000', '#ffffff');
+        break;
+      case 'ocean':
+        setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
+        break;
+      case 'leaf':
+        setThemeStyles('#90EE90', '#013220', '#00ff00');
+        break;
+      case 'beach':
+        setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
+        break;
+      default:
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
+        break;
     }
+    // Save the selected theme in local storage
+    localStorage.setItem('theme', theme);
+  }
 
-    function setThemeStyles(bodyColor, navColor, buttonColor) {
-      document.body.style.backgroundColor = bodyColor;
-      document.querySelector('nav').style.backgroundColor = navColor;
+  function setThemeStyles(bodyColor, navColor, buttonColor) {
+    document.body.style.backgroundColor = bodyColor;
+    document.querySelector('nav').style.backgroundColor = navColor;
 
-      var buttons = document.querySelectorAll('nav a');
-      buttons.forEach(function (button) {
-        button.style.color = buttonColor;
-        button.style.borderColor = buttonColor;
-      });
+    var buttons = document.querySelectorAll('nav a');
+    buttons.forEach(function (button) {
+      button.style.color = buttonColor;
+      button.style.borderColor = buttonColor;
+    });
 
-      // Apply styles to other elements as needed
+    // Apply styles to other elements as needed
+  }
+
+  function changeFavicon(newFavicon) {
+    var favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.href = newFavicon;
     }
+    // Save the updated favicon in local storage
+    localStorage.setItem('faviconUrl', newFavicon);
+  }
 
-    function changeFavicon(newFavicon) {
-      var favicon = document.querySelector("link[rel='icon']");
-      if (favicon) {
-        favicon.href = newFavicon;
-      }
-      // Save the updated favicon in local storage
-      localStorage.setItem('faviconUrl', newFavicon);
-    }
-
-    // Rest of your existing script...
-  </script>
+</script>
 
 </body>
 
