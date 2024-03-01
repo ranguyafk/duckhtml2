@@ -182,6 +182,9 @@
     #colorSelect:hover {
       background-color: #ffe44d;
     }
+	.discord {
+	position: bottom;
+	}
   </style>
   </head>
 
@@ -200,7 +203,7 @@
     <br>
     <br>
     <br>
-    <h1>Settings</h1>
+    <h1 style="color:white;">Settings</h1>
     <br>
     <center>
       <h2>Tab Cloaking</h2>
@@ -362,7 +365,7 @@
   function applyTheme(theme) {
     switch (theme) {
       case 'default':
-        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
         break;
       case 'white':
         setThemeStyles('#ffffff', '#000000', '#ffffff');
@@ -377,7 +380,7 @@
         setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
         break;
       default:
-        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
         break;
     }
     // Save the selected theme in local storage
@@ -405,6 +408,5 @@
     // Save the updated favicon in local storage
     localStorage.setItem('faviconUrl', newFavicon);
   }
-
 
 </script>
