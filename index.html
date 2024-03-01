@@ -11,13 +11,13 @@
     body {
       margin: 0;
       font-family: 'Inter','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1f3f1f;
+      background-color: #353839;
       position: relative;
       min-height: 100vh;
     }
 
     nav {
-      background-color: #363636;
+      background-color: #353839;
       text-align: center;
       padding: 10px;
       display: flex;
@@ -104,7 +104,7 @@
 
     #playNowButton {
       position: absolute;
-      top: 80%;
+      top: 30%;
       left: 50%;
       transform: translateX(-50%);
       background-color: #ffd700;
@@ -126,6 +126,56 @@
     .bottom {
       postion: bottom-right;
     }
+	
+.ad-spot {
+  position: fixed;
+  bottom: 40px; /* Adjust distance from bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  width: 200px; /* Adjust width as needed */
+  height: 50px; /* Adjust height as needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  border: 2px solid yellow; /* adjust border thickness */
+  border-radius: 5px; /* adjust corner roundness */
+  cursor: pointer;
+}
+
+.ad-spot p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ad-spot a {
+  text-decoration: none;
+}
+
+.ad-spot a:hover {
+  background-color: rgba(255, 255, 0, 0.2); /* Optional hover effect */
+}
+
+
+
+.social-media-icons {
+  position: absolute;
+  bottom: 10px; /* Adjust distance from bottom */
+  right: 10px; /* Adjust distance from right */
+  display: flex; /* Arrange icons horizontally */
+}
+
+.social-media-icons a {
+  margin-right: 5px;
+}
+
+.social-media-icons img {
+  width: 35px; /* Adjust image size */
+  height: 35px; /* Adjust image size */
+  border-radius: 50%; /* Make images round */
+  position: bottom-right;
+}
   </style>
 </head>
 
@@ -142,24 +192,42 @@
     <a href="/game-files/basket.html">Discord</a>
   </nav>
 
-  <br>
+  <br><center><br><br>
+  <h1 style="color:white; font-family:sans-serif"><b>DuckHTML</b></h1>
 
-  <h1>DuckHTML</h1>
-
-  <p id="dynamicText">Welcome to DuckHTML!</p>
-
+  <p id="dynamicText" style="color:white;">Welcome to DuckHTML!</p>
+  <button id="playNowButton" onclick="redirectToGamePage()">
+    Play Now
+    <img src="https://img.icons8.com/material-outlined/24/000000/play--v1.png" alt="Play Icon">
+  </button>
   <div id="cookieNotice">
     This website uses cookies. By using this site, you agree to our use of cookies.
     <button onclick="acceptCookies()">Accept</button>
     <button onclick="declineCookies()">Decline</button>
   </div>
 
-  <button id="playNowButton" onclick="redirectToGamePage()">
-    Play Now
-    <img src="https://img.icons8.com/material-outlined/24/000000/play--v1.png" alt="Play Icon">
-  </button>
+
+<div class="ad-spot">
+  <a href="your-discord-link" target="_blank">
+    <p  style="color:white">ad spot open<br> check discord for more</p>
+  </a>
+</div>
+  <div class="social-media-icons">
+    <a href="https://discord.gg/SnzVfn8k3P" target="_blank">
+      <img src="https://grimpress.net/wp-content/uploads/2022/08/discord-1.png" alt="Discord">
+    </a>‎ ‎ ‎ 
+    <a href="https://www.youtube.com/@DuckHTML" target="_blank">
+      <img src="https://cdn.icon-icons.com/icons2/792/PNG/512/YOUTUBE_icon-icons.com_65537.png" alt="YouTube">
+    </a>‎ ‎ ‎ 
+    <a href="your-tiktok-link" target="_blank">
+      <img src="https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo-gris.png" alt="TikTok">
+    </a>
+  </div>
 
 
+
+
+</center>
   <script>
     var messages = [
       "underi was here",
@@ -168,7 +236,9 @@
       "i hate school, real",
       "stop brusting on people",
       "Duck's are very cool",
-      "go to school, dont be a loser"
+      "go to school, dont be a loser",
+      "hambugers are tasteful",
+      "never go to the school bathrooms"
     ];
 
     function changeText() {
@@ -231,7 +301,7 @@
   function applyTheme(theme) {
     switch (theme) {
       case 'default':
-        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
         break;
       case 'white':
         setThemeStyles('#ffffff', '#000000', '#ffffff');
@@ -246,7 +316,7 @@
         setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
         break;
       default:
-        setThemeStyles('#D5b60a', '#363636', '#ffd700');
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
         break;
     }
     // Save the selected theme in local storage
