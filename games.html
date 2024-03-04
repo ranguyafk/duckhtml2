@@ -89,6 +89,29 @@
       width: calc(10% - 5px);
       /* 4 games per row, adjust as needed */
     }
+	        .nav-bar {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            align-items: center;
+            background-color: #000; /* Black background */
+            height: 3rem; /* Set navbar height */
+            padding: 0 1rem; /* Add some padding on the sides */
+        }
+
+        .nav-btn {
+            text-decoration: none; 
+            color: #fff; /* White text color */
+            font-weight: bold;
+            margin-right: 3%; /* Add margin-right for space */
+            margin-left: 3%; /* Add margin-right for space */
+            cursor: pointer;
+            display: inline-block; /* Needed for padding to work */
+            padding: 0.5rem 1rem;
+            border: none;
+            font-family: Tahoma;
+            background-color: #454545;
+            border-radius: 5px;
+        }
 
     .game img {
       width: 150px;
@@ -132,18 +155,13 @@
 </head>
 
 <body>
-
-  <nav>
-    <div class="logo">
-      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
-      <span>DuckHTML</span>
-    </div>
-    <a href="/index.html" class="active">Home</a>
-    <a href="/games.html">Games</a>
-    <a href="settings.html">Settings</a>
-    <a href="https://discord.gg/xfPsv2Rs6j">Discord</a>
-  </nav>
-
+	
+    <nav class="nav-bar">
+        <a href="/index.html" class="nav-btn">Home</a>
+        <a href="/games.html" class="nav-btn">Games</a>
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description" style="height: 2rem; margin: 0 3%;">  <a href="/settings.html" class="nav-btn">Settings</a>
+        <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
+    </nav>
   <br>
   <br>
   <br>
@@ -446,7 +464,7 @@
       <div class="game-title">TunnelRush</div>
     </a>
   </div>
-  <br <br>
+  <br> <br>
 
 
 
@@ -518,3 +536,28 @@
 </body>
 
 </html>
+
+  <script>
+    function filterGames() {
+      // Get input value and convert it to lowercase for case-insensitive matching
+      var input = document.getElementById('searchInput').value.toLowerCase();
+
+      // Get all game containers
+      var games = document.querySelectorAll('.game');
+
+      // Loop through each game
+      games.forEach(function (game) {
+        // Get the game title and convert it to lowercase
+        var title = game.querySelector('.game-title').innerText.toLowerCase();
+
+        // Check if the input value is present in the game title
+        if (title.includes(input)) {
+          // If yes, show the game
+          game.style.display = 'block';
+        } else {
+          // If no, hide the game
+          game.style.display = 'none';
+        }
+      });
+    }
+  </script>
