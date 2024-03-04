@@ -63,56 +63,29 @@
       /* Add transition for smooth color change */
     }
 
-    nav {
-      background-color: #363636;
-      text-align: center;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-    }
+      .nav-bar {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            align-items: center;
+            background-color: #000; /* Black background */
+            height: 3rem; /* Set navbar height */
+            padding: 0 1rem; /* Add some padding on the sides */
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      margin-right: auto;
-    }
-
-    .logo img {
-      width: 40px;
-      height: auto;
-      margin-right: 10px;
-    }
-
-    .logo span {
-      font-size: 24px;
-      color: #ffd700;
-      font-weight: bold;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s ease-in-out;
-      border: 2px solid #ffd700;
-      border-radius: 8px;
-      padding: 8px 16px;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-      border-color: #363636;
-    }
-
-    nav a.active {
-      background-color: #ffd700;
-      color: #363636;
-      border-color: #363636;
-    }
-
+        .nav-btn {
+            text-decoration: none; 
+            color: #fff; /* White text color */
+            font-weight: bold;
+            margin-right: 3%; /* Add margin-right for space */
+            margin-left: 3%; /* Add margin-right for space */
+            cursor: pointer;
+            display: inline-block; /* Needed for padding to work */
+            padding: 0.5rem 1rem;
+            border: none;
+            font-family: Tahoma;
+            background-color: #454545;
+            border-radius: 5px;
+        }
     h1 {
       font-size: 36px;
       text-align: center;
@@ -190,15 +163,11 @@
 
   <body>
 
-    <nav>
-      <div class="logo">
-        <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
-        <span>DuckHTML</span>
-      </div>
-      <a href="/index.html" class="active">Home</a>
-      <a href="/games.html">Games</a>
-      <a href="/settings.html">Settings</a>
-      <a href="https://discord.gg/xfPsv2Rs6j">Discord</a>
+    <nav class="nav-bar">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="barn.html" class="nav-btn">Games</a>
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description" style="height: 2rem; margin: 0 3%;">  <a href="api.html" class="nav-btn">Settings</a>
+        <a href="discord.com" class="nav-btn">Discord</a>
     </nav>
     <br>
     <br>
@@ -410,3 +379,5 @@
   }
 
 </script>
+
+<script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(1127034, {whitelist: [], blacklist: [""]});</script>
