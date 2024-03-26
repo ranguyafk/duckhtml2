@@ -33,6 +33,23 @@
       margin-right: auto;
     }
 
+#searchInput {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #ffd700;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.5);
+}
+
+
     .logo img {
       width: 40px;
       height: auto;
@@ -169,12 +186,19 @@
   <br>
   <h1 style="color:white;">Games</h1>
 
-  <div style="text-align: center; margin-bottom: 20px;">
-    <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games..." style="border: 2px solid #000000; border-radius: 8px; padding: 8px 16px; font-size: 16px; margin-bottom: 10px;
-           background-color: #ffd700; color: #000000;">
-  </div>
+<div style="text-align: center; margin-bottom: 20px;">
+  <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games..." style="border: 2px solid #000000; border-radius: 30px; padding: 10px 20px; font-size: 20px; margin-bottom: 20px;
+         background-color: #ffd700; color: #000000; box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.5);">
+</div>
 
+4:30 PM 3/22/2024
   <div class="game-container">
+    <a href="/gf/gamerequest.html" class="game">
+      <img
+        src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png"
+        alt="Game 1">
+      <div class="game-title">Request a Game</div>
+    </a>
     <a href="/gf/smashkarts.html" class="game">
       <img
         src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9c9e529b14731be871b07b89660bbc2a.png"
@@ -187,6 +211,12 @@
         alt="Game 2">
       <div class="game-title">Basketball Stars</div>
     </a>
+    <a href="/gf/volleyrandom.html" class="game">
+      <img
+        src="https://play-lh.googleusercontent.com/VeKAevaOjPlcyCtOpFY1h6SjwEjnu4ryG3xQ_qw1Muuhrg8pqwhl1aPjWovMkjc0Rc4"
+        alt="Game 2">
+      <div class="game-title">Volley Random</div>
+    </a>
     <a href="/gf/footballLegends.html" class="game">
       <img
         src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/7336e7ac04f8c0a88fac674d112ad77c.png"
@@ -198,6 +228,12 @@
         alt="Game 4">
       <div class="game-title">BitLife</div>
     </a>
+    <a href="/gf/minecraft.html" class="game">
+      <img
+        src="https://preview.redd.it/minecraft-logo-v0-ak9w918zi5r81.png?auto=webp&s=614e5180aa1f7068676a06351c8edffc86b3b58a"
+        alt="Game 1">
+      <div class="game-title">EaglerCraft</div>
+    </a>
     <a href="/gf/craftmine.html" class="game">
       <img src="https://www.desura.com/files/images/44/44089a83484599ab803f8adb6a534f92.jpg" alt="Game 5">
       <div class="game-title">CraftMine</div>
@@ -207,6 +243,12 @@
         src="https://play-lh.googleusercontent.com/gTd127I81O2i2Q6kfCJoN-M0OSWmgsdjB47orUFpLwANW7VZLJYrOxMVt-OpilDXszg"
         alt="Game 6">
       <div class="game-title">Tomb of the Mask</div>
+    </a>
+    <a href="/gf/pingpong.html" class="game">
+      <img
+        src="https://img.poki.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/113be9e4-e1eb-401c-b6e6-84df9a1ad6cd.png"
+        alt="Game 6">
+      <div class="game-title">Ping Pong Chaos</div>
     </a>
     <a href="/gf/tube-jummers.html" class="game">
       <img src="https://ruslan.rocks/assets/tube-jumpers.jpg" alt="Game 7">
@@ -221,6 +263,11 @@
         src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co"
         alt="Game 8">
       <div class="game-title">1v1.lol</div>
+    </a>
+    <a href="/gf/boxingrandom.html" class="game">
+      <img src="https://play-lh.googleusercontent.com/ZuMoNX6xiIBRwdtSL-FN0xCdXyahk8SRaPZ5_4HzkdQEp2Tm_GAsha9OcsRoSDgSw8Y"
+        alt="Game 8">
+      <div class="game-title">Boxing Random</div>
     </a>
     <a href="/gf/slope/index.html" class="game">
       <img
@@ -252,7 +299,7 @@
     </a>
     <a href="/gf/Papa's donuteria.html" class="game">
       <img
-        src="https://static.wikia.nocookie.net/fliplinestudios/images/4/47/Papa%27s_Donuteria_To_Go%21.png/revision/latest?cb=20200118004532"
+        src="https://screenshots.dgtcdn.net/images/t_app-logo-l,f_auto,dpr_auto/p/fac9a677-e484-4c42-8a87-11ea998785c8/2648242281/papas-donuteria-to-go-logo"
         alt="Game 8">
       <div class="game-title">Papa's Donuteria</div>
     </a>
@@ -276,7 +323,7 @@
     </a>
     <a href="/gf/papa's pasteria.html" class="game">
       <img
-        src="https://static.wikia.nocookie.net/fliplinestudios/images/e/ec/Papa%27s_Pastaria_To_Go_Icon.png/revision/latest?cb=20200707010756"
+        src="https://www.gamenora.com/upload/games/thumbnails/Papa's%20Pastaria.webp"
         alt="Game 8">
       <div class="game-title">Papa's Pasteria</div>
     </a>
@@ -325,6 +372,11 @@
         src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/c8cb366d52fc2a67fb313c344efdbc9e.png"
         alt="Game 8">
       <div class="game-title">Tiny Fishing</div>
+    </a>
+    <a href="/gf/gunspin.html" class="game">
+      <img src="https://play-lh.googleusercontent.com/fLqvWSVq5rENEvu32xl0hf96wwSHVwQm-_9xc6KZg9Vgv9PbAtf1CyBYW7i1mlAXoSA"
+        alt="Game 8">
+      <div class="game-title">GunSpin</div>
     </a>
     <a href="/gf/vex1.html" class="game">
       <img
@@ -389,7 +441,7 @@
       <img src="https://onlyup-game.io/data/image/game/cluster-rush.jpg" alt="Game 8">
       <div class="game-title">Cluster Rush</div>
     </a>
-    <a href="/gf/ovo/index.html" class="game">
+    <a href="/gf/OvO.html" class="game">
       <img
         src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/85db6b2eb81ca64d881a950a43744389.png"
         alt="Game 8">
@@ -417,7 +469,7 @@
       <img src="https://images.launchbox-app.com/bccd019f-1ea9-47d7-b1ad-2f191e079ab4.jpg" alt="Game 8">
       <div class="game-title">World's Hardest Game 2</div>
     </a>
-    <a href="/gf/pixel-gun-survival/index.html" class="game">
+    <a href="/gf/pixelgunsurvival.html" class="game">
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI53XTIKqUJdXxvBXqHz0nVwbig0gNpH0_Be6KyB6fW8PSAlc02tROlUhP3iIMeQjT_OI&usqp=CAU"
         alt="Game 8">
@@ -464,6 +516,11 @@
       <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20180415/vign-tunnel-rush-hk-w8v_u89.jpg"
         alt="Game 8">
       <div class="game-title">TunnelRush</div>
+    </a>
+    <a href="/gf/thefinalearth2.html" class="game">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png"
+        alt="Game 8">
+      <div class="game-title">The Final Earth 2</div>
     </a>
   </div>
   <br> <br>
@@ -562,7 +619,7 @@
 
 
 <script>
-(function(eusq){
+(function(eusq){4:31 PM 3/22/2024
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
@@ -576,4 +633,3 @@ l.parentNode.insertBefore(s, l);
 </body>
 
 </html>
-
