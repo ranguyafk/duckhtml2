@@ -229,12 +229,21 @@
 
 <body>
 
-   <nav class="nav-bar">
-        <a href="/index.html" class="nav-btn">Home</a>
-        <a href="/games.html" class="nav-btn">Games</a>
-      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description" style="height: 2rem; margin: 0 3%;">  <a href="/settings.html" class="nav-btn">Settings</a>
-        <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
-    </nav>
+<nav class="nav-bar">
+  <a href="/index.html" class="nav-btn">Home</a>
+  <a href="/games.html" class="nav-btn">Games</a>
+  <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description" style="height: 2rem; margin: 0 3%;">
+  <a href="/settings.html" class="nav-btn">Settings</a>
+  <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
+  <button class="nav-btn" onclick="openVideoPopup()">???</button> <!-- New button -->
+</nav>
+	<div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px; z-index: 9999;">
+  <video controls height="600" width="750">
+    <source src="/gf/rick.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button onclick="closeVideoPopup()" style="position: absolute; top: 10px; right: 10px; background-color: #fff; color: #000; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Close</button>
+</div>
 
   <br><center><br><br>
   <h1 style="color:white; font-family:sans-serif"><b>DuckHTML</b></h1>
@@ -392,3 +401,16 @@
     localStorage.setItem('faviconUrl', newFavicon);
   }
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0c5371f7de8a4aa491eb1f366635ee1f"}'></script>
+
+	<script>
+  // Function to open the video pop-up
+  function openVideoPopup() {
+    document.getElementById("videoPopup").style.display = "block";
+  }
+
+  // Function to close the video pop-up
+  function closeVideoPopup() {
+    document.getElementById("videoPopup").style.display = "none";
+  }
+</script>
+
