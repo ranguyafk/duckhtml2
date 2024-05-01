@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #353839;
+      overflow: hidden;
+      /* Add this line to remove scrollbars */
+    }
+
+
+    nav {
+      background-color: #353839;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: #363636;
+    }
+
+    nav a.active {
+      background-color: #ffd700;
+      color: #363636;
+      border-color: #363636;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      color: #363636;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #cookieNotice {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    #cookieNotice button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #playNowButton {
+      position: absolute;
+      top: 103%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #playNowButton img {
+      width: 20px;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    .bottom {
+      postion: bottom-right;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      background-color: #000;
+      /* Black background */
+      height: 3rem;
+      /* Set navbar height */
+      padding: 0 1rem;
+      /* Add some padding on the sides */
+      width: 100%;
+      /* Set navbar width */
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #fff;
+      /* White text color */
+      font-weight: bold;
+      margin-right: 3%;
+      /* Add margin-right for space */
+      margin-left: 3%;
+      /* Add margin-right for space */
+      cursor: pointer;
+      display: inline-block;
+      /* Needed for padding to work */
+      padding: 0.5rem 1rem;
+      border: none;
+      font-family: Tahoma;
+      background-color: #454545;
+      border-radius: 5px;
+    }
+
+    .ad-spot {
+      position: fixed;
+      bottom: 40px;
+      /* Adjust distance from bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      /* Center horizontally */
+      width: 200px;
+      /* Adjust width as needed */
+      height: 50px;
+      /* Adjust height as needed */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Adjust transparency */
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+      border: 2px solid yellow;
+      /* adjust border thickness */
+      border-radius: 5px;
+      /* adjust corner roundness */
+      cursor: pointer;
+    }
+
+    .ad-spot p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .ad-spot a {
+      text-decoration: none;
+    }
+
+    .ad-spot a:hover {
+      background-color: rgba(255, 255, 0, 0.2);
+      /* Optional hover effect */
+    }
+
+
+
+    .social-media-icons {
+      position: absolute;
+      bottom: 10px;
+      /* Adjust distance from bottom */
+      right: 10px;
+      /* Adjust distance from right */
+      display: flex;
+      /* Arrange icons horizontally */
+    }
+
+    .social-media-icons a {
+      margin-right: 5px;
+    }
+
+    .social-media-icons img {
+      width: 35px;
+      /* Adjust image size */
+      height: 35px;
+      /* Adjust image size */
+      border-radius: 50%;
+      /* Make images round */
+      position: bottom-right;
+    }
+
+    iframe {
+      width: 70vw;
+      height: calc(75vh - 30px);
+      /* Adjusted to leave space for the navbar */
+      border: none;
+    }
+
+    .rounded-image {
+      position: fixed;
+      bottom: 40px;
+      /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+      /* Adjust border radius as needed */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      /* Optional: Add shadow */
+    }
+
+    .rounded-imagetext {
+      position: fixed;
+      bottom: 5px;
+      /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+      /* Adjust border radius as needed */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      /* Optional: Add shadow */
+    }
+
+    .discord-btn {
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #454545;
+      border-radius: 5px;
+    }
+
+    .discord-btn img {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
+  </style>
+  <script>
+    function checkQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.has(param);
+    }
+
+    function createGameIframe(param, title) {
+      const hostUrl = window.location.origin;
+      const iframeSrc = `${hostUrl}/gf/${param}`;
+
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', iframeSrc);
+      iframe.setAttribute('id', 'gameIframe'); // Set an ID for easier reference
+
+      const container = document.getElementById('iframe-container');
+      container.appendChild(iframe);
+
+      document.getElementById('gameTitle').innerText = title;
+    }
+
+    window.onload = function () {
+      if (checkQueryParam('game')) {
+        const gameParamValue = new URLSearchParams(window.location.search).get('game');
+        const titleParamValue = new URLSearchParams(window.location.search).get('title');
+        createGameIframe(gameParamValue, titleParamValue);
+      } else {
+        console.log("The 'game' parameter is not present in the URL.");
+      }
+    };
+
+    // Function to toggle fullscreen mode for the iframe
+    function toggleFullscreen() {
+      // Get the iframe element
+      const iframe = document.querySelector('iframe');
+
+      // Check if fullscreen mode is enabled
+      if (!document.fullscreenElement) {
+        // If not, request fullscreen
+        iframe.requestFullscreen();
+      } else {
+        // Otherwise, exit fullscreen
+        document.exitFullscreen();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="nav-bar">
+    < <a href="/index.html" class="nav-btn">Home</a>
+      <a href="/games.html" class="nav-btn">Games</a>
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description"
+        style="height: 2rem; margin: 0 3%;">
+      <a href="/settings.html" class="nav-btn">Settings</a>
+      <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
+  </nav>
+
+  <center>
+    <br><br>
+    <h1 id="gameTitle" style="color: white;">GAMENAMEHERE</h1>
+    <div id="iframe-container"></div>
+    <br>
+      <script>
+        // Function to toggle fullscreen mode for the iframe
+        function toggleFullscreen() {
+          // Get the iframe element
+          const iframe = document.querySelector('iframe');
+
+          // Check if fullscreen mode is enabled
+          if (!document.fullscreenElement) {
+            // If not, request fullscreen
+            iframe.requestFullscreen();
+          } else {
+            // Otherwise, exit fullscreen
+            document.exitFullscreen();
+          }
+        }
+      </script>
+    </body>
+
+    </html>
+
+    <button class="nav-btn" onclick="toggleFullscreen()">Fullscreen</button>
+  </center>
+  <br><br><br><br>
+</body>
+
+
+
+
+
+</html>
