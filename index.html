@@ -16,7 +16,7 @@
     body {
       margin: 0;
       font-family: 'Inter','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #353839;
+            background-color: #353839;
       position: relative;
       min-height: 100vh;
     }
@@ -71,18 +71,6 @@
       border-color: #363636;
     }
 
-    h1 {
-      font-size: 36px;
-      text-align: center;
-      color: #363636;
-    }
-
-    p {
-      font-size: 18px;
-      text-align: center;
-      color: #333;
-      font-family: 'Arial', sans-serif;
-    }
 
     #cookieNotice {
       position: fixed;
@@ -109,14 +97,14 @@
 
     #playNowButton {
       position: absolute;
-      top: 30%;
-      left: 50%;
+      top: 40%;
+      left: 80%;
       transform: translateX(-50%);
       background-color: #ffd700;
       color: #363636;
       border: none;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 25px 40px;
+      font-size: 25px;
       font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
@@ -223,6 +211,71 @@
     border-radius: 20px; /* Adjust border radius as needed */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
   }
+  
+.ttt {
+  color: white;
+  font-size: 110px;
+  float: left;
+  letter-spacing: 15px;
+  font-family: Monospace;
+  padding: 15px;
+    margin-left: 15%;
+}
+
+.tttt {
+  color: white;
+  font-size: 20px;
+  font-family: Monospace;
+  clear: both; 
+  top: 10%;
+  margin-left: 0%; 
+
+}
+
+.ttttt {
+  color: white;
+  font-size: 20px;
+  font-family: Monospace;
+  clear: both; 
+  margin-left: 20%; 
+
+}
+
+.github {
+	position: absolute;
+	bottom: 0;
+	left: 155;
+	}
+	
+	.playnowtext {
+	  position: absolute;
+	  font-family: Monospace;
+	  color: white;
+	  font-size: 30px;
+      top: 30%;
+      left: 70%;
+	  }
+	  
+	  	.dash {
+	  position: absolute;
+	  font-family: Monospace;
+	  color: white;
+	  font-size: 90px;
+      top: 30%;
+      left: 50%;
+	  }
+	  
+	  .adbutton  {
+      background-color: #ffd700;
+      color: white;
+      padding: 25px 40px;
+      font-size: 25px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+  
+  
+  
   </style>
 	<script type="text/javascript"> adroll_adv_id = "HN2UPZXOOBF6XDGSKCXFCJ"; adroll_pix_id = "BMIC6Q6R5JFGBBTL7Z3ZKF"; adroll_version = "2.0";  (function(w, d, e, o, a) { w.__adroll_loaded = true; w.adroll = w.adroll || []; w.adroll.f = [ 'setProperties', 'identify', 'track' ]; var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) { return function() { w.adroll.push([ n, arguments ]) } })(w.adroll.f[a]) }  e = d.createElement('script'); o = d.getElementsByTagName('script')[0]; e.async = 1; e.src = roundtripUrl; o.parentNode.insertBefore(e, o); })(window, document); adroll.track("pageView"); </script> 
 </head>
@@ -236,14 +289,16 @@
   <a href="/settings.html" class="nav-btn">Settings</a>
   <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
 </nav>
-<br><center><br><br>
-  <h1 style="color:white; font-family:sans-serif"><b>DuckHTML</b></h1>
+<br><br><br>
+  <h1 class="ttt";><b>DuckHTML</b></h1><p id="dynamicText" class="ttttt" style="color:white;">"Welcome to DuckHTML!"</p>
 
-  <p id="dynamicText" style="color:white;">Welcome to DuckHTML!</p>
   <button id="playNowButton" onclick="redirectToGamePage()">
     Play Now
     <img src="https://img.icons8.com/material-outlined/24/000000/play--v1.png" alt="Play Icon">
   </button>
+  </button>
+<p class="playnowtext";> Explore all Games now.</p>
+<b><p class="dash";> -</p></b>
   <div id="cookieNotice">
     This website uses cookies. By using this site, you agree to our use of cookies.
     <button onclick="acceptCookies()">Accept</button>
@@ -253,16 +308,8 @@
 <a href="https://burgersmp.pagekite.me"> 
 <img src="https://ucarecdn.com/f929126c-7e07-46d8-9b06-5b27eb5cc7b2/3Fxd0nG.jpg" alt="Rounded Image" class="rounded-image" width="360" height="140">
 </div>
-<a href="https://discord.gg/xjdrgx9PMf" style="color: white; font-size: 15px" class="rounded-imagetext";>Click here to put your ad here</a>
 
-  <div class="social-media-icons">
-    <a href="https://discord.gg/SnzVfn8k3P" target="_blank">
-      <img src="https://grimpress.net/wp-content/uploads/2022/08/discord-1.png" alt="Discord">
-    </a>‎ ‎ ‎ 
-    <a href="https://www.youtube.com/@DuckHTML" target="_blank">
-      <img src="https://cdn.icon-icons.com/icons2/792/PNG/512/YOUTUBE_icon-icons.com_65537.png" alt="YouTube">
-    </a>‎ ‎ ‎ 
-  </div>
+<a href="https://discord.gg/xjdrgx9PMf" style="color: white; font-size: 15px" class="rounded-imagetext";>Click here to put your ad here</a>
 
 
 
@@ -270,24 +317,24 @@
 </center>
   <script>
     var messages = [
-      "underi was here",
-      "`omg` - ProudParrot2",
-      "We try",
-      "i hate school, real",
-      "stop brusting on people",
-      "Duck's are very cool",
-      "go to school, dont be a loser",
-      "hambugers are tasteful",
-      "never go to the school bathrooms",
-      "don't study, play duckHTML",
-      "dont be THOSE minecraft youtubers",
-      "don't put your phone in your microwave",
-      "dont try to fall down stairs",
-      "tide pods dont taste good",
-      "bribes are legal if the sum of money is big enough",
-      "this is government propaganda",
-      "dont hit people with marbles",
-      "if you have a 2013 Audi a5 convertible out in the parking lot its being towed"
+      "'underi was here'",
+      "'`omg` - ProudParrot2'",
+      "'We try'",
+      "'i hate school, real'",
+      "'stop brusting on people'",
+      "'Duck's are very cool'",
+      "'go to school, dont be a loser'",
+      "'hambugers are tasteful'",
+      "'never go to the school bathrooms'",
+      "'don't study, play duckHTML'",
+      "'dont be THOSE minecraft youtubers'",
+      "'don't put your phone in your microwave'",
+      "'dont try to fall down stairs'",
+      "'tide pods dont taste good'",
+      "'bribes are legal if the sum of money is big enough'",
+      "'this is government propaganda'",
+      "'dont hit people with marbles'",
+      "'if you have a 2013 Audi a5 convertible out in the parking lot its being towed'"
     ];
 
     function changeText() {
@@ -324,9 +371,10 @@
 </body>
 <br>
 <br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="bottom">
-  <a style="font-size:20px" ; href="/credits.html"> ‎ ‎ Credits</a>
+
+<div class="github">
+  <a style="font-size:20px; text-decoration:none;" ; href="/credits.html"> ‎ ‎ Credits</a>
+  <a style="font-size:20px; text-decoration:none; "; href="https://github.com/ranguyafk/duckhtml2/tree/duck"> ‎ ‎ Github</a>
 </div>
 
 
@@ -404,4 +452,3 @@
     document.getElementById("videoPopup").style.display = "none";
   }
 </script>
-
