@@ -161,6 +161,21 @@
       border-radius: 5px;
     }
 
+    .nav-btn2 {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      padding: 1rem 2rem;
+      border: none;
+      position: absolute;
+      bottom: 60%;
+      left: 86%;
+      font-family: Tahoma;
+      background-color: #454545;
+      border-radius: 5px;
+    }
+
     .ad-spot {
       position: fixed;
       bottom: 40px;
@@ -227,9 +242,11 @@
 
     iframe {
       width: 70vw;
-      height: calc(75vh - 30px);
+      height: calc(85vh - 70px);
       /* Adjusted to leave space for the navbar */
       border: none;
+      float: left;
+      padding: 5px;
     }
 
     .rounded-image {
@@ -270,6 +287,23 @@
       width: 20px;
       height: auto;
       margin-right: 5px;
+    }
+
+    .floating {
+      float: right;
+    }
+
+    .ad-container {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      bottom: 10px;
+      /* Adjust as needed */
+      right: 30px;
+      /* Adjust as needed */
+      border: 5px;
+      border-color: white;
+    }
     }
   </style>
   <script>
@@ -316,12 +350,13 @@
         document.exitFullscreen();
       }
     }
+
   </script>
 </head>
 
 <body>
   <nav class="nav-bar">
-    < <a href="/index.html" class="nav-btn">Home</a>
+    < <a href="/index.html" class="nav-btn">Homae</a>
       <a href="/games.html" class="nav-btn">Games</a>
       <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description"
         style="height: 2rem; margin: 0 3%;">
@@ -329,34 +364,59 @@
       <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
   </nav>
 
+
   <center>
     <br><br>
-    <h1 id="gameTitle" style="color: white;">GAMENAMEHERE</h1>
+    <h1 id="gameTitle" style="color: white; float: right; padding: 3vw;">GAMENAMEHERE</h1>
     <div id="iframe-container"></div>
     <br>
-      <script>
-        // Function to toggle fullscreen mode for the iframe
-        function toggleFullscreen() {
-          // Get the iframe element
-          const iframe = document.querySelector('iframe');
 
-          // Check if fullscreen mode is enabled
-          if (!document.fullscreenElement) {
-            // If not, request fullscreen
-            iframe.requestFullscreen();
-          } else {
-            // Otherwise, exit fullscreen
-            document.exitFullscreen();
-          }
+    <script>
+      // Function to toggle fullscreen mode for the iframe
+      function toggleFullscreen() {
+        // Get the iframe element
+        const iframe = document.querySelector('iframe');
+
+        // Check if fullscreen mode is enabled
+        if (!document.fullscreenElement) {
+          // If not, request fullscreen
+          iframe.requestFullscreen();
+        } else {
+          // Otherwise, exit fullscreen
+          document.exitFullscreen();
         }
-      </script>
+      }
+    </script>
+
+    <body>
+
     </body>
 
-    </html>
+</html>
 
-    <button class="nav-btn" onclick="toggleFullscreen()">Fullscreen</button>
-  </center>
-  <br><br><br><br>
+<button class="nav-btn2" style="font-size: 18px; family-font: Monospace;"
+  onclick="toggleFullscreen()">Fullscreen</button>
+
+
+<center>
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key': '685c782d1088e81356e8b908f427b8a7',
+        'format': 'iframe',
+        'height': 90,
+        'right': '50px',
+        'width': 728,
+        'params': {}
+
+      };
+    </script>
+  </div>
+</center>
+<script type="text/javascript" src="//www.topcreativeformat.com/685c782d1088e81356e8b908f427b8a7/invoke.js"></script>
+
+</center>
+<br><br><br><br>
 </body>
 
 
