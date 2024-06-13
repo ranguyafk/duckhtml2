@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-
   <title></title>
   <style>
     body {
@@ -306,7 +304,6 @@
       border: 5px;
       border-color: white;
     }
-    }
   </style>
   <script>
     function checkQueryParam(param) {
@@ -352,68 +349,53 @@
         document.exitFullscreen();
       }
     }
-
   </script>
 </head>
 
 <body>
   <nav class="nav-bar">
-    < <a href="/index.html" class="nav-btn">Homae</a>
-      <a href="/games.html" class="nav-btn">Games</a>
-      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description"
-        style="height: 2rem; margin: 0 3%;">
-      <a href="/settings.html" class="nav-btn">Settings</a>
-      <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
+    <a href="/index.html" class="nav-btn">Home</a>
+    <a href="/games.html" class="nav-btn">Games</a>
+    <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description"
+      style="height: 2rem; margin: 0 3%;">
+    <a href="/settings.html" class="nav-btn">Settings</a>
+    <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
   </nav>
-
 
   <center>
     <br><br>
     <h1 id="gameTitle" style="color: white; float: right; padding: 3vw;">GAMENAMEHERE</h1>
     <div id="iframe-container"></div>
+    <div id="banner-container">
+      <!-- AdForGames.com banner code here -->
+      <!-- AdForGames.com code begin -->
+      <script>
+        var afg={};afg.u=6289;afg.s=4;
+        document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");
+      </script>
+      <!-- AdForGames.com code end -->
+    </div>
     <br>
 
-    <script>
-      // Function to toggle fullscreen mode for the iframe
-      function toggleFullscreen() {
-        // Get the iframe element
-        const iframe = document.querySelector('iframe');
+    <button class="nav-btn2" style="font-size: 18px; family-font: Monospace;"
+      onclick="toggleFullscreen()">Fullscreen</button>
+  </center>
 
-        // Check if fullscreen mode is enabled
-        if (!document.fullscreenElement) {
-          // If not, request fullscreen
-          iframe.requestFullscreen();
-        } else {
-          // Otherwise, exit fullscreen
-          document.exitFullscreen();
-        }
-      }
-    </script>
+  <center>
+    <div class="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '685c782d1088e81356e8b908f427b8a7',
+          'format': 'iframe',
+          'height': 90,
+          'right': '50px',
+          'width': 728,
+          'params': {}
+        };
+      </script>
+    </div>
+  </center>
 
-    <body>
-
-    </body>
-
-</html>
-
-<button class="nav-btn2" style="font-size: 18px; family-font: Monospace;"
-  onclick="toggleFullscreen()">Fullscreen</button>
-
-
-
-
-<br><br><br><br>
 </body>
-
-
-<script type="text/javascript">
-    aclib.runInPagePush({
-        zoneId: '8425762',
-        refreshRate: 30,
-        maxAds: 2,
-    });
-</script>
-
-
 
 </html>
