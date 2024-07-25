@@ -1,21 +1,14 @@
 {
-    "name": "duckhtml3.0",
-    "version": "1.0.0",
-    "description": "A brief description of duckhtml3.0",
-    "main": "index.js",
-    "scripts": {
-        "build": "echo \"No build specified\" && exit 1",
-        "test": "echo \"No test specified\" && exit 1",
-        "start": "node index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/username/duckhtml3.0.git"
-    },
-    "author": "underi",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/username/duckhtml3.0/issues"
-    },
-    "homepage": "https://github.com/username/duckhtml3.0#readme"
+  "name": "ultraviolet-static",
+  "main": "lib/index.js",
+  "version": "1.0.5",
+  "type": "module",
+  "files": [
+    "public",
+    "lib"
+  ],
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "prettier": "^2.7.1"
+  }
 }
