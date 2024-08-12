@@ -7,8 +7,7 @@
   <title>DuckHTML</title>
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
-  <script async src="https://ss.mrmnd.com/banner.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap"><script async src="https://ss.mrmnd.com/banner.js"></script>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
@@ -85,10 +84,10 @@
 
     #iframe-container {
       position: absolute;
-      top: 120px; /* Adjust this value as needed */
+      top: 85px; /* Adjust this value as needed */
       left: 10px; /* Move the iframe to the left */
       right: 10px; /* Ensure it does not stretch too wide */
-      bottom: 140px; /* Adjust for space above the ad */
+      bottom: 150px; /* Leave space for buttons */
       display: flex;
       justify-content: flex-start; /* Align iframe to the left */
     }
@@ -98,30 +97,13 @@
       height: calc(80vh - 70px);
       border: none;
       position: relative; /* Relative positioning within container */
-      padding: 5px;
+      padding: 0px;
       box-sizing: border-box; /* Ensure padding and border are included in width/height */
-    }
-
-    .ad-container {
-      position: fixed;
-      bottom: 10px; /* Adjust this value to add padding between the screen and the ad */
-      left: 10px; /* Padding from the left */
-      width: 720px;
-      height: 90px;
-      z-index: 100; /* Ensure ad is above other elements */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .ad-container div {
-      width: 100%;
-      height: 100%;
     }
 
     .button-container {
       position: absolute;
-      top: calc(120px + 80px); /* Position buttons directly below the iframe */
+      top: calc(120px + 80px); /* Position buttons directly below the title */
       right: 50px; /* Align buttons to the right */
       display: flex; /* Align buttons horizontally */
       gap: 10px; /* Space between buttons */
@@ -182,6 +164,40 @@
       width: 20px;
       height: auto;
       margin-right: 5px;
+    }
+
+    .ad-container {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      bottom: 50px; /* Adjust this value to move the ad down */
+      right: 30px;
+      width: 720px; /* Adjust the width if necessary */
+      height: 900px; /* Adjust the height if necessary */
+      border: 5px;
+      border-color: white;
+    }
+
+
+    .nav-btn2 {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      padding: 1rem 2rem;
+      border: none;
+      position: absolute;
+      bottom: 60%;
+      left: 86%;
+      font-family: Tahoma;
+      background-color: #454545;
+      border-radius: 5px;
+    }
+
+    .content-container {
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 5px;
     }
 
     #cookieNotice {
@@ -269,21 +285,22 @@
         width: 80vw;
         height: calc(75vh - 70px);
       }
-
-      .ad-container {
-        width: 80%;
-      }
     }
 
     @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+        right: 10px; /* Adjust position for smaller screens */
+      }
+
+      #iframe-container {
+        left: 5px;
+        right: 5px;
+      }
+
       iframe {
         width: 90vw;
         height: calc(70vh - 70px);
-      }
-
-      .ad-container {
-        width: 90%;
-        bottom: 5px; /* Adjust for smaller screens */
       }
 
       .button-container {
@@ -314,6 +331,7 @@
         padding: 4px 8px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -330,16 +348,9 @@
     </div>
   </nav>
 
-  <h1 id="gameTitle">GAMENAMEHERE</h1>
-
-  <div id="iframe-container">
-    <!-- The iframe will be dynamically inserted here -->
-  </div>
-
-  <div class="ad-container">
-    <!-- Ad container with no background or border -->
-    <div data-mndbanid="d3851f80-f841-4862-8607-7cc978774426"></div>
-  </div>
+  <h1 id="gameTitle">GAMENAMEHERE</h1><br><br><br>
+  <div data-mndbanid="d3851f80-f841-4862-8607-7cc978774426"></div>
+  <div id="iframe-container"></div>
 
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
