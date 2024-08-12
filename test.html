@@ -88,7 +88,7 @@
       top: 120px; /* Adjust this value as needed */
       left: 10px; /* Move the iframe to the left */
       right: 10px; /* Ensure it does not stretch too wide */
-      bottom: 220px; /* Adjust this to leave space for buttons and ad */
+      bottom: 120px; /* Leave space for the ad */
       display: flex;
       justify-content: flex-start; /* Align iframe to the left */
     }
@@ -103,17 +103,18 @@
     }
 
     .ad-container {
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 720px;
       height: 90px;
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
       z-index: 100; /* Ensure ad is above other elements */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .button-container {
@@ -266,6 +267,10 @@
         width: 80vw;
         height: calc(75vh - 70px);
       }
+
+      .ad-container {
+        width: 80%;
+      }
     }
 
     @media (max-width: 768px) {
@@ -277,11 +282,7 @@
       #iframe-container {
         left: 5px;
         right: 5px;
-      }
-
-      iframe {
-        width: 90vw;
-        height: calc(70vh - 70px);
+        bottom: 110px; /* Adjust for smaller screens */
       }
 
       .button-container {
