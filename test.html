@@ -1,11 +1,413 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script async src="https://ss.mrmnd.com/banner.js"></script>
-</head>
-<center>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <title>DuckHTML</title>
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script async src="https://ss.mrmnd.com/banner.js"></script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8X677NPBRV');
+  </script>
 
-  <H1>If you found this page, go away</H1>
-  <P>-underi</P>
-</center>
-	<div data-mndbanid="d3851f80-f841-4862-8607-7cc978774426"></div>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      overflow: hidden; /* Remove scrollbars */
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-family: 'Press Start 2P', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: white;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #fff;
+      position: absolute;
+      top: 80px; /* Space for the fixed nav */
+      right: 50px; /* Move title to the right */
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    #iframe-container {
+      position: absolute;
+      top: 120px; /* Adjust this value as needed */
+      left: 10px; /* Move the iframe to the left */
+      right: 10px; /* Ensure it does not stretch too wide */
+      bottom: 220px; /* Adjust this to leave space for buttons and ad */
+      display: flex;
+      justify-content: flex-start; /* Align iframe to the left */
+    }
+
+    iframe {
+      width: 70vw;
+      height: calc(80vh - 70px);
+      border: none;
+      position: relative; /* Relative positioning within container */
+      padding: 5px;
+      box-sizing: border-box; /* Ensure padding and border are included in width/height */
+    }
+
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      height: 90px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      z-index: 100; /* Ensure ad is above other elements */
+    }
+
+    .button-container {
+      position: absolute;
+      top: calc(120px + 80px); /* Position buttons directly below the iframe */
+      right: 50px; /* Align buttons to the right */
+      display: flex; /* Align buttons horizontally */
+      gap: 10px; /* Space between buttons */
+    }
+
+    /* Individual button styling */
+    button {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: none;
+      background-color: #ffd700; /* Consistent color for all buttons */
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    }
+
+    button img {
+      width: 24px; /* Icon size */
+      height: auto;
+    }
+
+    button:active {
+      background-color: #ff6347; /* Darker color on click */
+      transform: scale(0.95); /* Slightly shrink the button on click */
+    }
+
+    .rounded-image {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded-imagetext {
+      position: fixed;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .discord-btn {
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #454545;
+      border-radius: 5px;
+    }
+
+    .discord-btn img {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
+
+    #cookieNotice {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    #cookieNotice button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* General button styles */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #ffd700; /* Consistent color for all buttons */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    /* Hover effect for buttons */
+    button:hover {
+      background-color: #f0c000; /* Darker yellow for hover */
+      transform: scale(1.05); /* Slightly enlarge the button */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    }
+
+    /* Specific button styles */
+    .bookmark-button {
+      background-color: #ffd700; /* Yellow color for bookmark button */
+    }
+
+    .bookmark-button:hover {
+      background-color: #f0c000; /* Darker yellow for hover */
+    }
+
+    /* Play Now Button */
+    .playNowButton {
+      background-color: #ffd700; /* Yellow color for Play Now button */
+    }
+
+    .playNowButton:hover {
+      background-color: #f0c000; /* Darker yellow for hover */
+    }
+
+    /* Refresh Button */
+    .refreshButton {
+      background-color: #ffd700; /* Yellow color for Refresh button */
+    }
+
+    .refreshButton:hover {
+      background-color: #f0c000; /* Darker yellow for hover */
+    }
+
+    /* Blank Button */
+    .blankButton {
+      background-color: #ffd700; /* Yellow color for Blank button */
+    }
+
+    .blankButton:hover {
+      background-color: #f0c000; /* Darker yellow for hover */
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      iframe {
+        width: 80vw;
+        height: calc(75vh - 70px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+        right: 10px; /* Adjust position for smaller screens */
+      }
+
+      #iframe-container {
+        left: 5px;
+        right: 5px;
+      }
+
+      iframe {
+        width: 90vw;
+        height: calc(70vh - 70px);
+      }
+
+      .button-container {
+        top: calc(120px + 70px); /* Adjust position for smaller screens */
+        right: 10px; /* Align to the right */
+        flex-direction: row; /* Align buttons horizontally */
+      }
+
+      button {
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .button-container {
+        bottom: 5px;
+        width: auto; /* Adjust width */
+        right: 5px; /* Align to the right */
+        left: auto; /* Remove left alignment */
+        transform: none; /* Remove centering */
+        flex-direction: row; /* Align buttons horizontally */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+      }
+
+      button {
+        font-size: 14px;
+        padding: 4px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+      <span>DuckHTML</span>
+    </div>
+    <div>
+      <a href="/index.html">Home</a>
+      <a href="/games.html">Games</a>
+      <a href="/settings.html">Settings</a>
+      <a href="/search.html">Search</a>
+    </div>
+  </nav>
+
+  <h1 id="gameTitle">GAMENAMEHERE</h1>
+
+  <div id="iframe-container">
+    <!-- The iframe will be dynamically inserted here -->
+  </div>
+
+  <div class="ad-container">
+    <!-- Your ad content here -->
+    <script async src="https://ss.mrmnd.com/banner.js"></script>
+  </div>
+
+  <div class="button-container">
+    <button class="playNowButton" onclick="toggleFullscreen()">
+      <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
+    </button>
+    <button class="refreshButton" onclick="refreshIframe()">
+      <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon">
+    </button>
+    <button class="openBlankButton" onclick="openInBlank()">
+      <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon">
+    </button>
+  </div>
+
+  <script>
+    function checkQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.has(param);
+    }
+
+    function createGameIframe(param, title) {
+      const hostUrl = window.location.origin;
+      const iframeSrc = `${hostUrl}/gf/${param}`;
+
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', iframeSrc);
+      iframe.setAttribute('id', 'gameIframe'); // Set an ID for easier reference
+
+      const container = document.getElementById('iframe-container');
+      container.innerHTML = ''; // Clear existing content
+      container.appendChild(iframe);
+
+      document.getElementById('gameTitle').textContent = title;
+      document.title = title;
+    }
+
+    window.onload = function () {
+      if (checkQueryParam('game')) {
+        const gameParamValue = new URLSearchParams(window.location.search).get('game');
+        const titleParamValue = new URLSearchParams(window.location.search).get('title');
+        createGameIframe(gameParamValue, titleParamValue || 'GAMENAMEHERE');
+      } else {
+        document.getElementById('gameTitle').textContent = 'No game specified';
+      }
+    };
+
+    function toggleFullscreen() {
+      const iframe = document.getElementById('gameIframe');
+      if (iframe) {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          iframe.requestFullscreen();
+        }
+      }
+    }
+
+    function refreshIframe() {
+      const iframe = document.getElementById('gameIframe');
+      if (iframe) {
+        iframe.contentWindow.location.reload();
+      }
+    }
+
+    function openInBlank() {
+      const iframe = document.getElementById('gameIframe');
+      if (iframe) {
+        const url = iframe.src;
+        window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
+      }
+    }
+  </script>
+</body>
 </html>
