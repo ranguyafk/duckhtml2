@@ -1,390 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-adsense-account" content="ca-pub-3595251150723826">
-  <title>DuckHTML</title>
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <title>DuckHTML Settings</title>
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<body style="background-color:#D5b60a;">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=CoolFont&display=swap">
-
+    gtag('config', 'G-8X677NPBRV');
+  </script>
   <style>
-    #titleFaviconContainer {
-      text-align: center;
+
+
+    #settingsContainer {
+      background-color: #1f1f1f;
       padding: 20px;
       border-radius: 15px;
-      margin-top: 20px;
+      width: 80%;
+      max-width: 800px; /* Limited maximum width */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
 
     .setting-item {
+      margin-bottom: 20px;
+    }
+
+    .input-container {
       margin-bottom: 15px;
+      text-align: left;
     }
 
     label {
-      font-family: 'Monospace', monospace;
+      font-family: 'VT323', sans-serif;
       font-size: 18px;
-      margin-right: 10px;
+      color: #f0f0f0;
+      display: block;
+      margin-bottom: 8px;
     }
 
-    input {
-      padding: 8px;
+    input[type="text"], select {
+      padding: 10px;
       border: 2px solid #ffd700;
       border-radius: 8px;
-      font-family: 'CoolFont', sans-serif;
+      font-family: 'VT323', sans-serif;
       font-size: 16px;
+      color: #363636;
+      width: calc(100% - 24px);
+      text-align: center;
+      background-color: #1f1f1f; /* Match theme background */
     }
 
-    button {
+    input[type="text"]:focus, select:focus {
+      outline: none;
+      border-color: #ffe44d;
+    }
+
+    .premade-favicons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .premade-favicons span {
+      display: inline-block;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .premade-favicons span:hover {
+      transform: scale(1.1);
+    }
+
+    .premade-favicons img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+
+    .action-button {
       background-color: #ffd700;
       color: #363636;
       border: none;
-      padding: 12px 20px;
-      margin: 5px;
-      border-radius: 15px;
-      cursor: pointer;
-      font-family: 'Monospace', monospace;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    button:hover {
-      background-color: #fdd835;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-      min-height: 100vh;
-      transition: background-color 0.5s ease;
-      /* Add transition for smooth color change */
-    }
-
-      .nav-bar {
-            display: flex;
-            justify-content: center; /* Center buttons horizontally */
-            align-items: center;
-            background-color: #000; /* Black background */
-            height: 3rem; /* Set navbar height */
-            padding: 0 1rem; /* Add some padding on the sides */
-        }
-
-        .nav-btn {
-            text-decoration: none; 
-            color: #fff; /* White text color */
-            font-weight: bold;
-            margin-right: 3%; /* Add margin-right for space */
-            margin-left: 3%; /* Add margin-right for space */
-            cursor: pointer;
-            display: inline-block; /* Needed for padding to work */
-            padding: 0.5rem 1rem;
-            border: none;
-            font-family: Tahoma;
-            background-color: #454545;
-            border-radius: 5px;
-        }
-    h1 {
-      font-size: 36px;
-      text-align: center;
-      color: #363636;
-    }
-
-    #titleFaviconChanger {
-      text-align: center;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 20px;
-    }
-
-    #titleFaviconChanger label,
-    #titleFaviconChanger button {
-      margin-top: 10px;
-    }
-
-    #titleFaviconChanger input,
-    #titleFaviconChanger button {
-      font-family: 'CoolFont', sans-serif;
-      /* Replace 'CoolFont' with the desired font */
-      font-size: 16px;
-      border: 2px solid #ffd700;
-      border-radius: 10px;
-      padding: 8px 16px;
-      margin-top: 10px;
-    }
-
-    #titleFaviconChanger button {
-      background-color: #ffd700;
-      color: #363636;
       cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
     }
 
-    #titleFaviconChanger button:hover {
+    .action-button:hover {
       background-color: #ffe44d;
+      transform: scale(1.05);
+    }
+
+    .action-button:focus {
+      outline: none;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
 
     #colorSelectorContainer {
-      text-align: center;
-      padding: 20px;
-      border-radius: 15px;
-      /* Rounded corners */
       margin-top: 20px;
     }
 
-    #colorSelectorHeader {
-      font-family: 'Monospace', monospace;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
     #colorSelect {
-      margin-top: 10px;
-      background-color: yellow;
-      border-radius: 10px;
-      font-family: 'CoolFont', sans-serif;
-      font-size: 16px;
+      padding: 8px;
       border: 2px solid #ffd700;
+      border-radius: 8px;
+      font-family: 'VT323', sans-serif;
+      font-size: 16px;
       color: #363636;
-      padding: 8px 16px;
+      background-color: #1f1f1f;
       cursor: pointer;
     }
 
     #colorSelect:hover {
-      background-color: #ffe44d;
+      background-color: #2f2f2f;
     }
-	.discord {
-	position: bottom;
-	}
+    body {
+      margin: 0;
+      font-family: 'VT323', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-family: 'Press Start 2P', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: white;
+    }
   </style>
-  </head>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+    <span>DuckHTML</span>
+  </div>
+  <div>
+    <a href="/index.html">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="/settings.html">Settings</a>
+    <a href="/search.html">Search</a>
+  </div>
+</nav>
 
-  <body>
+<div id="settingsContainer">
+  <h1>Settings</h1>
 
-    <nav class="nav-bar">
-        <a href="/index.html" class="nav-btn">Home</a>
-        <a href="/games.html" class="nav-btn">Games</a>
-      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="Image description" style="height: 2rem; margin: 0 3%;">  <a href="/settings.html" class="nav-btn">Settings</a>
-        <a href="https://discord.gg/WJrVhYbrdQ" class="nav-btn">Discord</a>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <h1 style="color:white;">Settings</h1>
-    <br>
-    <center>
-      <h2>Tab Cloaking</h2>
-    </center>
-    <div id="titleFaviconContainer">
-      <div class="setting-item">
-        <label for="pageTitle">Title:</label>
-        <input type="text" id="pageTitle" placeholder="Enter new title">
-      </div>
-      <div class="setting-item">
-        <label for="faviconUrl">Favicon URL:</label>
-        <input type="text" id="faviconUrl" placeholder="Enter favicon URL">
-      </div>
-      <button onclick="changeTitleFavicon()">Apply Changes</button>
+  <div class="setting-item">
+    <label for="pageTitle">Title:</label>
+    <input style="color: white;" type="text" id="pageTitle" placeholder="Enter new title">
+  </div>
+
+  <div class="setting-item">
+    <div class="input-container">
+      <label for="faviconUrl">Favicon URL:</label>
+      <input style="color: white;" type="text" id="faviconUrl" placeholder="Enter favicon URL">
     </div>
-    <br>
-    <center>
-      <h2>Themes</h2>
-    </center>
-    <!-- Background Color Selector -->
-    <div id="colorSelectorContainer">
+    <div class="premade-favicons">
+      <span onclick="selectFavicon('https://www.google.com/favicon.ico')">
+        <img src="https://www.google.com/favicon.ico" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico')">
+        <img src="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico" alt="Google Drive Favicon">
+      </span>
+      <span onclick="selectFavicon('https://assets.clever.com/resource-icons/apps/5148b6242e35482071000011/icon_964188f.png')">
+        <img src="https://assets.clever.com/resource-icons/apps/5148b6242e35482071000011/icon_964188f.png" alt="iReady Favicon">
+      </span>
+      <span onclick="selectFavicon('https://www.gstatic.com/classroom/ic_product_classroom_32.png')">
+        <img src="https://www.gstatic.com/classroom/ic_product_classroom_32.png" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://cdn-icons-png.flaticon.com/512/5968/5968517.png')">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://www.clever.com/wp-content/uploads/2023/06/cropped-Favicon-512px-192x192.png')">
+        <img src="https://www.clever.com/wp-content/uploads/2023/06/cropped-Favicon-512px-192x192.png" alt="Google Favicon">
+      </span>
+    </div>
+  </div>
+  
+  <div class="setting-item">
+    <h2>Theme:</h2>
+    <div style="color: white;" id="colorSelectorContainer">
       <select id="colorSelect" onchange="changeBackgroundColor()">
-        <option value="default">Default</option>
-        <option value="white">White</option>
-        <option value="ocean">Ocean</option>
-        <option value="leaf">Leaf</option>
-        <option value="beach">Beach</option>
+        <option style="color: white;" value="default">Default</option>
+        <option style="color: white;" value="white">White</option>
+        <option style="color: white;" value="ocean">Ocean</option>
+        <option style="color: white;" value="leaf">Leaf</option>
+        <option style="color: white;"  value="beach">Beach</option>
       </select>
     </div>
+  </div>
 
-    <script>
-      window.onload = function () {
-        var savedTheme = localStorage.getItem('theme') || 'default';
-        var savedTitle = localStorage.getItem('title') || 'DuckHTML';
-        var savedFavicon = localStorage.getItem('favicon') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+  <div class="setting-item">
+    <h2>Panic Key</h2>
+    <p>A panic key is a key you click when somebody is around. Once clicked it redirects you to a different website of your choosing.</p>
+    <div class="input-container">
+      <label style="color: white;" for="panicKey">Panic Key:</label>
+      <input style="color: white;" type="text" id="panicKey" placeholder="Enter panic key">
+    </div>
+    <div class="input-container">
+      <label for="panicUrl">Redirect URL:</label>
+      <input type="text" id="panicUrl" style="color: white;" placeholder="Enter URL to redirect">
+    </div>
+  </div>
 
-        applyTheme(savedTheme);
-        changeTitle(savedTitle);
-        changeFavicon(savedFavicon);
-      };
+  <button class="action-button" onclick="applyChanges()">Apply Changes</button>
+</div>
 
-      function applyTheme(theme) {
-        switch (theme) {
-          case 'default':
-            setThemeStyles('#D5b60a', '#363636', '#ffd700');
-            break;
-          case 'white':
-            setThemeStyles('#ffffff', '#000000', '#ffffff');
-            break;
-          case 'ocean':
-            setThemeStyles('#ADD8E6', '#D5FFFF', '#0000ff');
-            break;
-          case 'leaf':
-            setThemeStyles('#90EE90', '#013220', '#00ff00');
-            break;
-          case 'beach':
-            setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
-            break;
-          default:
-            setThemeStyles('#D5b60a', '#363636', '#ffd700');
-            break;
-        }
-        // Save the selected theme in local storage
-        localStorage.setItem('theme', theme);
-      }
 
-      function setThemeStyles(bodyColor, navColor, buttonColor) {
-        document.body.style.backgroundColor = bodyColor;
-        document.querySelector('nav').style.backgroundColor = navColor;
+  <script>
+    // Function to apply changes to title, favicon, and theme
+    function applyChanges() {
+      var newTitle = document.getElementById('pageTitle').value;
+      var newFavicon = document.getElementById('faviconUrl').value;
+      var selectedTheme = document.getElementById('colorSelect').value;
+      var panicKey = document.getElementById('panicKey').value.toLowerCase();
+      var panicUrl = document.getElementById('panicUrl').value;
 
-        var buttons = document.querySelectorAll('nav a');
-        buttons.forEach(function (button) {
-          button.style.color = buttonColor;
-          button.style.borderColor = buttonColor;
-        });
-      }
-
-      function changeBackgroundColor() {
-        var selectedTheme = document.getElementById("colorSelect").value;
-        applyTheme(selectedTheme);
-      }
-
-      function changeTitle(newTitle) {
-        document.title = newTitle;
-        document.getElementById("titleInput").value = newTitle;
-        localStorage.setItem('title', newTitle);
-      }
-
-      function changeFavicon(newFavicon) {
-        var favicon = document.querySelector("link[rel='icon']");
-        if (favicon) {
-          favicon.href = newFavicon;
-        }
-        document.getElementById("faviconInput").value = newFavicon;
-        localStorage.setItem('favicon', newFavicon);
-      }
-    </script>
-
-  </body>
-
-</html>
-<script>
-  // Run this function on page load
-  window.onload = function () {
-    // Retrieve the saved title and favicon or use the defaults
-    var savedTitle = localStorage.getItem('pageTitle') || document.title;
-    var savedFavicon = localStorage.getItem('faviconUrl') || '';
-
-    // Set the retrieved title and favicon
-    document.title = savedTitle;
-
-    if (savedFavicon !== '') {
-      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/x-icon';
-      link.rel = 'icon';
-      link.href = savedFavicon;
-      document.head.appendChild(link);
-    }
-  };
-
-  function changeTitleFavicon() {
-    var newTitle = document.getElementById("pageTitle").value;
-    var newFavicon = document.getElementById("faviconUrl").value;
-
-    if (newTitle !== "") {
-      document.title = newTitle;
-      // Save the updated title in local storage
       localStorage.setItem('pageTitle', newTitle);
+      localStorage.setItem('faviconUrl', newFavicon);
+      localStorage.setItem('panicKey', panicKey); // Store panic key
+      localStorage.setItem('panicUrl', panicUrl); // Store panic URL
+
+      document.title = newTitle;
+      updateFavicon(newFavicon);
+      applyTheme(selectedTheme);
     }
 
-    // Change the favicon
-    if (newFavicon !== "") {
-      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    // Function to set up panic key functionality
+    function setupPanicKey() {
+      var panicKey = localStorage.getItem('panicKey') || '';
+      var panicUrl = localStorage.getItem('panicUrl') || '';
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === panicKey) {
+          window.location.href = panicUrl;
+        }
+      });
+    }
+
+    // Run setup functions on page load
+    window.onload = function() {
+      var savedTitle = localStorage.getItem('pageTitle') || 'DuckHTML';
+      var savedFavicon = localStorage.getItem('faviconUrl') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      document.getElementById('pageTitle').value = savedTitle;
+      document.getElementById('faviconUrl').value = savedFavicon;
+
+      document.title = savedTitle;
+      updateFavicon(savedFavicon);
+      applyTheme(savedTheme);
+
+      // Setup panic key event listener
+      setupPanicKey();
+    };
+    // Function to update favicon
+    function updateFavicon(faviconUrl) {
+      var link = document.querySelector("link[rel~='icon']") || document.createElement('link');
       link.type = 'image/x-icon';
       link.rel = 'icon';
-      link.href = newFavicon;
+      link.href = faviconUrl;
       document.head.appendChild(link);
-      // Save the updated favicon in local storage
-      localStorage.setItem('faviconUrl', newFavicon);
     }
-  }
 
-</script>
+    // Function to apply theme based on selected option
+    function applyTheme(theme) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
 
-<script>
-  // Run this function on page load
-  window.onload = function () {
-    // Retrieve the saved title, favicon, and theme or use the defaults
-    var savedTitle = localStorage.getItem('pageTitle') || document.title;
-    var savedFavicon = localStorage.getItem('faviconUrl') || '';
-    var savedTheme = localStorage.getItem('theme') || 'default';
+      switch (theme) {
+        case 'default':
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent'); // Change border color to transparent
+          break;
+        case 'white':
+          setThemeStyles('#ffffff', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent');
+          break;
+        case 'ocean':
+          setThemeStyles('#ADD8E6', '#D5FFFF', '#0000ff', 'transparent');
+          break;
+        case 'leaf':
+          setThemeStyles('#90EE90', '#013220', '#00ff00', 'transparent');
+          break;
+        case 'beach':
+          setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C', 'transparent');
+          break;
+        default:
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffd700', 'transparent');
+          break;
+      }
 
-    // Set the retrieved title, favicon, and theme
-    document.title = savedTitle;
-    applyTheme(savedTheme);
-    changeFavicon(savedFavicon);
-  };
-
-  function applyTheme(theme) {
-    switch (theme) {
-      case 'default':
-        setThemeStyles('#353839', '#0e1111', '#ffd700');
-        break;
-      case 'white':
-        setThemeStyles('#ffffff', '#000000', '#ffffff');
-        break;
-      case 'ocean':
-        setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
-        break;
-      case 'leaf':
-        setThemeStyles('#90EE90', '#013220', '#00ff00');
-        break;
-      case 'beach':
-        setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
-        break;
-      default:
-        setThemeStyles('#353839', '#0e1111', '#ffd700');
-        break;
+      localStorage.setItem('theme', theme);
     }
-    // Save the selected theme in local storage
-    localStorage.setItem('theme', theme);
-  }
 
-  function setThemeStyles(bodyColor, navColor, buttonColor) {
-    document.body.style.backgroundColor = bodyColor;
-    document.querySelector('nav').style.backgroundColor = navColor;
+    // Function to update styles for body, nav, and buttons based on theme
+    function setThemeStyles(bodyColor, navColor, buttonTextColor, buttonBorderColor) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
 
-    var buttons = document.querySelectorAll('nav a');
-    buttons.forEach(function (button) {
-      button.style.color = buttonColor;
-      button.style.borderColor = buttonColor;
-    });
-
-    // Apply styles to other elements as needed
-  }
-
-  function changeFavicon(newFavicon) {
-    var favicon = document.querySelector("link[rel='icon']");
-    if (favicon) {
-      favicon.href = newFavicon;
+      body.style.backgroundColor = bodyColor;
+      nav.style.backgroundColor = navColor;
+      buttons.forEach(function(button) {
+        button.style.color = buttonTextColor;
+        button.style.borderColor = buttonBorderColor; // Set border color separately
+      });
     }
-    // Save the updated favicon in local storage
-    localStorage.setItem('faviconUrl', newFavicon);
-  }
-</script>
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0c5371f7de8a4aa491eb1f366635ee1f"}'></script>
 
-<script type="text/javascript">
-    aclib.runInPagePush({
-        zoneId: '8425762',
-        refreshRate: 30,
-        maxAds: 2,
-    });
-</script>
+    // Function to handle change in background color theme
+    function changeBackgroundColor() {
+      var selectedTheme = document.getElementById('colorSelect').value;
+      applyTheme(selectedTheme);
+    }
+
+    // Function to handle favicon selection
+    function selectFavicon(url) {
+      document.getElementById('faviconUrl').value = url;
+      updateFavicon(url);
+    }
+
+    // Function to set up panic key functionality
+    function setupPanicKey() {
+      document.addEventListener('keydown', function(event) {
+        var panicKey = document.getElementById('panicKey').value.toLowerCase();
+        var panicUrl = document.getElementById('panicUrl').value;
+
+        if (event.key === panicKey) {
+          window.location.href = panicUrl;
+        }
+      });
+    }
+
+    // Run setup functions on page load
+    window.onload = function() {
+      var savedTitle = localStorage.getItem('pageTitle') || 'DuckHTML';
+      var savedFavicon = localStorage.getItem('faviconUrl') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      document.getElementById('pageTitle').value = savedTitle;
+      document.getElementById('faviconUrl').value = savedFavicon;
+
+      document.title = savedTitle;
+      updateFavicon(savedFavicon);
+      applyTheme(savedTheme);
+
+      // Setup panic key event listener
+      setupPanicKey();
+    };
+  </script>
+
+</body>
+</html>
