@@ -88,7 +88,7 @@
       top: 120px; /* Adjust this value as needed */
       left: 10px; /* Move the iframe to the left */
       right: 10px; /* Ensure it does not stretch too wide */
-      bottom: 120px; /* Leave space for the ad */
+      bottom: 140px; /* Adjust for space above the ad */
       display: flex;
       justify-content: flex-start; /* Align iframe to the left */
     }
@@ -104,17 +104,19 @@
 
     .ad-container {
       position: fixed;
-      bottom: 0;
-      left: 0;
+      bottom: 10px; /* Adjust this value to add padding between the screen and the ad */
+      left: 10px; /* Padding from the left */
       width: 720px;
       height: 90px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
       z-index: 100; /* Ensure ad is above other elements */
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .ad-container div {
+      width: 100%;
+      height: 100%;
     }
 
     .button-container {
@@ -274,15 +276,14 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 1.5rem;
-        right: 10px; /* Adjust position for smaller screens */
+      iframe {
+        width: 90vw;
+        height: calc(70vh - 70px);
       }
 
-      #iframe-container {
-        left: 5px;
-        right: 5px;
-        bottom: 110px; /* Adjust for smaller screens */
+      .ad-container {
+        width: 90%;
+        bottom: 5px; /* Adjust for smaller screens */
       }
 
       .button-container {
@@ -336,8 +337,8 @@
   </div>
 
   <div class="ad-container">
-    <!-- Your ad content here -->
-    <script async src="https://ss.mrmnd.com/banner.js"></script>
+    <!-- Ad container with no background or border -->
+    <div data-mndbanid="d3851f80-f841-4862-8607-7cc978774426"></div>
   </div>
 
   <div class="button-container">
