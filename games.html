@@ -340,10 +340,9 @@ der-color: white;
     </div>
   </nav>
 
-    <div class="overlay">
-<a></a>https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TkRnd01qYzNNUT09&j=0nIt92YuQnblRnbvNmclNXdlx2Zv92ZuMHZlJWbl1SayFGdh1yNyATN3gjM2IiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=26&purl=&adurl=&cx=0&cy=0&sw=0&sh=0
-    </a></div>
 
+  <div id="overlay"></div>
+  </div>
   <br>
   <br>
   <br>
@@ -700,6 +699,28 @@ der-color: white;
   </body>
 
 
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const overlay = document.getElementById('overlay');
+      const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TkRnd01qYzNNUT09&j=0nIt92YuQnblRnbvNmclNXdlx2Zv92ZuMHZlJWbl1SayFGdh1yNyATN3gjM2IiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=26&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
+
+      // Show the overlay when the page loads
+      overlay.style.display = 'block';
+
+      // Handle click event on the overlay
+      overlay.addEventListener('click', () => {
+        window.open(targetUrl, '_blank');
+      });
+    });
+
+    function filterGames() {
+      // Your filter logic here
+    }
+
+    function openRandomGame() {
+      // Your logic to open a random game
+    }
+  </script>
 
 
 <script>
