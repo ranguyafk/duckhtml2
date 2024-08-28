@@ -101,14 +101,17 @@ der-color: white;
       margin-right: auto;
     }
 
-      #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: none; /* Initially hidden */
-      }
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Invisible background */
+  display: none; /* Hidden initially */
+  z-index: 1000;
+}
+
 
     .filters-container {
       display: flex;
@@ -698,29 +701,21 @@ der-color: white;
     </script>
   </body>
 
+<script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const overlay = document.getElementById('overlay');
-      const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TkRnd01qYzNNUT09&j=0nIt92YuQnblRnbvNmclNXdlx2Zv92ZuMHZlJWbl1SayFGdh1yNyATN3gjM2IiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=26&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
+  document.addEventListener('DOMContentLoaded', (event) => {
+  const overlay = document.getElementById('overlay');
+  const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TkRnd01qYzNNUT09&j=0nIt92YuQnblRnbvNmclNXdlx2Zv92ZuMHZlJWbl1SayFGdh1yNyATN3gjM2IiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=26&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
 
-      // Show the overlay when the page loads
-      overlay.style.display = 'block';
+  // Show the overlay when the page loads
+  overlay.style.display = 'block';
 
-      // Handle click event on the overlay
-      overlay.addEventListener('click', () => {
-        window.open(targetUrl, '_blank');
-      });
-    });
-
-    function filterGames() {
-      // Your filter logic here
-    }
-
-    function openRandomGame() {
-      // Your logic to open a random game
-    }
-  </script>
+  // Handle click event on the overlay
+  overlay.addEventListener('click', () => {
+    window.open(targetUrl, '_blank');
+    overlay.style.display = 'none'; // Hide the overlay after click
+  });
+});
 
 
 <script>
