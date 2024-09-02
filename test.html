@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Centered with Website Content</title>
+    <title>Ad Centered with Content Below</title>
     <style>
         body {
             margin: 0;
@@ -12,11 +12,11 @@
             overflow: hidden; /* Prevents scrollbars from appearing */
             background-color: #f0f0f0; /* Light background color */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            flex-direction: column; /* Allows vertical alignment */
         }
 
         #adContainer {
@@ -24,13 +24,13 @@
             height: 280px;
             background-color: #000;
             border-radius: 10px;
-            display: none; /* Hidden by default */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); /* Center ad */
             z-index: 1000; /* Ensure ad is on top */
+            display: none; /* Hidden by default */
         }
 
         .closeButton {
@@ -52,12 +52,12 @@
         #websiteContainer {
             width: 80vw;
             max-width: 1200px; /* Optional: limit max width for larger screens */
-            height: 80vh;
+            height: calc(100vh - 300px); /* Adjust based on ad height and spacing */
             background: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
             overflow: auto; /* Allows scrolling if content overflows */
-            margin-top: 320px; /* Margin to ensure it's below the ad */
+            margin-top: 20px; /* Space below the ad */
             text-align: center; /* Center content text */
         }
     </style>
@@ -1039,6 +1039,9 @@ der-color: white;
       }
   </script>
 </body></html>
+
+
+        
     </div>
 
     <script>
