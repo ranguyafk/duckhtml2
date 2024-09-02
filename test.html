@@ -164,48 +164,52 @@
             padding: 0;
             width: 30px;
             height: 30px;
+            
         }
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      text-decoration: none;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
 
-        .game-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-            max-width: 1200px;
-        }
+    .game {
+      text-align: center;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      width: calc(10% - 5px);
+      /* 4 games per row, adjust as needed */
+    }
 
-        .game {
-            text-align: center;
-            border: 2px solid #ffd700;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
-            width: calc(10% - 5px);
-            /* Adjust the width based on the number of games per row */
-        }
 
-        .game img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+    .game img {
+      width: 150px;
+      /* Set the width to 600px */
+      height: 150px;
+      /* Set the height to 600px */
+      object-fit: cover;
+      /* Maintain aspect ratio and cover the container */
+      border-radius: 10px;
+      /* Make the image rounded */
+      margin-bottom: 10px;
+    }
 
-        .game-title {
-            font-size: 18px;
-            text-decoration: none;
-            color: white;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
+    .game-title {
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
 
-        .game-title:hover {
-            color: #ffd700;
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
-        }
-
+    .game-title:hover {
+      color: #ffd700; /* Change color on hover */
+      transform: scale(1.1); /* Scale up the size */
+      transition: transform 0.3s ease; /* Smooth transition effect */
+    }
         .randomgame {
             background-color: #ffd700;
             color: #363636;
