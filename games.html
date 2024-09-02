@@ -762,7 +762,6 @@ der-color: white;
   </div>
   <br> <br>
 
-    <div id="overlay"></div>
 
     <script>
       // Call filterGames() when the page loads to ensure initial order
@@ -772,22 +771,6 @@ der-color: white;
     </script>
   </body>
 
-<script>
-
-  document.addEventListener('DOMContentLoaded', (event) => {
-  const overlay = document.getElementById('overlay');
-  const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TlRFek1ETTBOdz09&j=Qfi02bj5CduVGdu92YyV2c1VGbn92bn5yckVmYtVWLpJXY0FWLxITNyITM3kDMyIiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=27&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
-
-  // Show the overlay when the page loads
-  overlay.style.display = 'block';
-
-  // Handle click event on the overlay
-  overlay.addEventListener('click', () => {
-    window.open(targetUrl, '_blank');
-    overlay.style.display = 'none'; // Hide the overlay after click
-  });
-});
-</script>
 
 <script>
   // Run this function on page load
