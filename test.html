@@ -20,11 +20,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            padding-top: 20px; /* Add padding to prevent content cut-off */
+            box-sizing: border-box; /* Ensure padding is included in height */
         }
 
         #websiteContent {
             color: #fff;
             text-align: center;
+            max-width: 80%; /* Ensure content does not overflow */
         }
 
         #adContainer {
