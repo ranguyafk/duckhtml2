@@ -1,122 +1,962 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base target="_blank">
-    <title>Game Page</title>
-</head>
-<body>
-    <div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Frun2.xml&container=ig&quot; frameborder=&quot&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>"></div>
-    <button class="play-button" type="button" onclick="PlayTo(this)">Play on Pelican's Games</button>
-    <div id="adContainer">
-        <div class="closeButton" onclick="hideAdContainer()">×</div>
-        <!-- AdForGames.com code begin -->
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 9;
-            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
-        </script>
-        <!-- AdForGames.com code end -->
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <title>DuckHTML</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap">
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8X677NPBRV');
+  </script>
+
+
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .title {
+      font-size: 4rem;
+      margin-bottom: 0;
+      color: #f0f0f0;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-left: 10px;
+    }
+
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-family: 'Press Start 2P', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: white;
+    }
+
+
+der-color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Invisible background */
+  display: none; /* Hidden initially */
+  z-index: 1000;
+}
+
+
+    .filters-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      border: 3px solid #000000;
+      border-radius: 30%;
+      width: 30px; /* Adjust the width of the dropdown icon */
+      background-image: url('/arrow.png'); /* Replace with your logo path */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Hide the default dropdown arrow (optional) */
+    .dropdown select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .dropbtn {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 30px; /* Adjust the width of the dropdown icon */
+      height: 30px; /* Adjust the height of the dropdown icon */
+    }
+
+    #searchInput {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.5);
+      transition: box-shadow 0.3s ease;
+      font-family: 'Press Start 2P';
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      margin-bottom: 10px; /* Adjust spacing between title and filters */
+      color: #f0f0f0;
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    /* Hide the default dropdown arrow */
+    .dropdown select::-ms-expand {
+      display: none;
+    }
+    .dropdown select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: none;
+      padding: 0;
+    }
+
+
+    .icon-right {
+      margin-left: 10px; /* Adjust margin between dropdown and icon */
+      width: 30px; /* Set width of icon */
+      height: 30px; /* Set height of icon */
+    }
+
+    #searchInput:focus {
+      outline: none;
+      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.5);
+    }
+
+
+
+    .logo img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+
+
+
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      text-decoration: none;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .game {
+      text-align: center;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      width: calc(10% - 5px);
+      /* 4 games per row, adjust as needed */
+    }
+
+
+    .game img {
+      width: 150px;
+      /* Set the width to 600px */
+      height: 150px;
+      /* Set the height to 600px */
+      object-fit: cover;
+      /* Maintain aspect ratio and cover the container */
+      border-radius: 10px;
+      /* Make the image rounded */
+      margin-bottom: 10px;
+    }
+
+    .game-title {
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    .game-title:hover {
+      color: #ffd700; /* Change color on hover */
+      transform: scale(1.1); /* Scale up the size */
+      transition: transform 0.3s ease; /* Smooth transition effect */
+    }
+
+    a {
+      text-decoration: none;
+      /* Remove underline */
+      color: inherit;
+      font-family: 'VT323';
+      /* Ensure text color is inherited */
+    }
+
+
+
+      /* Style the dropdown content */
+      .select-style select {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #f1f1f1;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+        appearance: none;
+      }
+
+      /* Remove the default arrow on IE */
+      .select-style select::-ms-expand {
+        display: none;
+      }
+
+      /* Style when dropdown is open */
+      .select-style select:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center items horizontally */
+    }
+
+    .game {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      margin: 10px; /* Adjust margin as needed */
+    }
+
+    .game.hidden {
+      visibility: hidden;
+      opacity: 0;
+      margin: 0;
+    }
+
+    .randomgame {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 15px 40px;
+      font-size: 15px;
+      font-family: 'Press Start 2P';
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      text-align: center;
+    }
+
+
+    
+  </style>
+<script type="text/javascript" a-lib="1" src="https://acscdn.com/script/interstitial.js"></script><link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png"></head>
+
+  <body style="background-color: rgb(18, 18, 18);">
+  <nav style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="logo">
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+      <span>DuckHTML</span>
     </div>
-    <style>
-        .play-button {
-            min-width: 100%;
-            font-family: fantasy;
-            appearance: auto;
-            border: 0;
-            border-color: #fff;
-            border-radius: 5px;
-            background: #ADD8E6;
-            color: #fff;
-            font-size: 30px;
-            cursor: pointer;
-        }
+    <div>
+      <a href="/index.html" style="color: rgb(255, 255, 255); border-color: transparent;">Home</a>
+      <a href="/games.html" style="color: rgb(255, 255, 255); border-color: transparent;">Games</a>
+      <a href="/settings.html" style="color: rgb(255, 255, 255); border-color: transparent;">Settings</a>
+      <a href="/search.html" style="color: rgb(255, 255, 255); border-color: transparent;">Search</a>
+    </div>
+  </nav>
 
-        .play-button:hover {
-            background: #ADD8E7;
-        }
 
-        .play-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 4px #cbd6ee;
-        }
-        
-        .play-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
+  <div id="overlay" style="display: block;"></div>
+  
+  <br>
+  <br>
+  <br>
+    <h1 class="title">Games</h1>
 
-        #gameContainer {
-            width: 100vw;
-            height: 100vh;
-            padding: 0;
-            margin: 0;
-            position: relative;
-            background: rgb(35, 31, 32);
-        }
+    <div class="filters-container">
+      <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games...">
+      </div>
 
-        #gameIframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+      <div class="dropdown">
+        <select id="gameCategory" onchange="filterGames()" class="dropbtn">
+          <option value="" style="background-image: url('/arrow.png'); background-size: cover; width: 30px; height: 30px;"></option>
+          <option value="all">All Games</option>
+          <option value="papas">Papa's Games</option>
+          <option value="vex">Vex</option>
+          <option value="parking-fury">Parking Fury</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+    </div>
+    
 
-        #adContainer {
-            width: 336px;
-            height: 280px;
-            position: fixed;
-            top: 20px; /* Adjust top position as needed */
-            right: 20px; /* Adjust right position as needed */
-            background-color: #000;
-            border-radius: 10px;
-            display: none;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
-        }
+    <button class="randomgame" onclick="redirectToRandomGame()">Play Random Game</button>
+    
+  <div class="game-container">
+    <a href="play.html?game=gamerequest.html&amp;title=Request A Game" class="game" style="display: block;">
+      <img src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png" alt="Game 1">
+      <div class="game-title">Request a Game</div>
+    </a>
+    <a href="play.html?game=bunnyisland.html&amp;title=Bunny Island" class="game" style="display: block;">
+      <img src="https://poorbunny.io/images/login-logo.png" alt="Game 1">
+      <div class="game-title">Bunny Island</div>
+    </a>
+    <a href="play.html?game=smashkarts.html&amp;title=Smash Karts" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9c9e529b14731be871b07b89660bbc2a.png" alt="Game 1">
+      <div class="game-title">Smash Karts</div>
+    </a>
+    <a href="play.html?game=castelwars.html&amp;title=Castle Wars" class="game" style="display: block;">
+      <img src="https://vex7.io/data/image/castel-wars-modern-1.jpeg" alt="Game 1">
+      <div class="game-title">Castle Wars</div>
+    </a>
+    <a href="play.html?game=ageofwar.html&amp;title=Age of War" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/daa4e209c1087cca68f8882c8d2c0f02.png" alt="Game 8">
+      <div class="game-title">Age of War</div>
+    </a>
+    <a href="play.html?game=catninja.html&amp;title=Cat Ninja" class="game" style="display: block;">
+      <img src="https://www5.minijuegosgratis.com/v3/games/thumbnails/223845_7_sq.jpg" alt="Game 8">
+      <div class="game-title">Cat Ninja</div>
+    </a>
+    <a href="play.html?game=dunkshot.html&amp;title=Dunk Shot" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI_wCDLz_SlN9xf9Avmp4qAsUUwit_TzNfvmCAlFZCsA&amp;s" alt="Game 8">
+      <div class="game-title">Dunk Shot</div>
+    </a>
+    <a href="play.html?game=digtochina.html&amp;title=Dig to China" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/R1o8_AuZ53wC5Q60ZKoGBdIXjm4v7k99uGW1Lb8NFk58MeAO_e-IqcOxdPnjOK90" alt="Game 8">
+      <div class="game-title">Dig To China</div>
+    </a>
+    <a href="play.html?game=8ball.html&amp;title=8 Ball" class="game" style="display: block;">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/024/270/658/small/billiard-logo-vector.jpg" alt="Game 8">
+      <div class="game-title">8 Ball</div>
+    </a>
+    <a href="play.html?game=gunnight.html&amp;title=Gun Night.io" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeK4UME-Th8M4aPI5KpJ40xw0nHkr0Lk8D1g&amp;s" alt="Game 1">
+      <div class="game-title">Gun Night.io</div>
+    </a>
+    <a href="play.html?game=axis.html&amp;title=Axis FootBall League" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAS-0iptmR28xV5r4C9ijMiFrJv3Im4Gn76_IY1H-CA&amp;s" alt="Game 1">
+      <div class="game-title">Axis Football League</div>
+    </a>
+    <a href="play.html?game=hanger2.html&amp;title=Hanger 2" class="game" style="display: block;">
+      <img src="https://www.mathnook.com/img/addthis-fun-games/hanger-2-200x200.png" alt="Game 1">
+      <div class="game-title">Hanger 2</div>
+    </a>
+    <a href="play.html?game=basket.html&amp;title=BasketBall Stars" class="game" style="display: block;">
+      <img src="https://m.media-amazon.com/images/I/61Ao29Wp7lL.png" alt="Game 2">
+      <div class="game-title">Basketball Stars</div>
+    </a>
+    <a href="play.html?game=holeio.html&amp;title=Hole.io" class="game" style="display: block;">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/ca/Hole.io_logo.jpg" alt="Game 2">
+      <div class="game-title">hole.io</div>
+    </a>
+   <a href="play.html?game=ballblast.html&amp;title=Ball Blast" class="game" style="display: block;">
+      <img src="https://pizzatower.io/wp-content/uploads/2023/10/Screenshot_20-1.png.webp" alt="Game 3">
+      <div class="game-title">Ball Blast</div>
+    </a>
+    <a href="play.html?game=monkeymart.html&amp;title=Monkey Mart" class="game" style="display: block;">
+      <img src="https://monkey-mart.io/wp-content/uploads/2023/06/monkey-mart.png" alt="Game 3">
+      <div class="game-title">Monkey Mart</div>
+    </a>
+    <a href="play.html?game=footballLegends.html&amp;title=FootBall Legends" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/7336e7ac04f8c0a88fac674d112ad77c.png" alt="Game 3">
+      <div class="game-title">Football Legends</div>
+    </a>
+    <a href="play.html?game=polytrack.html&amp;title=PolyTrack" class="game" style="display: block;">
+      <img src="https://a.silvergames.com/j/b/polytrack.jpg" alt="Game 3">
+      <div class="game-title">PolyTrack</div>
+    </a>
+    <a href="play.html?game=Snake.html&amp;title=Snake" class="game" style="display: block;">
+      <img src="https://m.media-amazon.com/images/I/71WxXzxcCHL.png" alt="Game 3">
+      <div class="game-title">Snake</div>
+    </a>
+    <a href="play.html?game=btd.html&amp;title=Bloons Tower Defense" class="game" style="display: block;">
+      <img src="https://ucarecdn.com/1bc0e70d-b32f-47c2-80cc-37f97e1dfa5b/Bloons_TD_iOS_Logo.jpg" alt="Game 2">
+      <div class="game-title">Bloons Tower Defense</div>
+    </a>
+    <a href="play.html?game=btd4.html&amp;title=Bloons Tower Defense 4" class="game" style="display: block;">
+      <img src="https://gamefaqs.gamespot.com/a/box/0/7/0/174070_front.jpg" alt="Game 2">
+      <div class="game-title">Bloons Tower Defense 4</div>
+    </a>
+    <a href="play.html?game=1on1basketball.html&amp;title=1 on 1 Basketball" class="game" style="display: block;">
+      <img src="https://www3.minijuegosgratis.com/v3/games/thumbnails/1019_1.jpg" alt="Game 8">
+      <div class="game-title">1 on 1 Basketball</div>
+    </a>
+    <a href="play.html?game=superoliveworld.html&amp;title=Super Olive World" class="game" style="display: block;">
+      <img src="https://img.itch.zone/aW1nLzEwNjA4MTk3LmpwZWc=/original/pVJf04.jpeg" alt="Game 3">
+      <div class="game-title">Super Olive World</div>
+    </a>
+    <a href="play.html?game=bitlife.html&amp;title=BitLife" class="game" style="display: block;">
+      <img src="https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&amp;h=1600&amp;q=88&amp;f=75befc746fb83a0c568c44ca07bc5e64" alt="Game 4">
+      <div class="game-title">BitLife</div>
+    </a>
+    <a href="play.html?game=Baconmaydie/index.html&amp;title=Bacon May Die" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/W_dghckKR-MD8Hx5YvCpdx3bYNeqrBdZqnMI02JnP5rVH8VqGaQUzdiMXd2wdJGLeP0" alt="Game 4">
+      <div class="game-title">Bacon May Die</div>
+    </a>
+    <a href="play.html?game=minecraft.html&amp;title=Minecraft" class="game" style="display: block;">
+      <img src="https://preview.redd.it/minecraft-logo-v0-ak9w918zi5r81.png?auto=webp&amp;s=614e5180aa1f7068676a06351c8edffc86b3b58a" alt="Game 1">
+      <div class="game-title">EaglerCraft</div>
+    </a>
+    <a href="play.html?game=drifthunters.html&amp;title=Drift Hunters" class="game" style="display: block;">
+      <img src="https://cdn.now.gg/apps-content/com.nowgg.h5.pub501.app51334/icon/drift-hunters.png" alt="Game 4">
+      <div class="game-title">Drift Hunters</div>
+    </a>
+    <a href="play.html?game=craftmine.html&amp;title=CraftMine" class="game" style="display: block;">
+      <img src="https://www.desura.com/files/images/44/44089a83484599ab803f8adb6a534f92.jpg" alt="Game 5">
+      <div class="game-title">CraftMine</div>
+    </a>
+    <a href="play.html?game=tombofthemask.html&amp;title=Tomb Of the Mask" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/gTd127I81O2i2Q6kfCJoN-M0OSWmgsdjB47orUFpLwANW7VZLJYrOxMVt-OpilDXszg" alt="Game 6">
+      <div class="game-title">Tomb of the Mask</div>
+    </a>
+    <a href="play.html?game=pingpong.html&amp;title=Ping Pong Chaos" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/113be9e4-e1eb-401c-b6e6-84df9a1ad6cd.png" alt="Game 6">
+      <div class="game-title">Ping Pong Chaos</div>
+    </a>
+    <a href="play.html?game=tube-jummers.html&amp;title=Tube Jummers" class="game" style="display: block;">
+      <img src="https://ruslan.rocks/assets/tube-jumpers.jpg" alt="Game 7">
+      <div class="game-title">Tube Jumpers</div>
+    </a>
+    <a href="play.html?game=sunset.html&amp;title=Tanuki SunSet" class="game" style="display: block;">
+      <img src="https://i.psnprofiles.com/games/89b1fe/Le4e81d.png" alt="Game 8">
+      <div class="game-title">Tanuki SunSet</div>
+    </a>
+    <a href="play.html?game=1v1lol/index.html&amp;title=1v1 LOL" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="Game 8">
+      <div class="game-title">1v1.lol</div>
+    </a>
+    <a href="play.html?game=boxingrandom.html&amp;title=Boxing Random" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/ZuMoNX6xiIBRwdtSL-FN0xCdXyahk8SRaPZ5_4HzkdQEp2Tm_GAsha9OcsRoSDgSw8Y" alt="Game 8">
+      <div class="game-title">Boxing Random</div>
+    </a>
+    <a href="play.html?game=slope/index.html&amp;title=Slope" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="Game 8">
+      <div class="game-title">Slope</div>
+    </a>
+    <a href="play.html?game=papa's bake.html&amp;title=Papa's Bakeria" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/oOJSaZIe_D7tJdNVpXzpUwKH40sPma3OTWUUCarH5hzJTfL7Sv3DAr7-MuQsAJaRXA" alt="Game 8">
+      <div class="game-title">Papa's Bakeria</div>
+    </a>
+    <a href="play.html?game=papa's burger.html&amp;title=Papa's Burgeria" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/4fad37685af404ca0f987d927358ab79.jfif" alt="Game 8">
+      <div class="game-title">Papa's Burgeria</div>
+    </a>
+    <a href="play.html?game=papa's cakeria.html&amp;title=Papa's Cakeria" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/gte9Si0rKCJZOgvTwQkwAbv_6C8QOdY9qNubngx9KvldXLKOZOZpfTYFTAk38CyM3Uo" alt="Game 8">
+      <div class="game-title">Papa's Cakeria</div>
+    </a>
+    <a href="play.html?game=Papa's Cheeseria.html&amp;title=Papa's Cheeseria" class="game" style="display: block;">
+      <img src="https://m.media-amazon.com/images/I/81P8P34g22L.png" alt="Game 8">
+      <div class="game-title">Papa's Cheeseria</div>
+    </a>
+    <a href="play.html?game=papa's donuteria.html&amp;title=Papa's Donuteria" class="game" style="display: block;">
+      <img src="https://cdn-1.webcatalog.io/catalog/poki-papas-donuteria/poki-papas-donuteria-icon-filled-256.webp?v=1714783160648" alt="Game 8">
+      <div class="game-title">Papa's Donuteria</div>
+    </a>
+    <a href="play.html?game=Papa's Freezeria.html&amp;title=Papa's Freezeria" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/fe7c19da32800855dfb8f039adfe353b.png" alt="Game 8">
+      <div class="game-title">Papa's Freezeria</div>
+    </a>
+    <a href="play.html?game=Papa's hotdogeria.html&amp;title=Papa's Hotdogeria" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/gQHhv-BDnxtaQdwtnDfGzdTAl5UfraC93FrE7jQRc-S7sMNbc22eVGd8llA6_RIj8C0K" alt="Game 8">
+      <div class="game-title">Papa's Hotdogeria</div>
+    </a>
+    <a href="play.html?game=papa's pancakeria.html&amp;title=Papa's Pancakeria" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/29ee26d83d0e533f31629e8195e9b1db.png" alt="Game 8">
+      <div class="game-title">Papa's Pancakeria</div>
+    </a>
+    <a href="play.html?game=papa's pasteria.html&amp;title=Papa's Pasteria" class="game" style="display: block;">
+      <img src="https://www.gamenora.com/upload/games/thumbnails/Papa's%20Pastaria.webp" alt="Game 8">
+      <div class="game-title">Papa's Pasteria</div>
+    </a>
+    <a href="play.html?game=papa's scooperia.html&amp;title=Papa's Scooperia" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/KpLBHo89bWG3jmuYb_KqDD1rZSY4XzXcHiMLZ1PCv83GMwVMcJluuuXrT32oQGCo51A" alt="Game 8">
+      <div class="game-title">Papa's Scooperia</div>
+    </a>
+    <a href="play.html?game=papa's susheria.html&amp;title=Papa's Sushieria" class="game" style="display: block;">
+      <img src="https://m.media-amazon.com/images/I/71Oxh4KV4WL.png" alt="Game 8">
+      <div class="game-title">Papa's Shusheria</div>
+    </a>
+    <a href="play.html?game=Papa's tacomia.html&amp;title=Papa's TacoMia" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/VgECaKfYWKg1nn_hfRXWqDd60FcXhJINKwPW-1ZrtRy_j_yFJ_sW16Wlt70xgB46xi4" alt="Game 8">
+      <div class="game-title">Papa's Taco Mia</div>
+    </a>
+    <a href="play.html?game=papa's wingeria.html&amp;title=Papa's Wingeria" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/0ef4d3c4bd35cc2e9b65f3da07448fc2.jfif" alt="Game 8">
+      <div class="game-title">Papa's Wingeria</div>
+    </a>
+    <a href="play.html?game=parking1.html&amp;title=Parking Fury" class="game" style="display: block;">
+      <img src="https://kizicdn.com/system/static/thumbs/big_tile_thumb/1582/thumb300_park_300.jpg?1556202531" alt="Game 8">
+      <div class="game-title">Parking Fury 1</div>
+    </a>
+    <a href="play.html?game=parking2.html&amp;title=Parking Fury" class="game" style="display: block;">
+      <img src="https://kizicdn.com/system/static/thumbs/big_tile_thumb/1666/thumb300_pf2_icon_300.jpg?1556202804" alt="Game 8">
+      <div class="game-title">Parking Fury 2</div>
+    </a>
+    <a href="play.html?game=parking3.html&amp;title=Parking Fury" class="game" style="display: block;">
+      <img src="https://gameforge.com/de-DE/littlegames/includes/images/games/10234_5eb3f0bbbbc06.jpg" alt="Game 8">
+      <div class="game-title">Parking Fury 3</div>
+    </a>
+    <a href="play.html?game=unfairmario.html&amp;title=UnFairMario" class="game" style="display: block;">
+      <img src="https://www.speedrun.com/static/game/o6g2j812/cover.jpg?v=c36a17c" alt="Game 8">
+      <div class="game-title">UnFair Mario</div>
+    </a>
+    <a href="play.html?game=tinyfishing.html&amp;title=Tiny Fishing" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/c8cb366d52fc2a67fb313c344efdbc9e.png" alt="Game 8">
+      <div class="game-title">Tiny Fishing</div>
+    </a>
+    <a href="play.html?game=gunspin.html&amp;title=GunSpin" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/fLqvWSVq5rENEvu32xl0hf96wwSHVwQm-_9xc6KZg9Vgv9PbAtf1CyBYW7i1mlAXoSA" alt="Game 8">
+      <div class="game-title">GunSpin</div>
+    </a>
+    <a href="play.html?game=minesweeper.html&amp;title=MineSweeper" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98PNx2IZLoqi31xxRGZ7LWLvDboEnIlTwKxG1D70VYA&amp;s" alt="Game 8">
+      <div class="game-title">MineSweeper</div>
+    </a>
+    <a href="play.html?game=vex1.html&amp;title=Vex" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Ox0OrdUEOr30ujKcDbWSAVYTfMjxwHa6kcn_JPJOhIyBGLZamsXzifAjp-a9o04rAgM&amp;usqp=CAU" alt="Game 8">
+      <div class="game-title">Vex 1</div>
+    </a>
+    <a href="play.html?game=vex4.html&amp;title=Vex 4" class="game" style="display: block;">
+      <img src="https://store-images.s-microsoft.com/image/apps.16029.14622517353732960.576abfa8-e499-4dbe-adc4-750c6ba65c7f.72a18063-f8b6-41b6-a6ca-8d549bd33d53" alt="Game 8">
+      <div class="game-title">Vex 4</div>
+    </a>
+    <a href="play.html?game=vex5.html&amp;title=Vex 5" class="game" style="display: block;">
+      <img src="https://vex5.io/data/image/vex-5.jpeg" alt="Game 8">
+      <div class="game-title">Vex 5</div>
+    </a>
+    <a href="play.html?game=vex6.html&amp;title=Vex 6" class="game" style="display: block;">
+      <img src="https://yepicdn.com/system/static/thumbs/tile_thumb/39314/thumb150_vex-6_191x191-thumb.jpg?1634117369" alt="Game 8">
+      <div class="game-title">Vex 6</div>
+    </a>
+    <a href="play.html?game=drive-mad/index.html&amp;title=Drive Mad" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f8a2160e52333ee0d44ec19e8ca65139.png" alt="Game 8">
+      <div class="game-title">DriveMad</div>
+    </a>
+    <a href="play.html?game=driftboss.html&amp;title=Drift Boss" class="game" style="display: block;">
+      <img src="https://img.gamepix.com/games/drift-boss/icon/drift-boss.png" alt="Game 8">
+      <div class="game-title">DriftBoss</div>
+    </a>
+    <a href="play.html?game=basket-random/index.html&amp;title=BasketBall Random" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/gP8T5Z1O-ngxIloiwcBZzrzyLPYDp0R_1BDNKUDZboIRPVImeyWI8-7aExvB9gAGNKc" alt="Game 8">
+      <div class="game-title">Basketball Random</div>
+    </a>
+    <a href="play.html?game=retro-bowl/index.html&amp;title=Retro Bowl" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ=w240-h480-rw" alt="Game 8">
+      <div class="game-title">Retro Bowl</div>
+    </a>
+    <a href="play.html?game=Dogeminer/index.html&amp;title=DogeMiner" class="game" style="display: block;">
+      <img src="https://img.gamepix.com/games/dogeminer/icon/dogeminer.png" alt="Game 8">
+      <div class="game-title">DogeMiner</div>
+    </a>
+    <a href="play.html?game=csgo-clicker/index.html&amp;title=CSGO Clicker" class="game" style="display: block;">
+      <img src="https://play-lh.googleusercontent.com/hpwkNsCWYSmFfwhiM0sBHSRveYvI4vSl0yg8g4sin5QhxjrpDsLOyhB3p2eXbRqrPgc" alt="Game 8">
+      <div class="game-title">Csgo Clicker</div>
+    </a>
+    <a href="play.html?game=cluster-rush/index.html&amp;title=Cluster Rush" class="game" style="display: block;">
+      <img src="https://onlyup-game.io/data/image/game/cluster-rush.jpg" alt="Game 8">
+      <div class="game-title">Cluster Rush</div>
+    </a>
+    <a href="play.html?game=OVO/index.html&amp;title=OVO" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/85db6b2eb81ca64d881a950a43744389.png" alt="Game 8">
+      <div class="game-title">Ovo</div>
+    </a>
+    <a href="play.html?game=rooftop-snipers/index.html&amp;title=RoofTop Snipers" class="game" style="display: block;">
+      <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple117/v4/74/bb/88/74bb88b0-648d-9ee4-3484-f5ecb616362d/source/512x512bb.jpg" alt="Game 8">
+      <div class="game-title">RoofTop Spiners</div>
+    </a>
+    <a href="play.html?game=the-final-earth/index.html&amp;title=The Final Earth" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png" alt="Game 8">
+      <div class="game-title">The Final Earth</div>
+    </a>
+    <a href="play.html?game=worlds-hardest-game/index.html&amp;title=Worlds Hardest Game" class="game" style="display: block;">
+      <img src="https://store-images.microsoft.com/image/apps.17710.13510798885956294.63a83af1-649d-4866-930d-e41e6726284a.59da368e-f058-4860-91bd-069d1c2b6cdf?mode=scale&amp;q=90&amp;h=200&amp;w=200&amp;background=%23464646" alt="Game 8">
+      <div class="game-title">World's Hardest Game</div>
+    </a>
+    <a href="play.html?game=worlds-hardest-game-2/index.html&amp;title=Worlds Hardest Game 2" class="game" style="display: block;">
+      <img src="https://images.launchbox-app.com/bccd019f-1ea9-47d7-b1ad-2f191e079ab4.jpg" alt="Game 8">
+      <div class="game-title">World's Hardest Game 2</div>
+    </a>
+    <a href="play.html?game=pixelgunsurvival.html&amp;title=Pixel GUn Surivial" class="game" style="display: block;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI53XTIKqUJdXxvBXqHz0nVwbig0gNpH0_Be6KyB6fW8PSAlc02tROlUhP3iIMeQjT_OI&amp;usqp=CAU" alt="Game 8">
+      <div class="game-title">Pixel Gun Survival</div>
+    </a>
+    <a href="play.html?game=getaway-shootout/index.html&amp;title=Getaway Shootout" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/934bde36-a4a1-43d0-8b35-30f15feddbb4.png" alt="Game 8">
+      <div class="game-title">Getaway Shootout</div>
+    </a>
+    <a href="play.html?game=stunt2/index.html&amp;title=Madalin Stunt Cars 2" class="game" style="display: block;">
+      <img src="https://madalinstuntcars2.io/data/image/madalin-stunt-cars-21.jpg" alt="Game 8">
+      <div class="game-title">Madalin Stunt Cars 2</div>
+    </a>
+    <a href="play.html?game=stunt3/index.html&amp;title=Madalin Stunt Cars 3" class="game" style="display: block;">
+      <img src="https://www.drifted.com/wp-content/uploads/2021/10/how-to-play-madalin-stunt-cars-3-thumbnail.jpg" alt="Game 8">
+      <div class="game-title">Madalin Stunt Cars 3</div>
+    </a>
+    <a href="play.html?game=sm64/index.html&amp;title=Super Mario 64" class="game" style="display: block;">
+      <img src="https://assets1.ignimgs.com/2019/05/31/mario-64---button-1559263987447.jpg" alt="Game 8">
+      <div class="game-title">Super Mario 64</div>
+    </a>
+    <a href="play.html?game=subway-surfers/index.html&amp;title=Subway Surfers" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/7eab05665a8ce03c9a0b40a2bc6e3886.png" alt="Game 8">
+      <div class="game-title">Subway Surfers</div>
+    </a>
+    <a href="play.html?game=tunnel-rush.html&amp;title=Madalin Stunt Cars 2" class="game" style="display: block;">
+      <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20180415/vign-tunnel-rush-hk-w8v_u89.jpg" alt="Game 8">
+      <div class="game-title">TunnelRush</div>
+    </a>
+    <a href="play.html?game=thefinalearth2.html&amp;title=The Final Earth 2" class="game" style="display: block;">
+      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png" alt="Game 8">
+      <div class="game-tipltle">The Final Earth 2</div>
+    </a>
+  </div>
+  <br> <br>
 
-        .closeButton {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 24px;
-            color: #fff;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <div id="overlay"></div>
+
     <script>
-        // Function to show the ad container
-        function showAdContainer() {
-            document.getElementById('adContainer').style.display = 'block';
-        }
-
-        // Function to hide the ad container
-        function hideAdContainer() {
-            document.getElementById('adContainer').style.display = 'none';
-        }
-
-        // Function to toggle ad container visibility every 30 seconds
-        setInterval(function () {
-            showAdContainer();
-            setTimeout(function () {
-                hideAdContainer();
-            }, 30000); // 30 seconds
-        }, 60000); // 1 minute (adjust as needed)
-
-        function PlayTo(sel){
-            var div = document.getElementById('fr');
-            div.innerHTML=div.getAttribute('data');
-            document.querySelector('.play-button').style.display = "none";
-        }
+      // Call filterGames() when the page loads to ensure initial order
+      window.onload = function() {
+        filterGames(); // This will make sure the games are in their initial order
+      };
     </script>
-</body>
-</html>
+  
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+  const overlay = document.getElementById('overlay');
+  const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TlRFek1ETTBOdz09&j=Qfi02bj5CduVGdu92YyV2c1VGbn92bn5yckVmYtVWLpJXY0FWLxITNyITM3kDMyIiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=27&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
+
+  // Show the overlay when the page loads
+  overlay.style.display = 'block';
+
+  // Handle click event on the overlay
+  overlay.addEventListener('click', () => {
+    window.open(targetUrl, '_blank');
+    overlay.style.display = 'none'; // Hide the overlay after click
+  });
+});
+</script>
+
+<script>
+  // Run this function on page load
+  window.onload = function () {
+    // Retrieve the saved title, favicon, and theme or use the defaults
+    var savedTitle = localStorage.getItem('pageTitle') || document.title;
+    var savedFavicon = localStorage.getItem('faviconUrl') || '';
+    var savedTheme = localStorage.getItem('theme') || 'default';
+
+    // Set the retrieved title, favicon, and theme
+    document.title = savedTitle;
+    applyTheme(savedTheme);
+    changeFavicon(savedFavicon);
+  };
+
+  function applyTheme(theme) {
+    switch (theme) {
+      case 'default':
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
+        break;
+      case 'white':
+        setThemeStyles('#ffffff', '#000000', '#ffffff');
+        break;
+      case 'ocean':
+        setThemeStyles('#ADD8E6', '#D5FFFF', '#ffffff');
+        break;
+      case 'leaf':
+        setThemeStyles('#90EE90', '#013220', '#00ff00');
+        break;
+      case 'beach':
+        setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C');
+        break;
+      default:
+        setThemeStyles('#353839', '#0e1111', '#ffd700');
+        break;
+    }
+    // Save the selected theme in local storage
+    localStorage.setItem('theme', theme);
+  }
+
+
+</script>
+
+  <script>
+    function filterGames() {
+      // Get input value and convert it to lowercase for case-insensitive matching
+      var input = document.getElementById('searchInput').value.toLowerCase();
+
+      // Get all game containers
+      var games = document.querySelectorAll('.game');
+
+      // Loop through each game
+      games.forEach(function (game) {
+        // Get the game title and convert it to lowercase
+        var title = game.querySelector('.game-title').innerText.toLowerCase();
+
+        // Check if the input value is present in the game title
+        if (title.includes(input)) {
+          // If yes, show the game<button class="randomgame" onclick="redirectToRandomGame()">Play Random Game</button>
+          game.style.display = 'block';
+        } else {
+          // If no, hide the game
+          game.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;0c5371f7de8a4aa491eb1f366635ee1f&quot;}"></script>
+
+
+
+<script type="text/javascript">
+    aclib.runInterstitial({
+        zoneId: '8425766',
+    });
+</script>
+
+
+
+
+
+    <script>
+      function filterGames() {
+        var input, filter, gameContainer, games, a, i, gameTitle;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        gameContainer = document.getElementsByClassName("game-container")[0];
+        games = gameContainer.getElementsByClassName("game");
+
+        // Get selected category
+        var categorySelect = document.getElementById("gameCategory");
+        var category = categorySelect.value.toLowerCase();
+
+        for (i = 0; i < games.length; i++) {
+          a = games[i].getElementsByClassName("game-title")[0];
+          gameTitle = a.textContent || a.innerText;
+          var titleLower = gameTitle.toLowerCase();
+          var filterUpper = filter.toUpperCase();
+
+          var shouldDisplay = true;
+
+          // Filter by selected category
+          if (category !== "all") {
+            if (
+              (category === "papas" && titleLower.indexOf("papa's") === -1) ||
+              (category === "vex" && titleLower.indexOf("vex") === -1) ||
+              (category === "parking-fury" && titleLower.indexOf("parking fury") === -1) ||
+              (category === "hard" && titleLower.indexOf("hard") === -1) ||
+              (category === "hard" && titleLower.indexOf("hard") === -1)
+            ) {
+              shouldDisplay = false;
+            }
+          }
+
+          // Filter by search input
+          if (filter !== "" && gameTitle.toUpperCase().indexOf(filterUpper) === -1) {
+            shouldDisplay = false;
+          }
+
+          // Set display style based on filtering
+          if (shouldDisplay) {
+            games[i].style.display = "block";
+          } else {
+            games[i].style.display = "none";
+          }
+        }
+      }
+
+    </script>
+
+  <script>
+    window.onload = function() {
+      var savedTitle = localStorage.getItem('pageTitle') || 'DuckHTML';
+      var savedFavicon = localStorage.getItem('faviconUrl') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      document.title = savedTitle;
+      updateFavicon(savedFavicon);
+      applyTheme(savedTheme);
+    };
+
+    // Function to update favicon
+    function updateFavicon(faviconUrl) {
+      var link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'icon';
+      link.href = faviconUrl;
+      document.head.appendChild(link);
+    }
+
+    // Function to apply theme based on selected option
+    function applyTheme(theme) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
+
+      switch (theme) {
+        case 'default':
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent'); // Change border color to transparent
+          break;
+        case 'white':
+          setThemeStyles('#ffffff', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent');
+          break;
+        case 'ocean':
+          setThemeStyles('#ADD8E6', '#D5FFFF', '#0000ff', 'transparent');
+          break;
+        case 'leaf':
+          setThemeStyles('#90EE90', '#013220', '#00ff00', 'transparent');
+          break;
+        case 'beach':
+          setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C', 'transparent');
+          break;
+        default:
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffd700', 'transparent');
+          break;
+      }
+    }
+
+    // Function to update styles for body, nav, and buttons based on theme
+    function setThemeStyles(bodyColor, navColor, buttonTextColor, buttonBorderColor) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
+
+      body.style.backgroundColor = bodyColor;
+      nav.style.backgroundColor = navColor;
+      buttons.forEach(function(button) {
+        button.style.color = buttonTextColor;
+        button.style.borderColor = buttonBorderColor; // Set border color separately
+      });
+    }
+  </script>
+
+
+
+  <script>
+      function redirectToRandomGame() {
+          // Array of game filenames (assuming they are all .html files)
+          var games = [
+              '1on1basketball.html',
+              '1v1lol.html',
+              '8ball.html',
+              'OVO2.html',
+              'OvO.html',
+              'ageofwar.html',
+              'ballblast.html',
+              'bitlife.html',
+              'boxingrandom.html',
+              'craftmine.html',
+              'driftboss.html',
+              'dunkshot.html',
+              'gunspin.html',
+              'tinyfishing.html',
+              'tombofthemask.html',
+              'tube-jummers.html',
+              'tunnelrush.html',
+              'unfairmario.html',
+              'vex1.html',
+              'minecraft.html',
+              'drifthunters.html',
+              'Snake.html',
+              'monkeymart.html',
+              'digtochina.html',
+              'bunnyisland.html',
+              'polytrack.html'
+
+
+              // Add more filenames as needed
+          ];
+
+          // Generate a random index
+          var randomIndex = Math.floor(Math.random() * games.length);
+
+          // Get the selected game filename
+          var selectedGame = games[randomIndex];
+
+          // Derive the title from the filename (assuming it's structured as "ExampleTitle.html")
+          var selectedTitle = selectedGame.split('.')[0]; // Remove .html extension
+
+          // Construct the URL with parameters
+          var url = '/play.html?game=' + encodeURIComponent(selectedGame) + '&title=' + encodeURIComponent(selectedTitle);
+
+          // Redirect to the game
+          window.location.href = url;
+      }
+  </script>
+</body></html>
