@@ -4,33 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Centered with Content Below</title>
+    <title>Website with Ads</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevents scrollbars from appearing */
-            background-color: #f0f0f0; /* Light background color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        #contentContainer {
+            width: 100vw;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background: rgb(35, 31, 32);
+            overflow: hidden;
         }
 
         #adContainer {
             width: 336px;
             height: 280px;
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
             background-color: #000;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center ad */
-            z-index: 1000; /* Ensure ad is on top */
-            display: none; /* Hidden by default */
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
         }
 
         .closeButton {
@@ -48,36 +43,14 @@
             justify-content: center;
             align-items: center;
         }
-
-        #websiteContainer {
-            width: 80vw;
-            max-width: 1200px; /* Optional: limit max width for larger screens */
-            height: calc(100vh - 300px); /* Adjust based on ad height and spacing */
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            overflow: auto; /* Allows scrolling if content overflows */
-            margin-top: 20px; /* Space below the ad */
-            text-align: center; /* Center content text */
-        }
     </style>
 </head>
 
 <body>
-    <div id="adContainer">
-        <div class="closeButton" onclick="hideAdContainer()">×</div>
-        <!-- AdForGames.com code begin -->
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 9;
-            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
-        </script>
-        <!-- AdForGames.com code end -->
-    </div>
-
-    <div id="websiteContainer">
-<html lang="en"><head>
+    <div id="contentContainer">
+        <!-- Your website content goes here -->
+        <div id="websiteContent">
+            <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DuckHTML Unblocked Games, Free to play">
@@ -1039,9 +1012,19 @@ der-color: white;
       }
   </script>
 </body></html>
+        </div>
+    </div>
 
-
-        
+    <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+        <!-- AdForGames.com code begin -->
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 9;
+            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+        </script>
+        <!-- AdForGames.com code end -->
     </div>
 
     <script>
@@ -1058,14 +1041,15 @@ der-color: white;
         // Show the ad container initially
         showAdContainer();
 
-        // Function to toggle ad container visibility every 50 seconds
+        // Function to toggle ad container visibility every 30 seconds
         setInterval(function () {
             hideAdContainer();
             setTimeout(function () {
                 showAdContainer();
-            }, 1000); // Delay before showing the ad again
-        }, 50000); // 50 seconds
+            }, 1000); // Adjust this delay to your preference
+        }, 50000); // 30 seconds
     </script>
+
 </body>
 
 </html>
