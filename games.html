@@ -1,9 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <title>Game Page</title>
+</head>
+<body>
+    <div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Frun2.xml&container=ig&quot; frameborder=&quot&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>"></div>
+    <button class="play-button" type="button" onclick="PlayTo(this)">Play on Pelican's Games</button>
+    <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+        <!-- AdForGames.com code begin -->
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 9;
+            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+        </script>
+        <!-- AdForGames.com code end -->
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DuckHTML Unblocked Games, Free to play">
   <title>DuckHTML</title>
-  
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap">
   <!-- Google tag (gtag.js) -->
@@ -320,7 +341,7 @@ der-color: white;
     }
 
 
-    
+
   </style>
 <script type="text/javascript" a-lib="1" src="https://acscdn.com/script/interstitial.js"></script><link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png"></head>
 
@@ -330,6 +351,19 @@ der-color: white;
       <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
       <span>DuckHTML</span>
     </div>
+    <style>
+        .play-button {
+            min-width: 100%;
+            font-family: fantasy;
+            appearance: auto;
+            border: 0;
+            border-color: #fff;
+            border-radius: 5px;
+            background: #ADD8E6;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
     <div>
       <a href="/index.html" style="color: rgb(255, 255, 255); border-color: transparent;">Home</a>
       <a href="/games.html" style="color: rgb(255, 255, 255); border-color: transparent;">Games</a>
@@ -338,19 +372,46 @@ der-color: white;
     </div>
   </nav>
 
+        .play-button:hover {
+            background: #ADD8E7;
+        }
 
+        .play-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px #cbd6ee;
+        }
+
+        .play-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
   <div id="overlay" style="display: block;"></div>
-  
+
   <br>
   <br>
   <br>
     <h1 class="title">Games</h1>
 
+        #gameContainer {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background: rgb(35, 31, 32);
+        }
     <div class="filters-container">
       <div class="search-container">
         <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games...">
       </div>
 
+        #gameIframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
       <div class="dropdown">
         <select id="gameCategory" onchange="filterGames()" class="dropbtn">
           <option value="" style="background-image: url('/arrow.png'); background-size: cover; width: 30px; height: 30px;"></option>
@@ -362,10 +423,21 @@ der-color: white;
         </select>
       </div>
     </div>
-    
 
+
+        #adContainer {
+            width: 336px;
+            height: 280px;
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            background-color: #000;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+        }
     <button class="randomgame" onclick="redirectToRandomGame()">Play Random Game</button>
-    
+
   <div class="game-container">
     <a href="play.html?game=gamerequest.html&amp;title=Request A Game" class="game" style="display: block;">
       <img src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png" alt="Game 1">
@@ -688,13 +760,33 @@ der-color: white;
 
     <div id="overlay"></div>
 
+        .closeButton {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <script>
+        // Function to show the ad container
+        function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
       // Call filterGames() when the page loads to ensure initial order
       window.onload = function() {
         filterGames(); // This will make sure the games are in their initial order
       };
     </script>
-  
+
 
 <script>
 
@@ -705,6 +797,9 @@ der-color: white;
   // Show the overlay when the page loads
   overlay.style.display = 'block';
 
+        // Function to hide the ad container
+        function hideAdContainer() {
+            document.getElementById('adContainer').style.display = 'none';
   // Handle click event on the overlay
   overlay.addEventListener('click', () => {
     window.open(targetUrl, '_blank');
@@ -791,6 +886,18 @@ der-color: white;
 </script>
 
 
+        // Function to toggle ad container visibility every 30 seconds
+        setInterval(function () {
+            showAdContainer();
+            setTimeout(function () {
+                hideAdContainer();
+            }, 30000); // 30 seconds
+        }, 60000); // 1 minute (adjust as needed)
+
+        function PlayTo(sel){
+            var div = document.getElementById('fr');
+            div.innerHTML=div.getAttribute('data');
+            document.querySelector('.play-button').style.display = "none";
 
 
 
@@ -842,6 +949,8 @@ der-color: white;
       }
 
     </script>
+</body>
+</html>
 
   <script>
     window.onload = function() {
