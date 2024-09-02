@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Display</title>
+    <title>Game with Ads</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+        #gameContainer {
+            width: 100vw;
             height: 100vh;
-            background: #f0f0f0;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background: rgb(35, 31, 32);
+            overflow: hidden; /* Prevent scrollbars */
         }
 
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        #gameIframe {
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            z-index: 999; /* Positioned below the ad */
+            border: none;
         }
 
         #adContainer {
@@ -32,14 +31,9 @@
             transform: translate(-50%, -50%);
             background-color: #000;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
             z-index: 1000;
-            cursor: pointer;
-            /* Ensure no layout shifts */
-            margin: 0;
         }
 
         .closeButton {
@@ -64,43 +58,49 @@
         }
     </style>
 </head>
+
 <body>
-    <div id="overlay"></div>
+    <div id="gameContainer">
+        <!-- Example website content -->
+        <div style="width: 100%; height: 100%; background: #ddd; display: flex; align-items: center; justify-content: center;">
+            <h1>Example Website</h1>
+        </div>
+    </div>
+
     <div id="adContainer">
         <div class="closeButton" onclick="hideAdContainer()">×</div>
-        <div id="adContent" style="width: 100%; height: 100%;"></div>
+        <!-- AdForGames.com code begin -->
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 9;
+            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+        </script>
+        <!-- AdForGames.com code end -->
     </div>
 
     <script>
+        // Function to show the ad container
+        function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
+
         // Function to hide the ad container
         function hideAdContainer() {
             document.getElementById('adContainer').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none'; // Hide the overlay
         }
 
-        // Load the ad script
-        function loadAd() {
-            var script = document.createElement('script');
-            script.innerHTML = `
-                var afg = {};
-                afg.u = 6289;
-                afg.s = 9;
-                document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
-            `;
-            document.getElementById('adContent').appendChild(script);
-        }
+        // Show the ad container initially
+        showAdContainer();
 
-        // Load the ad on page load
-        window.onload = function() {
-            loadAd();
-        };
-
-        // Close the ad when it is clicked
-        document.getElementById('adContainer').addEventListener('click', function() {
+        // Function to toggle ad container visibility every 30 seconds
+        setInterval(function () {
             hideAdContainer();
-            // Optional: Open a new tab when the ad is clicked
-            window.open('https://example.com', '_blank');
-        });
+            setTimeout(function () {
+                showAdContainer();
+            }, 1000); // Adjust this delay to your preference
+        }, 50000); // 50 seconds (30 seconds was a typo in the previous code)
     </script>
 </body>
+
 </html>
