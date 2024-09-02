@@ -1,184 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Game Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <style>
+        /* General body and html styles */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Prevents scrollbars from appearing */
+            font-family: Arial, sans-serif;
+            background-color: rgb(35, 31, 32);
+            color: white;
         }
 
+        /* Main container styles */
         #contentContainer {
             width: 100%;
             height: 100%;
-            background: rgb(35, 31, 32);
             display: flex;
-            flex-direction: column; /* Ensure content stacks vertically */
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            position: relative;
             box-sizing: border-box;
         }
 
-        nav {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 30px;
-            z-index: 1000;
-        }
-
-        nav .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        nav .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        nav .logo span {
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: white;
-            font-family: 'Press Start 2P', sans-serif;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            padding: 8px 16px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-            border-color: white;
-        }
-
+        /* Title style */
         .title {
-            font-size: 3.5rem;
-            margin-top: 80px; /* Add margin-top to offset fixed nav */
-            color: #f0f0f0;
-            font-family: 'Press Start 2P', sans-serif;
-        }
-
-        .filters-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 24px;
             margin: 20px;
-            width: 100%;
-            max-width: 1200px; /* Constrain width for better alignment */
         }
 
+        /* Search input style */
         #searchInput {
-            border-radius: 30px;
-            padding: 10px 20px;
-            font-size: 20px;
-            background-color: #ffd700;
-            color: #000000;
-            border: 2px solid #000000;
-            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            transition: box-shadow 0.3s ease;
-            font-family: 'Press Start 2P';
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .dropdown select {
-            appearance: none;
-            background-color: transparent;
-            border: 2px solid #000000;
-            border-radius: 30%;
-            padding: 5px;
-            background-image: url('/arrow.png');
-            background-size: cover;
-            width: 30px;
-            height: 30px;
-        }
-
-        .game-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center items horizontally */
-            margin-top: 20px;
-        }
-
-        .game {
-            text-align: center;
-            border: 2px solid #ffd700;
-            border-radius: 10px;
             padding: 10px;
-            margin: 10px;
-            width: calc(25% - 20px); /* Adjust width to fit 4 games per row */
+            font-size: 16px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
         }
 
-        .game img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .game-title {
-            font-size: 18px;
-            color: white;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
-
-        .game-title:hover {
-            color: #ffd700;
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
-        }
-
-        .randomgame {
-            background-color: #ffd700;
-            color: #363636;
-            border: none;
-            padding: 15px 40px;
-            font-size: 15px;
-            font-family: 'Press Start 2P';
-            border-radius: 8px;
-            cursor: pointer;
-            display: block;
-            text-align: center;
-            margin: 20px;
-        }
-
+        /* Ad container styles */
         #adContainer {
-            width: 336px;
-            height: 280px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 336px; /* Adjust the width as needed */
+            height: 280px; /* Adjust the height as needed */
+            margin-top: 20px;
             background-color: #000;
             border-radius: 10px;
-            display: none;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            position: relative;
+            overflow: hidden;
+            text-align: center; /* Center align ad content */
         }
 
+        /* Close button styles */
         .closeButton {
             position: absolute;
             top: 5px;
@@ -196,96 +74,30 @@
         }
     </style>
 </head>
-
 <body>
     <div id="contentContainer">
-        <nav>
-            <div class="logo">
-                <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
-                <span>DuckHTML</span>
-            </div>
-            <div>
-                <a href="/index.html">Home</a>
-                <a href="/games.html">Games</a>
-                <a href="/settings.html">Settings</a>
-                <a href="/search.html">Search</a>
-            </div>
-        </nav>
-
         <h1 class="title">Games</h1>
+        <input type="text" id="searchInput" placeholder="Search for games...">
 
-        <div class="filters-container">
-            <div class="search-container">
-                <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="Search for games...">
-            </div>
-            <div class="dropdown">
-                <select id="gameCategory" onchange="filterGames()">
-                    <option value="all">All Games</option>
-                    <option value="papas">Papa's Games</option>
-                    <option value="vex">Vex</option>
-                    <option value="parking-fury">Parking Fury</option>
-                    <option value="hard">Hard</option>
-                </select>
-            </div>
+        <!-- Ad container -->
+        <div id="adContainer">
+            <div class="closeButton" onclick="hideAdContainer()">×</div>
+            <!-- Ad script -->
+            <script>
+                var afg = {};
+                afg.u = 6289;
+                afg.s = 9;
+                document.write("<script src='//js.adforgames.com/cd.js'><\/script>");
+            </script>
         </div>
-
-        <button class="randomgame" onclick="redirectToRandomGame()">Play Random Game</button>
-
-        <div class="game-container">
-            <a href="play.html?game=gamerequest.html&amp;title=Request A Game" class="game">
-                <img src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png" alt="Game 1">
-                <div class="game-title">Request a Game</div>
-            </a>
-            <a href="play.html?game=thefinalearth2.html&amp;title=The Final Earth 2" class="game">
-                <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png" alt="Game 8">
-                <div class="game-title">The Final Earth 2</div>
-            </a>
-        </div>
-    </div>
-
-    <div id="adContainer">
-        <div class="closeButton" onclick="hideAdContainer()">×</div>
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 9;
-            document.write("<script src='//js.adforgames.com/cd.js'><\/script>");
-        </script>
     </div>
 
     <script>
-        function showAdContainer() {
-            document.getElementById('adContainer').style.display = 'block';
-        }
-
         function hideAdContainer() {
             document.getElementById('adContainer').style.display = 'none';
         }
 
-        function filterGames() {
-            var searchValue = document.getElementById('searchInput').value.toLowerCase();
-            var categoryValue = document.getElementById('gameCategory').value;
-            var games = document.getElementsByClassName('game');
-
-            for (var i = 0; i < games.length; i++) {
-                var gameTitle = games[i].getElementsByClassName('game-title')[0].innerText.toLowerCase();
-                var gameCategory = games[i].getAttribute('data-category');
-
-                if ((gameTitle.includes(searchValue) || searchValue === '') &&
-                    (gameCategory === categoryValue || categoryValue === 'all')) {
-                    games[i].style.display = 'block';
-                } else {
-                    games[i].style.display = 'none';
-                }
-            }
-        }
-
-        function redirectToRandomGame() {
-            var games = document.getElementsByClassName('game');
-            var randomIndex = Math.floor(Math.random() * games.length);
-            window.location.href = games[randomIndex].href;
-        }
+        // Optionally, you can add logic here to handle showing or hiding the ad dynamically
     </script>
 </body>
-
 </html>
