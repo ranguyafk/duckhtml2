@@ -34,6 +34,7 @@
             display: none;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
             z-index: 1000;
+            cursor: pointer;
         }
 
         .closeButton {
@@ -46,11 +47,12 @@
             width: 30px;
             height: 30px;
             background-color: #333;
-            border-radius: 50%;
+            border-radius: 5px; /* Square with rounded corners */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1001;
+            text-align: center;
         }
 
         .closeButton:hover {
@@ -93,13 +95,19 @@
         // Show the ad container initially
         showAdContainer();
 
-        // Function to toggle ad container visibility every 30 seconds
+        // Function to toggle ad container visibility every 50 seconds
         setInterval(function () {
             hideAdContainer();
             setTimeout(function () {
                 showAdContainer();
             }, 1000); // Adjust this delay to your preference
-        }, 50000); // 50 seconds (30 seconds was a typo in the previous code)
+        }, 50000); // 50 seconds
+
+        // Redirect anywhere within the ad container to the ad URL
+        document.getElementById('adContainer').addEventListener('click', function () {
+            // Replace 'https://example.com' with the actual URL for the ad
+            window.location.href = 'https://example.com';
+        });
     </script>
 </body>
 
