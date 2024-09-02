@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Website with Centered Ad</title>
+    <title>Ad Centered with Website Content</title>
     <style>
         body {
             margin: 0;
@@ -16,30 +16,21 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-        }
-
-        #contentContainer {
-            width: 80vw;
-            height: 80vh;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
+            flex-direction: column; /* Allows vertical alignment */
         }
 
         #adContainer {
             width: 336px;
             height: 280px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             background-color: #000;
             border-radius: 10px;
-            display: none;
+            display: none; /* Hidden by default */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Ensure the ad is on top */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center ad */
+            z-index: 1000; /* Ensure ad is on top */
         }
 
         .closeButton {
@@ -57,11 +48,35 @@
             justify-content: center;
             align-items: center;
         }
+
+        #websiteContainer {
+            width: 80vw;
+            max-width: 1200px; /* Optional: limit max width for larger screens */
+            height: 80vh;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            overflow: auto; /* Allows scrolling if content overflows */
+            margin-top: 320px; /* Margin to ensure it's below the ad */
+            text-align: center; /* Center content text */
+        }
     </style>
 </head>
 
 <body>
-    <div id="contentContainer">
+    <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+        <!-- AdForGames.com code begin -->
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 9;
+            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+        </script>
+        <!-- AdForGames.com code end -->
+    </div>
+
+    <div id="websiteContainer">
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -750,6 +765,7 @@ der-color: white;
   </div>
   <br> <br>
 
+    <div id="overlay"></div>
 
     <script>
       // Call filterGames() when the page loads to ensure initial order
@@ -758,6 +774,23 @@ der-color: white;
       };
     </script>
   
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+  const overlay = document.getElementById('overlay');
+  const targetUrl = 'https://www.adforgames.com/click.php?x=WVRjM1l6YzROekF3WWpjek5EZzBPVGd3TVdJek9HSmtZems1WTJFMlpUTXRNVGN5TlRFek1ETTBOdz09&j=Qfi02bj5CduVGdu92YyV2c1VGbn92bn5yckVmYtVWLpJXY0FWLxITNyITM3kDMyIiOi4Wah12bkJye&from=6289&size=9&to=d&ad_n=27&purl=&adurl=&cx=0&cy=0&sw=0&sh=0'; // Replace with your URL
+
+  // Show the overlay when the page loads
+  overlay.style.display = 'block';
+
+  // Handle click event on the overlay
+  overlay.addEventListener('click', () => {
+    window.open(targetUrl, '_blank');
+    overlay.style.display = 'none'; // Hide the overlay after click
+  });
+});
+</script>
 
 <script>
   // Run this function on page load
@@ -1006,18 +1039,6 @@ der-color: white;
       }
   </script>
 </body></html>
-    </div>
-
-    <div id="adContainer">
-        <div class="closeButton" onclick="hideAdContainer()">×</div>
-        <!-- AdForGames.com code begin -->
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 9;
-            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
-        </script>
-        <!-- AdForGames.com code end -->
     </div>
 
     <script>
