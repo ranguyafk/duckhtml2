@@ -32,7 +32,7 @@
             border-radius: 10px;
             display: none; /* Initially hidden */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
-            z-index: 1000;
+            z-index: 1001;
             cursor: pointer;
         }
 
@@ -50,18 +50,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1001;
+            z-index: 1002;
             text-align: center;
         }
 
         .closeButton:hover {
             background-color: #555;
         }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+            display: none; /* Initially hidden */
+            z-index: 1000;
+        }
     </style>
 </head>
 
 <body>
     <div id="gameContainer">
+
 
 <html lang="en"><head>
   <meta charset="UTF-8">
@@ -1029,6 +1041,8 @@ der-color: white;
         
     </div>
 
+    <div id="overlay"></div>
+
     <div id="adContainer">
         <div class="closeButton" onclick="hideAdContainer()">×</div>
         <!-- AdForGames.com code begin -->
@@ -1042,14 +1056,16 @@ der-color: white;
     </div>
 
     <script>
-        // Function to show the ad container
+        // Function to show the ad container and overlay
         function showAdContainer() {
             document.getElementById('adContainer').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
         }
 
-        // Function to hide the ad container
+        // Function to hide the ad container and overlay
         function hideAdContainer() {
             document.getElementById('adContainer').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         }
 
         // Show the ad container initially
