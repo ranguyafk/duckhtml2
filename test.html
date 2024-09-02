@@ -13,6 +13,16 @@
             background: #f0f0f0;
         }
 
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 999; /* Positioned below the ad */
+        }
+
         #adContainer {
             width: 336px;
             height: 280px;
@@ -28,6 +38,8 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             cursor: pointer;
+            /* Ensure no layout shifts */
+            margin: 0;
         }
 
         .closeButton {
@@ -53,6 +65,7 @@
     </style>
 </head>
 <body>
+    <div id="overlay"></div>
     <div id="adContainer">
         <div class="closeButton" onclick="hideAdContainer()">×</div>
         <div id="adContent" style="width: 100%; height: 100%;"></div>
@@ -62,6 +75,7 @@
         // Function to hide the ad container
         function hideAdContainer() {
             document.getElementById('adContainer').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none'; // Hide the overlay
         }
 
         // Load the ad script
