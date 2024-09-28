@@ -87,23 +87,32 @@
       return atob(encodedString);
     }
 
+    function checkCredentials() {
+      const username = prompt('Enter username:');
+      const password = prompt('Enter password:');
+
+      // Base64 encoded correct password
+      const correctUsername = 'admin';
+      const encodedPassword = 'cGFzc3dvcmQxMjM='; // Base64 for "password123"
+      const correctPassword = decodeBase64(encodedPassword);
+
+      if (username === correctUsername && password === correctPassword) {
+        window.location.href = 'https://www.example.com'; // Replace with your redirect URL
+      } else {
+        alert('Wrong password');
+      }
+    }
+
     document.addEventListener('keydown', function(event) {
       if (event.key === '0') {
-        const username = prompt('Enter username:');
-        const password = prompt('Enter password:');
-
-        // Base64 encoded correct password
-        const correctUsername = 'admin';
-        const encodedPassword = 'cGFzc3dvcmQxMjM='; // Base64 for "password123"
-        const correctPassword = decodeBase64(encodedPassword);
-
-        if (username === correctUsername && password === correctPassword) {
-          window.location.href = '/index.html'; // Replace with your redirect URL
-        } else {
-          alert('Wrong password');
-        }
+        checkCredentials();
       }
     });
+
+    // Call checkCredentials on page load if you want to prompt for credentials right away
+    window.onload = function() {
+      alert('Press "0" to enter credentials.');
+    };
   </script>
 </head>
 
