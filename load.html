@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <meta name="ezoic-site-verification" content="OU5ZahMTz6KotnNZt0L68lfaDs9EjT" />
+  <title>DuckHTML</title>
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8X677NPBRV');
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'VT323', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-family: 'Press Start 2P', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: white;
+    }
+
+    .content {
+      padding-top: 100px;
+      width: 80%;
+      max-width: 1200px;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .title {
+      font-size: 4rem;
+      margin-bottom: 0;
+      color: #f0f0f0;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-left: 10px;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      margin-top: 0;
+      color: #c0c0c0;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-left: 10px;
+    }
+
+    #playNowButton {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 25px 50px;
+      font-size: 30px;
+      font-family: 'Press Start 2P', sans-serif;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: -8%;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    .featured-title {
+      font-size: 2rem;
+      color: #ffd700;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .featured-games-container {
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; /* Align items center */
+      overflow-x: auto; /* Allow horizontal scrolling */
+      scrollbar-width: none; /* Hide scrollbar for Firefox */
+      -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    }
+
+    .featured-games {
+      display: flex;
+    }
+
+    .featured-games::-webkit-scrollbar { 
+      display: none;
+    }
+
+    .game-card {
+      background-color: #1e1e1e;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 0 10px;
+      flex: 0 0 auto;
+      width: 180px;
+      height: 300px;
+      text-align: center;
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    .game-card img {
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: 8px;
+    }
+
+    .game-card h3 {
+      font-size: 1rem;
+      margin: 10px 0 0 0;
+      color: #f0f0f0;
+    }
+
+    .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 100;
+      border-radius: 8px;
+    }
+
+    .scroll-button.left {
+      left: 10px;
+    }
+
+    .scroll-button.right {
+      right: 10px;
+    }
+
+    .credits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .credit-section {
+      flex: 1;
+      background-color: #1e1e1e;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    .credit-section h2 {
+      font-size: 2rem;
+      color: #ffd700;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .credit-list {
+      display: flex;
+      justify-content: space-around; /* Adjusted to spread items horizontally */
+      align-items: center; /* Center vertically */
+      flex-wrap: wrap; /* Allow items to wrap */
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      line-height: 1.5;
+    }
+
+    .credit-item {
+      margin: 10px;
+    }
+
+    .credit-item h3 {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 5px;
+    }
+
+    .credit-item p {
+      margin: 0;
+    }
+
+    .credit-item button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .more-than-just-games {
+      font-size: 1.5rem;
+      color: #ffd700;
+      font-family: 'Press Start 2P', sans-serif;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #cookieNotice {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    #cookieNotice button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .more-than-just-games {
+      font-size: 1.5rem;
+      color: #ffd700;
+      font-family: 'Press Start 2P', sans-serif;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .more-than-just-games .credits {
+      margin-top: 40px;
+      background-color: #1e1e1e;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    .more-than-just-games .credits h2 {
+      font-size: 2rem;
+      color: #ffd700;
+      font-family: 'Press Start 2P', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .more-than-just-games .credit-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      
+      line-height: 1.5;
+    }
+
+    .more-than-just-games .credit-item {
+      margin: 20px;
+    }
+
+    .more-than-just-games .credit-item h3 {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 5px;
+    }
+
+    .more-than-just-games .credit-item p {
+      margin: 0;
+    }
+
+    .more-than-just-games p {
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-top: 20px;
+    }
+
+    .more-than-just-games a button {
+      background-color: #ffd700;
+      color: #363636;
+      border: none;
+      padding: 8px 16px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 16px;
+      transition: backgrtound-color 0.3s ease-in-out;
+    }
+
+    .more-than-just-games a button:hover {
+      background-color: #c0c0c0;
+    }
+
+    .rounded-image {
+      border: 2px solid transparent;
+      border-color: yellow;
+      border-radius: 5px;
+      height: 90px;
+      width: 720px;
+    }
+
+      .rounded-imagetext {
+      
+    }
+  </style>
+
+  <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="./js/preload.js"></script>
+
+  <script type="text/javascript">
+    atOptions = {
+      'key': '8d57283b953b8b546d6a04d4deac19dc',
+      'format': 'iframe',
+      'height': 250,
+      'width': 300,
+      'params': {}
+    };
+  </script>
+</head>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+    <span>DuckHTML</span>
+  </div>
+  <div>
+    <a href="/index.html">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="/settings.html">Settings</a>
+    <a href="/search.html">Search</a>
+  </div>
+</nav>
+
+
+
+      <div id="menubtns">
+        <a href="./gs.html">
+          <button onclick="window.location.href = '/'">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </a>
+        <button onclick="document.querySelector('iframe').requestFullscreen()">
+          <i class="fas fa-expand"></i>
+        </button>
+        <button onclick="favorite()">
+          <i class="favorited far fa-star"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/index.js"></script>
+<script src="./assets/data/games.js"></script>
+<script src="./assets/data/apps.js"></script>
+<script src="./js/load.js"></script>
+
+</html>
