@@ -599,8 +599,13 @@
   </div>
 
 
-
-<script type='text/javascript' src='//pl24530633.cpmrevenuegate.com/8a/26/04/8a2604b7dc51db332008ddf67973775b.js'></script>
+ <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+<!-- AdForGames.com code begin -->
+<script>var afg={};afg.u=6289;afg.s=7;
+document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
+<!-- AdForGames.com code end -->
+    </div>
 
 
 
@@ -659,7 +664,16 @@
             });
         }
 
+        function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
 
+        function hideAdContainer() {
+            document.getElementById('adContainer').style.display = 'none';
+        }
+
+        // Example: Show the ad container after 5 seconds
+        setTimeout(showAdContainer, 5000);
     </script>
 </body>
 
