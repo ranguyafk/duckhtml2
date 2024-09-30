@@ -166,16 +166,20 @@
       height: auto;
       margin-right: 5px;
     }
-
-.ad-container {
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  bottom: 10px; /* Adjust this value as needed */
-  right: 10px; /* Adjust this value as needed */
-  border: 5px solid white;
-  z-index: 1000; /* Ensure it’s above other elements */
-}
+        /* Ad container style */
+        #adContainer {
+            width: 300px;
+            height: 250px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #121212;
+            border-radius: 10px;
+            display: none; /* Hide the ad container initially */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Ensure the ad is above other content */
+        }
 
 
     .nav-btn2 {
@@ -350,8 +354,13 @@
 
   <div id="iframe-container"></div>
 
-<script type='text/javascript' src='//pl24530633.cpmrevenuegate.com/8a/26/04/8a2604b7dc51db332008ddf67973775b.js'></script>
+ <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+<!-- AdForGames.com code begin -->
+<script>var afg={};afg.u=6289;afg.s=7;
+document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
 <!-- AdForGames.com code end -->
+    </div>
   
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
@@ -422,6 +431,17 @@
         window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
       }
     }
+
+            function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
+
+        function hideAdContainer() {
+            document.getElementById('adContainer').style.display = 'none';
+        }
+
+        // Example: Show the ad container after 5 seconds
+        setTimeout(showAdContainer, 5000);
   </script>
 </body>
 </html>
