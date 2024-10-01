@@ -69,3 +69,56 @@ function favorite() {
         setObj("favoritedGames", favoritedGames);
     }
 }
+
+
+
+        function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
+
+        function hideAdContainer() {
+            document.getElementById('adContainer').style.display = 'none';
+        }
+
+        // Example: Show the ad container after 5 seconds
+        setTimeout(showAdContainer, 5000);
+
+<html>
+     <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+<!-- AdForGames.com code begin -->
+<script>var afg={};afg.u=6289;afg.s=7;
+document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
+<!-- AdForGames.com code end -->
+    </div>
+    </html>
+
+<style>
+        #adContainer {
+            width: 300px;
+            height: 250px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #121212;
+            border-radius: 10px;
+            display: none; /* Hide the ad container initially */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Ensure the ad is above other content */
+        }
+
+        .closeButton {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            </style>
