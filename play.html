@@ -112,8 +112,8 @@
     }
 
         #adContainer {
-            width: 325px;
-            height: 275px;
+            width: 300px;
+            height: 250px;
             position: fixed;
             top: 50%;
             left: 50%;
@@ -125,7 +125,7 @@
             z-index: 1000; /* Ensure the ad is above other content */
         }
 
-        .close {
+        .closeButton {
             position: absolute;
             top: 5px;
             right: 5px;
@@ -140,6 +140,7 @@
             justify-content: center;
             align-items: center;
         }
+
 
     /* Individual button styling */
     button {
@@ -370,10 +371,13 @@
 
   <h1 id="gameTitle">GAMENAMEHERE</h1><br><br><br>
 
-<script>var afg={};afg.u=6289;afg.s=31;
-afg.anchor="bottom";
+ <div id="adContainer">
+        <div class="closeButton" onclick="hideAdContainer()">×</div>
+<!-- AdForGames.com code begin -->
+<script>var afg={};afg.u=6289;afg.s=7;
 document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-  <div id="iframe-container"></div>
+<!-- AdForGames.com code end -->
+    </div>
 
 
   <div class="button-container">
@@ -445,6 +449,17 @@ document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</scri
         window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
       }
     }
+
+            function showAdContainer() {
+            document.getElementById('adContainer').style.display = 'block';
+        }
+
+        function hideAdContainer() {
+            document.getElementById('adContainer').style.display = 'none';
+        }
+
+        // Example: Show the ad container after 5 seconds
+        setTimeout(showAdContainer, 5000);
 
 
   </script>
