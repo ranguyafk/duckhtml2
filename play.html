@@ -40,7 +40,6 @@
       z-index: 1000;
     }
 
-
     nav .logo {
       display: flex;
       align-items: center;
@@ -111,36 +110,36 @@
       gap: 10px; /* Space between buttons */
     }
 
-        #adContainer {
-            width: 300px;
-            height: 250px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #121212;
-            border-radius: 10px;
-            display: none; /* Hide the ad container initially */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Ensure the ad is above other content */
-        }
+    /* Ad container style */
+    #adContainer {
+      width: 300px;
+      height: 250px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #121212;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000; /* Ensure the ad is above other content */
+      display: none; /* Hide the ad container initially */
+    }
 
-        .closeButton {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 24px;
-            color: #fff;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
+    .closeButton {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     /* Individual button styling */
     button {
@@ -163,142 +162,6 @@
     button:active {
       background-color: #ff6347; /* Darker color on click */
       transform: scale(0.95); /* Slightly shrink the button on click */
-    }
-
-    .rounded-image {
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .rounded-imagetext {
-      position: fixed;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .discord-btn {
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border: none;
-      background-color: #454545;
-      border-radius: 5px;
-    }
-
-    .discord-btn img {
-      width: 20px;
-      height: auto;
-      margin-right: 5px;
-    }
-        /* Ad container style */
-
-
-    .nav-btn2 {
-      text-decoration: none;
-      color: #fff;
-      cursor: pointer;
-      display: inline-block;
-      padding: 1rem 2rem;
-      border: none;
-      position: absolute;
-      bottom: 60%;
-      left: 86%;
-      font-family: Tahoma;
-      background-color: #454545;
-      border-radius: 5px;
-    }
-
-    .content-container {
-      text-align: center;
-      margin-top: 20px;
-      border-radius: 5px;
-    }
-
-    #cookieNotice {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 150px;
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-      display: none;
-    }
-
-    #cookieNotice button {
-      background-color: #ffd700;
-      color: #363636;
-      border: none;
-      padding: 8px 16px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* General button styles */
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      background-color: #ffd700; /* Consistent color for all buttons */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      outline: none;
-      transition: all 0.3s ease; /* Smooth transition for hover effects */
-    }
-
-    /* Hover effect for buttons */
-    button:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-      transform: scale(1.05); /* Slightly enlarge the button */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-    }
-
-    /* Specific button styles */
-    .bookmark-button {
-      background-color: #ffd700; /* Yellow color for bookmark button */
-    }
-
-    .bookmark-button:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Play Now Button */
-    .playNowButton {
-      background-color: #ffd700; /* Yellow color for Play Now button */
-    }
-
-    .playNowButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Refresh Button */
-    .refreshButton {
-      background-color: #ffd700; /* Yellow color for Refresh button */
-    }
-
-    .refreshButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
-    }
-
-    /* Blank Button */
-    .blankButton {
-      background-color: #ffd700; /* Yellow color for Blank button */
-    }
-
-    .blankButton:hover {
-      background-color: #f0c000; /* Darker yellow for hover */
     }
 
     /* Media Queries */
@@ -369,16 +232,7 @@
     </div>
   </nav>
 
-  <h1 id="gameTitle">GAMENAMEHERE</h1><br><br><br>
-
- <div id="adContainer">
-        <div class="closeButton" onclick="hideAdContainer()">×</div>
-<!-- AdForGames.com code begin -->
-<script>var afg={};afg.u=6289;afg.s=7;
-document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-<!-- AdForGames.com code end -->
-    </div>
-
+  <h1 id="gameTitle">GAMENAMEHERE</h1>
 
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
@@ -390,6 +244,18 @@ document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</scri
     <button class="openBlankButton" onclick="openInBlank()">
       <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon">
     </button>
+  </div>
+
+  <div id="adContainer">
+    <div class="closeButton" onclick="closeAd()">×</div>
+    <!-- AdForGames.com code begin -->
+    <script>
+      var afg = {};
+      afg.u = 6289;
+      afg.s = 7;
+      document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+    </script>
+    <!-- AdForGames.com code end -->
   </div>
 
   <script>
@@ -422,7 +288,14 @@ document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</scri
       } else {
         document.getElementById('gameTitle').textContent = 'No game specified';
       }
+      
+      // Show the ad after loading the page
+      document.getElementById('adContainer').style.display = 'block';
     };
+
+    function closeAd() {
+      document.getElementById('adContainer').style.display = 'none';
+    }
 
     function toggleFullscreen() {
       const iframe = document.getElementById('gameIframe');
@@ -449,22 +322,7 @@ document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</scri
         window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
       }
     }
-
-            function showAdContainer() {
-            document.getElementById('adContainer').style.display = 'block';
-        }
-
-        function hideAdContainer() {
-            document.getElementById('adContainer').style.display = 'none';
-        }
-
-        // Example: Show the ad container after 5 seconds
-        setTimeout(showAdContainer, 5000);
-
-
   </script>
-
-
 
 </body>
 </html>
