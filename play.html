@@ -97,9 +97,6 @@
       width: 70vw;
       height: calc(80vh - 70px);
       border: none;
-      position: relative; /* Relative positioning within container */
-      padding: 0px;
-      box-sizing: border-box; /* Ensure padding and border are included in width/height */
     }
 
     .button-container {
@@ -163,59 +160,6 @@
       background-color: #ff6347; /* Darker color on click */
       transform: scale(0.95); /* Slightly shrink the button on click */
     }
-
-    /* Media Queries */
-    @media (max-width: 1024px) {
-      iframe {
-        width: 80vw;
-        height: calc(75vh - 70px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.5rem;
-        right: 10px; /* Adjust position for smaller screens */
-      }
-
-      #iframe-container {
-        left: 5px;
-        right: 5px;
-      }
-
-      iframe {
-        width: 90vw;
-        height: calc(70vh - 70px);
-      }
-
-      .button-container {
-        top: calc(120px + 70px); /* Adjust position for smaller screens */
-        right: 10px; /* Align to the right */
-        flex-direction: row; /* Align buttons horizontally */
-      }
-
-      button {
-        font-size: 16px;
-        padding: 5px 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .button-container {
-        bottom: 5px;
-        width: auto; /* Adjust width */
-        right: 5px; /* Align to the right */
-        left: auto; /* Remove left alignment */
-        transform: none; /* Remove centering */
-        flex-direction: row; /* Align buttons horizontally */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-      }
-
-      button {
-        font-size: 14px;
-        padding: 4px 8px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -233,6 +177,8 @@
   </nav>
 
   <h1 id="gameTitle">GAMENAMEHERE</h1>
+
+  <div id="iframe-container"></div>
 
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
@@ -323,6 +269,5 @@
       }
     }
   </script>
-
 </body>
 </html>
