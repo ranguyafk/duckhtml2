@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
   <script async src="https://ss.mrmnd.com/banner.js"></script>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
   <script>
@@ -24,14 +24,14 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
-      overflow: hidden; /* Remove scrollbars */
+      overflow: hidden;
     }
 
     nav {
       width: 100%;
       position: fixed;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      background-color: rgba(0, 0, 0, 0.5); 
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -45,7 +45,7 @@
     }
 
     nav .logo img {
-      height: 40px;
+      height: 50px;
       margin-right: 10px;
     }
 
@@ -77,31 +77,31 @@
       font-size: 1.8rem;
       color: #fff;
       position: absolute;
-      top: 80px; /* Space for the fixed nav */
-      right: 50px; /* Move title to the right */
+      top: 80px; 
+      right: 50px; 
       font-family: 'Press Start 2P', sans-serif;
     }
 
     #iframe-container {
       position: absolute;
-      top: 85px; /* Adjust this value as needed */
-      left: 10px; /* Move the iframe to the left */
-      right: 10px; /* Ensure it does not stretch too wide */
-      bottom: 150px; /* Leave space for buttons */
+      top: 95px; 
+      left: 10px; 
+      right: 20px; 
+      bottom: 150px; 
       display: flex;
-      justify-content: flex-start; /* Align iframe to the left */
+      justify-content: flex-start; 
     }
 
     iframe {
-      width: 70vw;
-      height: calc(80vh - 70px);
+      width: 72vw;
+      height: calc(90vh - 100px);
       border: none;
     }
 
     .button-container {
       position: absolute;
       top: calc(120px + 80px); /* Position buttons directly below the title */
-      right: 50px; /* Align buttons to the right */
+      right: 80px; /* Align buttons to the right */
       display: flex; /* Align buttons horizontally */
       gap: 10px; /* Space between buttons */
     }
@@ -114,13 +114,13 @@
         top: 20%; /* Position down from the top */
         left: 50%;
         transform: translateX(-50%);
-        background-color: #121212; /* Same background color as the ad */
-        display: none; /* Hide the ad container initially */
-        z-index: 1000; /* Ensure the ad is above other content */
-        border-radius: 10px; /* Rounded corners */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-        padding: 20px; /* Padding around the content */
-        text-align: center; /* Center text */
+        background-color: #121212;
+        display: none;
+        z-index: 1000;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+        padding: 20px;
+        text-align: center;
     }
 
     .closeButton {
@@ -140,32 +140,30 @@
     }
 
     .adMessage {
-        color: #fff; /* White text color */
-        font-size: 18px; /* Font size */
-        margin: 10px 0; /* Margin around the message */
+        color: #fff;
+        font-size: 18px; 
+        margin: 10px 0; 
     }
-
-    /* Individual button styling */
     button {
       display: flex;
       align-items: center;
-      font-size: 18px;
+      font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
-      padding: 5px 10px;
+      padding: 20px 30px;
       border: none;
-      background-color: #ffd700; /* Consistent color for all buttons */
-      transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+      background-color: #ffd700;
+      transition: background-color 0.3s ease-in-out, transform 0 .2s ease;
     }
 
     button img {
-      width: 24px; /* Icon size */
+      width: 30px; 
       height: auto;
     }
 
     button:active {
-      background-color: #ff6347; /* Darker color on click */
-      transform: scale(0.95); /* Slightly shrink the button on click */
+      background-color: #ff6347; 
+      transform: scale(0.95); 
     }
   </style>
 </head>
@@ -175,10 +173,6 @@
       <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
       <span>DuckHTML</span>
     </div>
-
-
-
-    
     <div>
       <a href="/index.html">Home</a>
       <a href="/games.html">Games</a>
@@ -186,15 +180,11 @@
       <a href="/search.html">Search</a>
     </div>
   </nav>
-
-
   <h1 id="gameTitle">GAMENAMEHERE</h1>
-
   <div id="iframe-container"></div>
-
   <div class="button-container">
     <button class="playNowButton" onclick="toggleFullscreen()">
-      <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
+  <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
     </button>
     <button class="refreshButton" onclick="refreshIframe()">
       <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon">
@@ -203,10 +193,6 @@
       <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon">
     </button>
   </div>
-
-
-
-
   <script>
     function checkQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
