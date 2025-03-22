@@ -336,10 +336,34 @@
 </body>
 </html>
 
-<script type="text/javascript">
-    aclib.runInPagePush({
-        zoneId: '8425762',
-        refreshRate: 30,
-        maxAds: 2,
+
+    <!-- Ad Popup -->
+    <div id="adPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; padding: 20px; border-radius: 15px; z-index: 2000; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <div style="position: absolute; right: 10px; top: 10px; cursor: pointer; color: white; font-size: 24px;" onclick="closeAdPopup()">×</div>
+        <!-- AdForGames.com code begin -->
+        <script>var afg={};afg.u=6289;afg.s=7;
+        document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
+        <!-- AdForGames.com code end -->
+    </div>
+
+
+<!-- AdForGames.com code begin -->
+<script>var afg={};afg.u=6289;afg.s=31;
+afg.anchor="bottom";
+document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
+<!-- AdForGames.com code end -->
+
+    <script>
+    function showAdPopup() {
+        document.getElementById('adPopup').style.display = 'block';
+    }
+
+    function closeAdPopup() {
+        document.getElementById('adPopup').style.display = 'none';
+    }
+
+    // Show ad popup when page loads
+    window.addEventListener('load', function() {
+        setTimeout(showAdPopup, 1000);
     });
-</script>
+    </script>
