@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play" />
   <title>DuckHTML</title>
-  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap" />
 
-
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,6 +17,7 @@
     gtag('js', new Date());
     gtag('config', 'G-8X677NPBRV');
   </script>
+
   <style>
     body {
       margin: 0;
@@ -31,7 +31,7 @@
       width: 100%;
       position: fixed;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.5); 
+      background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -77,19 +77,19 @@
       font-size: 1.8rem;
       color: #fff;
       position: absolute;
-      top: 80px; 
-      right: 50px; 
+      top: 80px;
+      right: 50px;
       font-family: 'Press Start 2P', sans-serif;
     }
 
     #iframe-container {
       position: absolute;
-      top: 95px; 
-      left: 10px; 
-      right: 20px; 
-      bottom: 150px; 
+      top: 95px;
+      left: 10px;
+      right: 20px;
+      bottom: 150px;
       display: flex;
-      justify-content: flex-start; 
+      justify-content: flex-start;
     }
 
     iframe {
@@ -100,50 +100,12 @@
 
     .button-container {
       position: absolute;
-      top: calc(120px + 80px); /* Position buttons directly below the title */
-      right: 80px; /* Align buttons to the right */
-      display: flex; /* Align buttons horizontally */
-      gap: 10px; /* Space between buttons */
+      top: calc(120px + 80px);
+      right: 80px;
+      display: flex;
+      gap: 10px;
     }
 
-    /* Ad container style */
-    #adContainer {
-        width: 600px; /* Set a specific width for the popup */
-        height: auto; /* Allow height to adjust based on content */
-        position: fixed;
-        top: 20%; /* Position down from the top */
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #121212;
-        display: none;
-        z-index: 1000;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
-        padding: 20px;
-        text-align: center;
-    }
-
-    .closeButton {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        font-size: 24px;
-        color: #fff;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        background-color: #333;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .adMessage {
-        color: #fff;
-        font-size: 18px; 
-        margin: 10px 0; 
-    }
     button {
       display: flex;
       align-items: center;
@@ -153,24 +115,58 @@
       padding: 20px 30px;
       border: none;
       background-color: #ffd700;
-      transition: background-color 0.3s ease-in-out, transform 0 .2s ease;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease;
     }
 
     button img {
-      width: 30px; 
+      width: 30px;
       height: auto;
     }
 
     button:active {
-      background-color: #ff6347; 
-      transform: scale(0.95); 
+      background-color: #ff6347;
+      transform: scale(0.95);
+    }
+
+    /* Ad popup styles */
+    .ad-popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      z-index: 9999;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      width: 600px;
+      max-width: 90%;
+    }
+
+    .ad-popup .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .ad-content {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="logo">
-      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo">
+      <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo" />
       <span>DuckHTML</span>
     </div>
     <div>
@@ -180,19 +176,28 @@
       <a href="/search.html">Search</a>
     </div>
   </nav>
+
   <h1 id="gameTitle">GAMENAMEHERE</h1>
   <div id="iframe-container"></div>
+
   <div class="button-container">
-    <button class="playNowButton" onclick="toggleFullscreen()">
-  <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon">
+    <button onclick="toggleFullscreen()">
+      <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon" />
     </button>
-    <button class="refreshButton" onclick="refreshIframe()">
-      <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon">
+    <button onclick="refreshIframe()">
+      <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon" />
     </button>
-    <button class="openBlankButton" onclick="openInBlank()">
-      <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon">
+    <button onclick="openInBlank()">
+      <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon" />
     </button>
   </div>
+
+  <!-- Ad popup HTML -->
+  <div class="ad-popup" id="adPopup">
+    <button class="close-btn" onclick="closeAd()">X</button>
+    <div class="ad-content" id="adContent"></div>
+  </div>
+
   <script>
     function checkQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -214,16 +219,6 @@
       document.getElementById('gameTitle').textContent = title;
       document.title = title;
     }
-
-    window.onload = function () {
-      if (checkQueryParam('game')) {
-        const gameParamValue = new URLSearchParams(window.location.search).get('game');
-        const titleParamValue = new URLSearchParams(window.location.search).get('title');
-        createGameIframe(gameParamValue, titleParamValue || 'GAMENAMEHERE');
-      } else {
-        document.getElementById('gameTitle').textContent = 'No game specified';
-      }
-    };
 
     function toggleFullscreen() {
       const iframe = document.getElementById('gameIframe');
@@ -250,70 +245,31 @@
         window.open('about:blank').document.write(`<iframe src="${url}" style="border:none;width:100%;height:100vh;"></iframe>`);
       }
     }
+
+    function showAd() {
+      document.getElementById("adPopup").style.display = "block";
+      const adScript = document.createElement('script');
+      adScript.src = '//js.adforgames.com/cd.js';
+      adScript.async = true;
+      window.afg = { u: 6289, s: 7 };
+      document.getElementById('adContent').appendChild(adScript);
+    }
+
+    function closeAd() {
+      document.getElementById("adPopup").style.display = "none";
+    }
+
+    window.onload = function () {
+      if (checkQueryParam('game')) {
+        const params = new URLSearchParams(window.location.search);
+        const game = params.get('game');
+        const title = params.get('title') || 'GAMENAMEHERE';
+        createGameIframe(game, title);
+        showAd(); // Show ad after iframe loads
+      } else {
+        document.getElementById('gameTitle').textContent = 'No game specified';
+      }
+    };
   </script>
-  <!-- Add this right before the closing </body> tag -->
-<div class="ad-popup" id="adPopup">
-  <button class="close-btn" onclick="closeAd()">X</button>
-  <div class="ad-content">
-    <!-- AdForGames.com code begin -->
-    <script>
-      var afg = {};
-      afg.u = 6289;
-      afg.s = 7;
-      document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
-    </script>
-    <!-- AdForGames.com code end -->
-  </div>
-</div>
-
-<script>
-  function showAd() {
-    document.getElementById("adPopup").style.display = "block";
-  }
-
-  function closeAd() {
-    document.getElementById("adPopup").style.display = "none";
-  }
-
-  // Show the popup after 3 seconds
-  window.onload = function () {
-    setTimeout(showAd, 3000);
-  };
-</script>
-
-<style>
-  .ad-popup {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 320px;
-    background: #1c1c1c;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    display: none;
-    z-index: 9999;
-  }
-
-  .ad-popup .close-btn {
-    background: #ff4444;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    float: right;
-    font-weight: bold;
-  }
-
-  .ad-popup .ad-content {
-    margin-top: 10px;
-  }
-</style>
-
 </body>
 </html>
-
-
-
