@@ -6,8 +6,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>DuckHTML</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-                <meta name="monetag" content="cda92f570e23ae85854fa82a2d81052e">
-<script src="https://kulroakonsu.net/88/tag.min.js" data-zone="142750" async data-cfasync="false"></script>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
 
 
@@ -744,4 +742,69 @@
 
         </html>
         </script>
+
+                    
+<div class="ad-popup" id="adPopup">
+  <button class="close-btn" onclick="closeAd()">X</button>
+  <div class="ad-content">
+    <!-- AdForGames.com code begin -->
+    <script>
+      var afg = {};
+      afg.u = 6289;
+      afg.s = 7;
+      document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+    </script>
+    <!-- AdForGames.com code end -->
+  </div>
+</div>
+
+<script>
+  function showAd() {
+    document.getElementById("adPopup").style.display = "block";
+  }
+
+  function closeAd() {
+    document.getElementById("adPopup").style.display = "none";
+  }
+
+  // Show the popup after 3 seconds
+  window.onload = function () {
+    setTimeout(showAd, 3000);
+  };
+</script>
+
+  <style>
+    .ad-popup {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 320px;
+      background: #1c1c1c;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      display: none;
+      z-index: 9999;
+    }
+
+    .ad-popup .close-btn {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      float: right;
+      font-weight: bold;
+    }
+
+    .ad-popup .ad-content {
+      margin-top: 10px;
+    }
+  </style>
+
+
+
+</script>
 
