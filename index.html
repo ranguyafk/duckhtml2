@@ -518,7 +518,7 @@
     <br><br>
   </div>
     </div>
-  </div>
+  </div><!-- Ad Overlay -->
 <div id="adOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
      background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center;
      z-index: 9999;">
@@ -530,17 +530,24 @@
     
     <!-- Ad Content -->
     <div id="adContent" style="text-align: center;">
-      <!-- AdForGames.com code begin -->
-      <script>
-        var afg = {};
-        afg.u = 6289;
-        afg.s = 7;
-        document.write("<scr"+"ipt src='//js.adforgames.com/cd.js'></scr"+"ipt>");
-      </script>
-      <!-- AdForGames.com code end -->
+      Loading ad...
     </div>
   </div>
 </div>
+
+<script>
+  // Dynamically load AdForGames script safely
+  const script = document.createElement('script');
+  script.src = 'https://js.adforgames.com/cd.js';
+  script.onload = () => console.log("Ad script loaded");
+  script.onerror = () => document.getElementById('adContent').innerText = 'Ad failed to load.';
+  document.getElementById('adContent').innerHTML = ''; // Clear "Loading ad..."
+  document.getElementById('adContent').appendChild(script);
+
+  // Define the ad config globally for the script
+  window.afg = { u: 6289, s: 7 };
+</script>
+
 
 
   <a href="https://discord.gg/YrRk9PvVwh"> 
