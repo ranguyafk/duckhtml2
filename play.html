@@ -161,8 +161,8 @@
       const { game, title } = getQueryParams();
       
       if (game && title) {
-        // Set iframe src
-        document.getElementById('gameIframe').src = game;
+        // Set iframe src with /gf/ prepended to the game name
+        document.getElementById('gameIframe').src = '/gf/' + game;
         
         // Update the h1 and browser title
         document.getElementById('gameTitle').textContent = title;
