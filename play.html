@@ -150,6 +150,34 @@
       <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon" />
     </button>
   </div>
+  <script>
+  // Toggle fullscreen for the iframe
+  function toggleFullscreen() {
+    const iframe = document.getElementById('gameIframe');
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+      iframe.mozRequestFullScreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  }
+
+  // Refresh the iframe source
+  function refreshIframe() {
+    const iframe = document.getElementById('gameIframe');
+    iframe.src = iframe.src;
+  }
+
+  // Open the iframe source in a new tab
+  function openInBlank() {
+    const iframe = document.getElementById('gameIframe');
+    window.open(iframe.src, '_blank');
+  }
+</script>
+
 
   <script>
     // Function to get the query parameters
