@@ -326,3 +326,299 @@
   }
 
 </script>
+
+<style>
+
+
+/* Settings Page Styling */
+.settings-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.settings-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.settings-header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  color: #ffd700;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.settings-header p {
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Settings Grid Layout */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Settings Card */
+.settings-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border: 2px solid #444;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.2);
+  border-color: #ffd700;
+}
+
+.card-header {
+  margin-bottom: 25px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 15px;
+}
+
+.card-header h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin: 0 0 8px 0;
+}
+
+.card-header p {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #aaa;
+  margin: 0;
+}
+
+/* Setting Groups */
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.setting-group label {
+  display: block;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.setting-group input,
+.setting-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #555;
+  border-radius: 10px;
+  background: #333;
+  color: #eee;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.setting-group input:focus,
+.setting-group select:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.setting-group small {
+  display: block;
+  font-family: 'VT323', monospace;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Favicon Grid */
+.favicon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.favicon-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  background: #333;
+  border: 2px solid #555;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.favicon-option:hover {
+  border-color: #ffd700;
+  background: #444;
+  transform: scale(1.05);
+}
+
+.favicon-option img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.favicon-option span {
+  font-family: 'VT323', monospace;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Warning Box */
+.warning-box {
+  background: linear-gradient(135deg, #3a2a00 0%, #4a3500 100%);
+  border: 2px solid #ffa500;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  font-family: 'VT323', monospace;
+  color: #ffd700;
+  font-size: 0.95rem;
+}
+
+/* Action Section */
+.action-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.action-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #121212;
+}
+
+.action-button.primary:hover {
+  background: linear-gradient(135deg, #ffed4e 0%, #fff700 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.action-button.secondary {
+  background: linear-gradient(135deg, #555 0%, #666 100%);
+  color: #eee;
+}
+
+.action-button.secondary:hover {
+  background: linear-gradient(135deg, #666 0%, #777 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Status Message */
+.status-message {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.status-message.success {
+  background: linear-gradient(135deg, #1e4a3a 0%, #2d6e50 100%);
+  border: 2px solid #4CAF50;
+  color: #90EE90;
+}
+
+.status-message.error {
+  background: linear-gradient(135deg, #4a1e1e 0%, #6e2d2d 100%);
+  border: 2px solid #f44336;
+  color: #ffaaaa;
+}
+
+.status-message.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 15px;
+  }
+  
+  .settings-header h1 {
+    font-size: 2rem;
+  }
+  
+  .settings-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .settings-card {
+    padding: 20px;
+  }
+  
+  .action-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .favicon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1rem;
+  }
+  
+  .favicon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
