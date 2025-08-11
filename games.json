@@ -18,35 +18,35 @@
     "description": "Fight over a roof, make it to the end!",
     "tags": ["Action", "Arcade", "Shooter"],
     "image": "https://imgs.crazygames.com/rooftop-snipers_1x1/20250108040441/rooftop-snipers_1x1-cover?format=auto&quality=100&metadata=none&width=1200",
-    "url": "play?game=rooftop-snipers/index.html&title=RoofTop Snipers"
+    "url": "play.html?game=rooftop-snipers/index.html&title=RoofTop Snipers"
   },
   {
     "title": "The Final Earth",
     "description": "Build up your earth in a 2d world",
     "tags": ["Puzzle", "Arcade", "Logic"],
     "image": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png",
-    "url": "play?game=the-final-earth/index.html&title=The Final Earth"
+    "url": "play.html?game=the-final-earth/index.html&title=The Final Earth"
   },
   {
     "title": "Worldest Hardest Game",
     "description": "Hardest game ever, you CANT beat it",
     "tags": ["Puzzle", "Classic", "Logic"],
     "image": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png",
-    "url": "play?game=worlds-hardest-game/index.html&title=Worlds Hardest Game"
+    "url": "play.html?game=worlds-hardest-game/index.html&title=Worlds Hardest Game"
   },
   {
     "title": "Getaway Shootout",
     "description": "Get to the helie, no other suriviors",
     "tags": ["Arcade", "Action", "Logic"],
     "image": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/934bde36-a4a1-43d0-8b35-30f15feddbb4.png",
-    "url": "play?game=getaway-shootout/index.html&title=Getaway Shootout"
+    "url": "play.html?game=getaway-shootout/index.html&title=Getaway Shootout"
   },
   {
     "title": "Worldest Hardest Game 2",
     "description": "Hardest game ever, you CANT beat it 2",
     "tags": ["Puzzle", "Classic", "Logic"],
     "image": "https://images.launchbox-app.com/bccd019f-1ea9-47d7-b1ad-2f191e079ab4.jpg",
-    "url": "play?game=worlds-hardest-game-2/index.html&title=Worlds Hardes Game 2"
+    "url": "play.html?game=worlds-hardest-game-2/index.html&title=Worlds Hardes Game 2"
   },
     {
       "title": "Bunny Island",
@@ -403,7 +403,7 @@
     "description": "Retro game where you play as mario",
     "tags": ["Classic", "Arcade", "Simulation"],
     "image": "https://assets1.ignimgs.com/2019/05/31/mario-64---button-1559263987447.jpg",
-    "url": "play?game=sm64/index.html&title=Super Mario 64"
+    "url": "play.html?game=sm64/index.html&title=Super Mario 64"
   },
     {
       "title": "Boxing Random",
@@ -559,35 +559,35 @@
     "description": "Make it through the night without dieing",
     "tags": ["Action", "Arcade", "Fast-paced"],
     "image": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18362_00/1/i_cd6a177c374f229f9cd8e1164a78d49f78af97820747d480daf8cdd3e965c248/i/icon0.png",
-    "url": "play?game=fanf1.html&title=Fnaf 1"
+    "url": "play.html?game=fanf1.html&title=Fnaf 1"
   },
   {
     "title": "Fanf 2",
     "description": "Make it through the night without dieing 2",
     "tags": ["Action", "Arcade", "Fast-paced"],
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm7I8jEYRPCDyuroF2BDvUsVQYZlAEwArKx3lBYzUhug9mOvwjve3rb6cnX2YuftieEQQ&usqp=CAU",
-    "url": "play?game=fanf2.html&title=Fanf 2"
+    "url": "play.html?game=fanf2.html&title=Fanf 2"
   },
   {
     "title": "Fanf 3",
     "description": "Make it through the night without dieing 3",
     "tags": ["Action", "Arcade", "Fast-paced"],
     "image": "https://preview.redd.it/why-dont-the-fnaf-3-and-ucn-icons-have-freddy-v0-18oi1nnjcl0c1.jpg?width=512&format=pjpg&auto=webp&s=d424facbb6983bb0e3667d93290c802b18e7365c",
-    "url": "play?game=fanf3.html&title=Fnaf 3"
+    "url": "play.html?game=fanf3.html&title=Fnaf 3"
   },
   {
     "title": "Fanf 4",
     "description": "Make it through the night without dieing 4",
     "tags": ["Action", "Arcade", "Fast-paced"],
     "image": "https://images.sftcdn.net/images/t_app-icon-m/p/d7beb96e-6286-11e8-b0e1-0242ac120007/3323414895/fnaf-4-demo-logo",
-    "url": "play?game=fanf4.html&title=Fnaf 4"
+    "url": "play.html?game=fanf4.html&title=Fnaf 4"
   },
   {
     "title": "Fanf Custom Night",
     "description": "Make your own game of fanf, goodluck",
     "tags": ["Action", "Arcade", "Fast-paced"],
     "image": "https://image.api.playstation.com/vulcan/img/rnd/202104/2723/psrxE7pFEwTJqOVLuNqwm00N.png",
-    "url": "play?game=fanfcustom.html&title=Fnaf Custom Night"
+    "url": "play.html?game=fanfcustom.html&title=Fnaf Custom Night"
   },
     {
       "title": "Vex 4",
