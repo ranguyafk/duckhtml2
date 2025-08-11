@@ -2,44 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="DuckHTML Unblocked Games, Free to play" />
   <title>DuckHTML</title>
-  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" />
+  <link rel="icon" href="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-8X677NPBRV');
-  </script>
-<script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-(function(){var z=window,a="fb972fba699a8b4a493d5c656aa0f735",p=[["siteId",19+164-685+5195316],["minBid",0.001],["popundersPerIP","500,500"],["delayBetween",0],["default",false],["defaultPerDay",100000],["topmostLayer","auto"]],w=["d3d3LnhhZHNtYXJ0LmNvbS9yL2Fqc3RhdC5taW4uanM=","ZDExZW5xMnJ5bXkweWwuY2xvdWRmcm9udC5uZXQvVy9TeEkvaHBhcnRpY2xlLm1pbi5jc3M="],x=-1,t,y,k=function(){clearTimeout(y);x++;if(w[x]&&!(1771641213000<(new Date).getTime()&&1<x)){t=z.document.createElement("script");t.type="text/javascript";t.async=!0;var l=z.document.getElementsByTagName("script")[0];t.src="https://"+atob(w[x]);t.crossOrigin="anonymous";t.onerror=k;t.onload=function(){clearTimeout(y);z[a.slice(0,16)+a.slice(0,16)]||k()};y=setTimeout(k,5E3);l.parentNode.insertBefore(t,l)}};if(!z[a]){try{Object.freeze(z[a]=p)}catch(e){}k()}})();
-/*]]>/* */
-</script>
-
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
-      overflow: hidden;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
     }
     nav {
       width: 100%;
       position: fixed;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0,0,0,0.75);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 30px;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     nav .logo {
       display: flex;
@@ -53,80 +43,261 @@
       font-size: 24px;
       color: white;
       font-weight: bold;
+      user-select: none;
     }
     nav a {
       margin: 0 15px;
       text-decoration: none;
       color: white;
-      font-family: 'Press Start 2P', sans-serif;
+      font-family: 'Press Start 2P', monospace;
       font-weight: bold;
       font-size: 16px;
       transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
       border: 2px solid transparent;
       border-radius: 8px;
       padding: 8px 16px;
+      user-select: none;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       color: #ffd700;
       border-color: white;
+      outline: none;
     }
-    h1 {
-      font-size: 1.8rem;
-      color: #fff;
-      position: absolute;
-      top: 80px;
-      right: 50px;
-      font-family: 'Press Start 2P', sans-serif;
+    main {
+      margin-top: 80px;
+      display: flex;
+      gap: 30px;
+      padding: 20px 30px 40px 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .game-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 350px;
+      background-color: #1f1f1f;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px #444;
+      user-select: none;
+    }
+    .game-info img.icon {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+      max-height: 200px;
+      background: #222;
+      box-shadow: 0 0 10px #555 inset;
+    }
+    .game-info h1 {
+      font-family: 'Press Start 2P', cursive, monospace;
+      font-size: 1.2rem;
+      margin: 0;
+      color: #ffd700;
+      text-align: center;
+    }
+    .desc {
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+      line-height: 1.3;
+      color: #ddd;
+      max-height: 100px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+    .desc::-webkit-scrollbar {
+      width: 6px;
+    }
+    .desc::-webkit-scrollbar-thumb {
+      background: #ffd700aa;
+      border-radius: 4px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .tag {
+      background: #ffd700;
+      color: #121212;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      user-select: none;
+      box-shadow: 0 0 3px #bb9a00;
+      cursor: default;
     }
     #iframe-container {
-      position: absolute;
-      top: 95px;
-      left: 10px;
-      right: 20px;
-      bottom: 150px;
+      flex-grow: 1;
+      max-width: 72vw;
+      min-width: 320px;
+      height: 80vh;
+      background: #000;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #222;
+      overflow: hidden;
+      position: relative;
       display: flex;
-      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
     }
-    iframe {
-      width: 72vw;
-      height: calc(90vh - 100px);
+    #gameIframe {
+      width: 100%;
+      height: 100%;
       border: none;
+      border-radius: 12px;
+      background: #000;
     }
     .button-container {
-      position: absolute;
-      top: calc(120px + 80px);
-      right: 80px;
       display: flex;
-      gap: 10px;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: nowrap; /* prevent wrapping */
+      margin-top: 10px;
+      user-select: none;
     }
-    button {
+
+    .button-container button {
       display: flex;
       align-items: center;
+      justify-content: center;
       font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
-      padding: 20px 30px;
+      padding: 14px 22px;
       border: none;
       background-color: #ffd700;
       transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+      box-shadow: 0 0 10px #ffda0055;
     }
-    button img {
-      width: 30px;
+    .button-container button img {
+      width: 28px;
       height: auto;
+      pointer-events: none;
+      user-select: none;
     }
-    button:active {
+    .button-container button:active {
       background-color: #ff6347;
       transform: scale(0.95);
+    }
+    .recommendations-section {
+      max-width: 1000px;
+      margin: 0 auto 50px auto;
+      padding: 0 20px;
+    }
+    .recommendations-section h2 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .recommendations-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+    }
+
+    .recommendation-item {
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 10px #444;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+      color: #eee;
+      text-decoration: none;
+    }
+    .recommendation-item:hover,
+    .recommendation-item:focus {
+      box-shadow: 0 0 20px #ffd700;
+      outline: none;
+    }
+    .recommendation-item img {
+      max-width: 100%;
+      max-height: 140px;
+      border-radius: 10px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      background: #111;
+    }
+    .rec-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.85rem;
+      color: #ffd700;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rec-desc {
+      font-family: 'VT323', monospace;
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.3;
+      max-height: 3.9em;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .rec-tag {
+      background: #ffd700;
+      color: #121212;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 10px;
+      box-shadow: 0 0 3px #bb9a00;
+      user-select: none;
+      cursor: default;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 15px 30px 15px;
+      }
+      .game-info {
+        max-width: 100%;
+      }
+      #iframe-container {
+        max-width: 100vw;
+        height: 60vh;
+        margin-bottom: 30px;
+      }
+      .recommendations-list {
+        grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      }
+      .recommendation-item {
+        padding: 12px;
+      }
+      .recommendation-item img {
+        max-height: 110px;
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">
+    <div class="logo" aria-label="DuckHTML logo and brand name">
       <img src="https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png" alt="DuckHTML Logo" />
       <span>DuckHTML</span>
     </div>
-    <div>
+    <div role="navigation" aria-label="Main menu">
       <a href="/index.html">Home</a>
       <a href="/games.html">Games</a>
       <a href="/settings.html">Settings</a>
@@ -134,73 +305,202 @@
     </div>
   </nav>
 
-  <h1 id="gameTitle">Game Loading...</h1>
-  <div id="iframe-container">
-    <iframe id="gameIframe" src="" width="72vw" height="calc(90vh - 100px)" border="none"></iframe>
-  </div>
+  <main>
+    <section class="game-info" aria-labelledby="game-title">
+      <img class="icon" id="gameIcon" src="" alt="Game Icon" />
+      <h1 id="game-title">Loading...</h1>
+      <div class="desc" id="gameDescription" tabindex="0">Loading game description...</div>
+      <div class="tags" id="gameTags" aria-label="Game tags"></div>
 
-  <div class="button-container">
-    <button onclick="toggleFullscreen()">
-      <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen Icon" />
-    </button>
-    <button onclick="refreshIframe()">
-      <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh Icon" />
-    </button>
-    <button onclick="openInBlank()">
-      <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open Blank Icon" />
-    </button>
-  </div>
+      <div class="button-container" role="group" aria-label="Game controls">
+        <button onclick="toggleFullscreen()" aria-label="Toggle fullscreen">
+          <img src="https://cdn0.iconfinder.com/data/icons/audio-and-video-outline-1/24/audio_-31-512.png" alt="Fullscreen" />
+        </button>
+        <button onclick="refreshIframe()" aria-label="Refresh game">
+          <img src="https://static.thenounproject.com/png/1810370-200.png" alt="Refresh" />
+        </button>
+        <button onclick="openInBlank()" aria-label="Open game in new tab">
+          <img src="https://static.thenounproject.com/png/1483687-200.png" alt="Open in new tab" />
+        </button>
+      </div>
+    </section>
+
+    <section id="iframe-container" aria-label="Game display area">
+      <iframe id="gameIframe" src="" title="Game iframe"></iframe>
+    </section>
+  </main>
+
+  <section class="recommendations-section" aria-label="Recommended games">
+    <h2>Recommended Games</h2>
+    <div class="recommendations-list" id="recommendationsList"></div>
+  </section>
+
   <script>
-  // Toggle fullscreen for the iframe
-  function toggleFullscreen() {
-    const iframe = document.getElementById('gameIframe');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
+    function toggleFullscreen() {
+      const iframe = document.getElementById('gameIframe');
+      if (iframe.requestFullscreen) iframe.requestFullscreen();
+      else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+      else if (iframe.mozRequestFullScreen) iframe.mozRequestFullScreen();
+      else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
     }
-  }
 
-  // Refresh the iframe source
-  function refreshIframe() {
-    const iframe = document.getElementById('gameIframe');
-    iframe.src = iframe.src;
-  }
+    function refreshIframe() {
+      const iframe = document.getElementById('gameIframe');
+      iframe.src = iframe.src;
+    }
 
-  // Open the iframe source in a new tab
-  function openInBlank() {
-    const iframe = document.getElementById('gameIframe');
-    window.open(iframe.src, '_blank');
-  }
-</script>
+    function openInBlank() {
+      const iframe = document.getElementById('gameIframe');
+      if (iframe.src) window.open(iframe.src, '_blank');
+    }
 
-
-  <script>
-    // Function to get the query parameters
     function getQueryParams() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const game = urlParams.get('game');
-      const title = urlParams.get('title');
-      return { game, title };
+      const params = new URLSearchParams(window.location.search);
+      return {
+        game: params.get("game"),
+        title: params.get("title")
+      };
     }
 
-    // Set the iframe src and title based on the query parameters
-    document.addEventListener('DOMContentLoaded', function() {
+    async function loadGameData() {
       const { game, title } = getQueryParams();
-      
-      if (game && title) {
-        // Set iframe src with /gf/ prepended to the game name
-        document.getElementById('gameIframe').src = '/gf/' + game;
-        
-        // Update the h1 and browser title
-        document.getElementById('gameTitle').textContent = title;
-        document.title = `${title} | DuckHTML`;
+
+      const gameIconEl = document.getElementById("gameIcon");
+      const gameTitleEl = document.getElementById("game-title");
+      const gameDescEl = document.getElementById("gameDescription");
+      const gameTagsEl = document.getElementById("gameTags");
+      const iframe = document.getElementById("gameIframe");
+      const recommendationsList = document.getElementById("recommendationsList");
+
+      try {
+        const res = await fetch("games.json");
+        const gamesList = await res.json();
+
+        // Find the game data by matching 'game' param with 'url' param in games.json
+        let foundGameData = null;
+        for (const g of gamesList) {
+          if (typeof g.url === 'string') {
+            try {
+              const urlParams = new URLSearchParams(g.url.split('?')[1]);
+              if (urlParams.get('game') === game) {
+                foundGameData = g;
+                break;
+              }
+            } catch {}
+          }
+        }
+
+        if (foundGameData) {
+          gameIconEl.src = foundGameData.image || "";
+          gameIconEl.alt = foundGameData.title + " Icon";
+          gameTitleEl.textContent = foundGameData.title || title || "Unknown Game";
+          gameDescEl.textContent = foundGameData.description || "No description available.";
+          gameTagsEl.innerHTML = "";
+          if (Array.isArray(foundGameData.tags)) {
+            foundGameData.tags.forEach(tag => {
+              const span = document.createElement("span");
+              span.className = "tag";
+              span.textContent = tag;
+              gameTagsEl.appendChild(span);
+            });
+          }
+          // Set iframe src
+          iframe.src = "/gf/" + game;
+          document.title = `${foundGameData.title} | DuckHTML`;
+        } else {
+          // If no match, fallback to title and show no description
+          gameIconEl.src = "";
+          gameIconEl.alt = "No icon available";
+          gameTitleEl.textContent = title || "Game not found";
+          gameDescEl.textContent = "Description not available.";
+          gameTagsEl.innerHTML = "";
+          iframe.src = "";
+          document.title = "DuckHTML";
+        }
+
+        // Now show up to 4 recommended games excluding the current one
+        recommendationsList.innerHTML = "";
+
+        const recs = gamesList.filter(g => g.title !== (foundGameData?.title || ""));
+
+        // Simple recommendation: games sharing at least one tag with current game
+        let recommended = [];
+
+        if (foundGameData?.tags?.length) {
+          recommended = recs.filter(g => g.tags && g.tags.some(tag => foundGameData.tags.includes(tag)));
+        }
+
+        if (recommended.length < 4) {
+          // fill with other games to make at least 4 recommendations
+          const others = recs.filter(g => !recommended.includes(g));
+          recommended = recommended.concat(others).slice(0,4);
+        } else {
+          recommended = recommended.slice(0,4);
+        }
+
+        if (recommended.length === 0) {
+          recommendationsList.innerHTML = "<p style='color:#aaa; text-align:center;'>No recommendations available.</p>";
+        } else {
+          recommended.forEach(rec => {
+            const a = document.createElement("a");
+            a.className = "recommendation-item";
+            if (rec.url && rec.title) {
+              try {
+                const recUrlParams = new URLSearchParams(rec.url.split('?')[1]);
+                const recGame = recUrlParams.get('game') || "";
+                a.href = `play.html?game=${encodeURIComponent(recGame)}&title=${encodeURIComponent(rec.title)}`;
+              } catch {
+                a.href = "#";
+              }
+            } else {
+              a.href = "#";
+            }
+
+            const img = document.createElement("img");
+            img.src = rec.image || "";
+            img.alt = rec.title + " Icon";
+            a.appendChild(img);
+
+            const spanTitle = document.createElement("span");
+            spanTitle.className = "rec-title";
+            spanTitle.textContent = rec.title || "";
+            a.appendChild(spanTitle);
+
+            const spanDesc = document.createElement("div");
+            spanDesc.className = "rec-desc";
+            spanDesc.textContent = rec.description || "No description available.";
+            a.appendChild(spanDesc);
+
+            const tagContainer = document.createElement("div");
+            tagContainer.className = "rec-tags";
+            if (Array.isArray(rec.tags)) {
+              rec.tags.forEach(tag => {
+                const tspan = document.createElement("span");
+                tspan.className = "rec-tag";
+                tspan.textContent = tag;
+                tagContainer.appendChild(tspan);
+              });
+            }
+            a.appendChild(tagContainer);
+
+            recommendationsList.appendChild(a);
+          });
+        }
+      } catch (err) {
+        console.error("Error loading games.json or processing data:", err);
+        gameTitleEl.textContent = title || "Error loading game";
+        gameDescEl.textContent = "Failed to load game info.";
+        gameIconEl.src = "";
+        gameIconEl.alt = "No icon";
+        gameTagsEl.innerHTML = "";
+        iframe.src = "";
+        recommendationsList.innerHTML = "";
+        document.title = "DuckHTML";
       }
-    });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadGameData);
   </script>
+  <script src="settings.js"></script>
 </body>
 </html>
