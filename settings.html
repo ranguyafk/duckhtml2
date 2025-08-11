@@ -473,6 +473,35 @@
       font-size: 1.5rem;
     }
 
+    
+
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #666;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.9rem;
+    font-family: 'VT323', monospace;
+    border-top: 1px solid #222;
+    margin-top: auto;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 1024px) {
+    #gameContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav div:last-child {
+      margin-top: 10px;
+    }
+
     .card-header h2 {
       font-size: 1rem;
     }
