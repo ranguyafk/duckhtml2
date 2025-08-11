@@ -67,266 +67,6 @@
 </body>
 </html>
 
-<script>
-
-
-  // Load saved settings on page load
-  document.addEventListener('DOMContentLoaded', function() {
-    loadSavedSettings();
-    setupPanicKey();
-    applyTheme(localStorage.getItem('selectedTheme') || '#121212');
-  });
-
-  // Load saved settings from localStorage
-  function loadSavedSettings() {
-    const savedTitle = localStorage.getItem('pageTitle');
-    const savedFavicon = localStorage.getItem('faviconUrl');
-    const savedTheme = localStorage.getItem('selectedTheme');
-    const savedPanicKey = localStorage.getItem('panicKey');
-    const savedPanicUrl = localStorage.getItem('panicUrl');
-
-    // Update title on all pages
-    if (savedTitle) {
-      document.title = savedTitle;
-    }
-
-    // Update favicon on all pages
-    if (savedFavicon) {
-      updateFavicon(savedFavicon);
-    }
-
-    // Only update form elements if they exist (on settings page)
-    const pageTitleInput = document.getElementById('pageTitle');
-    if (pageTitleInput && savedTitle) {
-      pageTitleInput.value = savedTitle;
-    }
-
-    const faviconInput = document.getElementById('faviconUrl');
-    if (faviconInput && savedFavicon) {
-      faviconInput.value = savedFavicon;
-    }
-
-    const colorSelect = document.getElementById('colorSelect');
-    if (colorSelect && savedTheme) {
-      colorSelect.value = savedTheme;
-    }
-
-    const panicKeyInput = document.getElementById('panicKey');
-    if (panicKeyInput && savedPanicKey) {
-      panicKeyInput.value = savedPanicKey;
-    }
-
-    const panicUrlInput = document.getElementById('panicUrl');
-    if (panicUrlInput && savedPanicUrl) {
-      panicUrlInput.value = savedPanicUrl;
-    }
-  }
-
-  // Apply changes with user feedback
-  function applyChanges() {
-    try {
-      const newTitle = document.getElementById('pageTitle').value || 'DuckHTML';
-      const newFavicon = document.getElementById('faviconUrl').value;
-      const selectedTheme = document.getElementById('colorSelect').value;
-      const panicKey = document.getElementById('panicKey').value.toLowerCase();
-      const panicUrl = document.getElementById('panicUrl').value;
-
-      // Save to localStorage
-      localStorage.setItem('pageTitle', newTitle);
-      localStorage.setItem('faviconUrl', newFavicon);
-      localStorage.setItem('selectedTheme', selectedTheme);
-      localStorage.setItem('panicKey', panicKey);
-      localStorage.setItem('panicUrl', panicUrl);
-
-      // Apply changes immediately
-      document.title = newTitle;
-      if (newFavicon) {
-        updateFavicon(newFavicon);
-      }
-      applyTheme(selectedTheme);
-
-      // Restart panic key listener
-      setupPanicKey();
-
-      // Show success message
-      showStatusMessage('✅ Settings saved successfully!', 'success');
-    } catch (error) {
-      showStatusMessage('❌ Error saving settings. Please try again.', 'error');
-      console.error('Error saving settings:', error);
-    }
-  }
-
-  // Reset settings to default
-  function resetSettings() {
-    if (confirm('Are you sure you want to reset all settings to default? This cannot be undone.')) {
-      localStorage.removeItem('pageTitle');
-      localStorage.removeItem('faviconUrl');
-      localStorage.removeItem('selectedTheme');
-      localStorage.removeItem('panicKey');
-      localStorage.removeItem('panicUrl');
-
-      // Reset form fields
-      document.getElementById('pageTitle').value = '';
-      document.getElementById('faviconUrl').value = '';
-      document.getElementById('colorSelect').value = '#121212';
-      document.getElementById('panicKey').value = '';
-      document.getElementById('panicUrl').value = '';
-
-      // Apply defaults
-      document.title = 'Settings | DuckHTML';
-      updateFavicon('https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png');
-      applyTheme('#121212');
-
-      showStatusMessage('🔄 Settings reset to default values', 'success');
-    }
-  }
-
-  // Show status message to user
-  function showStatusMessage(message, type) {
-    const statusEl = document.getElementById('statusMessage');
-    if (statusEl) {
-      statusEl.textContent = message;
-      statusEl.className = `status-message ${type}`;
-
-      // Auto-hide after 3 seconds
-      setTimeout(() => {
-        statusEl.className = 'status-message hidden';
-      }, 3000);
-    }
-  }
-
-  // Set up panic key functionality
-  function setupPanicKey() {
-    // Remove existing listeners
-    document.removeEventListener('keydown', panicKeyHandler);
-
-    const panicKey = localStorage.getItem('panicKey');
-    const panicUrl = localStorage.getItem('panicUrl');
-
-    if (panicKey && panicUrl) {
-      document.addEventListener('keydown', panicKeyHandler);
-    }
-  }
-
-  // Panic key handler
-  function panicKeyHandler(event) {
-    const panicKey = localStorage.getItem('panicKey');
-    const panicUrl = localStorage.getItem('panicUrl');
-
-    if (event.key.toLowerCase() === panicKey && panicUrl) {
-      window.location.href = panicUrl;
-    }
-  }
-
-  // Update favicon
-  function updateFavicon(faviconUrl) {
-    if (!faviconUrl) return;
-
-    let link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.head.appendChild(link);
-    }
-    link.href = faviconUrl;
-  }
-
-  // Handle favicon selection from grid
-  function selectFavicon(url) {
-    document.getElementById('faviconUrl').value = url;
-    updateFavicon(url);
-    showStatusMessage('🎯 Favicon updated! Don\'t forget to save changes.', 'success');
-  }
-
-  // Apply theme based on selected option
-  function applyTheme(theme) {
-    localStorage.setItem('selectedTheme', theme);
-
-    const themes = {
-      '#121212': {
-        body: '#121212',
-        nav: 'rgba(0, 0, 0, 0.85)',
-        text: '#eee',
-        border: '#444',
-        accent: '#ffd700'
-      },
-      '#ffffff': {
-        body: '#ffffff',
-        nav: 'rgba(255, 255, 255, 0.95)',
-        text: '#333',
-        border: '#ddd',
-        accent: '#1976d2'
-      },
-      '#2c1810': {
-        body: '#2c1810',
-        nav: 'rgba(44, 24, 16, 0.85)',
-        text: '#f4e4bc',
-        border: '#8b4513',
-        accent: '#daa520'
-      },
-      '#0f1419': {
-        body: '#0f1419',
-        nav: 'rgba(15, 20, 25, 0.85)',
-        text: '#c9d1d9',
-        border: '#30363d',
-        accent: '#58a6ff'
-      },
-      '#1a1a2e': {
-        body: '#1a1a2e',
-        nav: 'rgba(26, 26, 46, 0.85)',
-        text: '#e94560',
-        border: '#16213e',
-        accent: '#0f3460'
-      }
-    };
-
-    const selectedTheme = themes[theme] || themes['#121212'];
-    setThemeStyles(selectedTheme.body, selectedTheme.nav, selectedTheme.text, selectedTheme.border, selectedTheme.accent);
-  }
-
-  // Handle theme change
-  function changeBackgroundColor() {
-    const selectedTheme = document.getElementById('colorSelect').value;
-    applyTheme(selectedTheme);
-  }
-
-  // Set theme styles throughout the page
-  function setThemeStyles(bodyColor, navColor, textColor, borderColor, accentColor) {
-    const body = document.body;
-    const nav = document.querySelector('nav');
-
-    // Apply basic theme
-    body.style.backgroundColor = bodyColor;
-    body.style.color = textColor;
-
-    if (nav) {
-      nav.style.backgroundColor = navColor;
-    }
-
-    // Update nav links
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.style.color = textColor;
-      link.style.borderColor = borderColor;
-    });
-
-    // Update headings
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    headings.forEach(heading => {
-      heading.style.color = accentColor;
-    });
-
-    // Update form elements
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-      input.style.backgroundColor = bodyColor === '#ffffff' ? '#f8f9fa' : '#333';
-      input.style.color = textColor;
-      input.style.borderColor = borderColor;
-    });
-  }
-
-</script>
-
 <style>
 
 
@@ -622,3 +362,267 @@
   }
 }
 </style>
+
+
+
+<script>
+
+
+  // Load saved settings on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    loadSavedSettings();
+    setupPanicKey();
+    applyTheme(localStorage.getItem('selectedTheme') || '#121212');
+  });
+
+  // Load saved settings from localStorage
+  function loadSavedSettings() {
+    const savedTitle = localStorage.getItem('pageTitle');
+    const savedFavicon = localStorage.getItem('faviconUrl');
+    const savedTheme = localStorage.getItem('selectedTheme');
+    const savedPanicKey = localStorage.getItem('panicKey');
+    const savedPanicUrl = localStorage.getItem('panicUrl');
+
+    // Update title on all pages
+    if (savedTitle) {
+      document.title = savedTitle;
+    }
+
+    // Update favicon on all pages
+    if (savedFavicon) {
+      updateFavicon(savedFavicon);
+    }
+
+    // Only update form elements if they exist (on settings page)
+    const pageTitleInput = document.getElementById('pageTitle');
+    if (pageTitleInput && savedTitle) {
+      pageTitleInput.value = savedTitle;
+    }
+
+    const faviconInput = document.getElementById('faviconUrl');
+    if (faviconInput && savedFavicon) {
+      faviconInput.value = savedFavicon;
+    }
+
+    const colorSelect = document.getElementById('colorSelect');
+    if (colorSelect && savedTheme) {
+      colorSelect.value = savedTheme;
+    }
+
+    const panicKeyInput = document.getElementById('panicKey');
+    if (panicKeyInput && savedPanicKey) {
+      panicKeyInput.value = savedPanicKey;
+    }
+
+    const panicUrlInput = document.getElementById('panicUrl');
+    if (panicUrlInput && savedPanicUrl) {
+      panicUrlInput.value = savedPanicUrl;
+    }
+  }
+
+  // Apply changes with user feedback
+  function applyChanges() {
+    try {
+      const newTitle = document.getElementById('pageTitle').value || 'DuckHTML';
+      const newFavicon = document.getElementById('faviconUrl').value;
+      const selectedTheme = document.getElementById('colorSelect').value;
+      const panicKey = document.getElementById('panicKey').value.toLowerCase();
+      const panicUrl = document.getElementById('panicUrl').value;
+
+      // Save to localStorage
+      localStorage.setItem('pageTitle', newTitle);
+      localStorage.setItem('faviconUrl', newFavicon);
+      localStorage.setItem('selectedTheme', selectedTheme);
+      localStorage.setItem('panicKey', panicKey);
+      localStorage.setItem('panicUrl', panicUrl);
+
+      // Apply changes immediately
+      document.title = newTitle;
+      if (newFavicon) {
+        updateFavicon(newFavicon);
+      }
+      applyTheme(selectedTheme);
+
+      // Restart panic key listener
+      setupPanicKey();
+
+      // Show success message
+      showStatusMessage('✅ Settings saved successfully!', 'success');
+    } catch (error) {
+      showStatusMessage('❌ Error saving settings. Please try again.', 'error');
+      console.error('Error saving settings:', error);
+    }
+  }
+
+  // Reset settings to default
+  function resetSettings() {
+    if (confirm('Are you sure you want to reset all settings to default? This cannot be undone.')) {
+      localStorage.removeItem('pageTitle');
+      localStorage.removeItem('faviconUrl');
+      localStorage.removeItem('selectedTheme');
+      localStorage.removeItem('panicKey');
+      localStorage.removeItem('panicUrl');
+
+      // Reset form fields
+      document.getElementById('pageTitle').value = '';
+      document.getElementById('faviconUrl').value = '';
+      document.getElementById('colorSelect').value = '#121212';
+      document.getElementById('panicKey').value = '';
+      document.getElementById('panicUrl').value = '';
+
+      // Apply defaults
+      document.title = 'Settings | DuckHTML';
+      updateFavicon('https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png');
+      applyTheme('#121212');
+
+      showStatusMessage('🔄 Settings reset to default values', 'success');
+    }
+  }
+
+  // Show status message to user
+  function showStatusMessage(message, type) {
+    const statusEl = document.getElementById('statusMessage');
+    if (statusEl) {
+      statusEl.textContent = message;
+      statusEl.className = `status-message ${type}`;
+
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        statusEl.className = 'status-message hidden';
+      }, 3000);
+    }
+  }
+
+  // Set up panic key functionality
+  function setupPanicKey() {
+    // Remove existing listeners
+    document.removeEventListener('keydown', panicKeyHandler);
+
+    const panicKey = localStorage.getItem('panicKey');
+    const panicUrl = localStorage.getItem('panicUrl');
+
+    if (panicKey && panicUrl) {
+      document.addEventListener('keydown', panicKeyHandler);
+    }
+  }
+
+  // Panic key handler
+  function panicKeyHandler(event) {
+    const panicKey = localStorage.getItem('panicKey');
+    const panicUrl = localStorage.getItem('panicUrl');
+
+    if (event.key.toLowerCase() === panicKey && panicUrl) {
+      window.location.href = panicUrl;
+    }
+  }
+
+  // Update favicon
+  function updateFavicon(faviconUrl) {
+    if (!faviconUrl) return;
+
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.head.appendChild(link);
+    }
+    link.href = faviconUrl;
+  }
+
+  // Handle favicon selection from grid
+  function selectFavicon(url) {
+    document.getElementById('faviconUrl').value = url;
+    updateFavicon(url);
+    showStatusMessage('🎯 Favicon updated! Don\'t forget to save changes.', 'success');
+  }
+
+  // Apply theme based on selected option
+  function applyTheme(theme) {
+    localStorage.setItem('selectedTheme', theme);
+
+    const themes = {
+      '#121212': {
+        body: '#121212',
+        nav: 'rgba(0, 0, 0, 0.85)',
+        text: '#eee',
+        border: '#444',
+        accent: '#ffd700'
+      },
+      '#ffffff': {
+        body: '#ffffff',
+        nav: 'rgba(255, 255, 255, 0.95)',
+        text: '#333',
+        border: '#ddd',
+        accent: '#1976d2'
+      },
+      '#2c1810': {
+        body: '#2c1810',
+        nav: 'rgba(44, 24, 16, 0.85)',
+        text: '#f4e4bc',
+        border: '#8b4513',
+        accent: '#daa520'
+      },
+      '#0f1419': {
+        body: '#0f1419',
+        nav: 'rgba(15, 20, 25, 0.85)',
+        text: '#c9d1d9',
+        border: '#30363d',
+        accent: '#58a6ff'
+      },
+      '#1a1a2e': {
+        body: '#1a1a2e',
+        nav: 'rgba(26, 26, 46, 0.85)',
+        text: '#e94560',
+        border: '#16213e',
+        accent: '#0f3460'
+      }
+    };
+
+    const selectedTheme = themes[theme] || themes['#121212'];
+    setThemeStyles(selectedTheme.body, selectedTheme.nav, selectedTheme.text, selectedTheme.border, selectedTheme.accent);
+  }
+
+  // Handle theme change
+  function changeBackgroundColor() {
+    const selectedTheme = document.getElementById('colorSelect').value;
+    applyTheme(selectedTheme);
+  }
+
+  // Set theme styles throughout the page
+  function setThemeStyles(bodyColor, navColor, textColor, borderColor, accentColor) {
+    const body = document.body;
+    const nav = document.querySelector('nav');
+
+    // Apply basic theme
+    body.style.backgroundColor = bodyColor;
+    body.style.color = textColor;
+
+    if (nav) {
+      nav.style.backgroundColor = navColor;
+    }
+
+    // Update nav links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.style.color = textColor;
+      link.style.borderColor = borderColor;
+    });
+
+    // Update headings
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(heading => {
+      heading.style.color = accentColor;
+    });
+
+    // Update form elements
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.style.backgroundColor = bodyColor === '#ffffff' ? '#f8f9fa' : '#333';
+      input.style.color = textColor;
+      input.style.borderColor = borderColor;
+    });
+  }
+
+</script>
+
+
