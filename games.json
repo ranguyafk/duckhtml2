@@ -20,6 +20,13 @@
     "image": "https://imgs.crazygames.com/rooftop-snipers_1x1/20250108040441/rooftop-snipers_1x1-cover?format=auto&quality=100&metadata=none&width=1200",
     "url": "play.html?game=rooftop-snipers/index.html&title=RoofTop Snipers"
   },
+    {
+    "title": "Adventure Drivers",
+    "description": "Get first in 2d racing game!",
+    "tags": ["Action", "Arcade", "Racing"],
+    "image": "https://cdn.content.play123.com/game-images/adventure-drivers_sq.webp",
+    "url": "play.html?game=addriving/index.html&title=Adventure Drivers"
+  },
   {
     "title": "The Final Earth",
     "description": "Build up your earth in a 2d world",
@@ -48,6 +55,13 @@
     "image": "https://images.launchbox-app.com/bccd019f-1ea9-47d7-b1ad-2f191e079ab4.jpg",
     "url": "play.html?game=worlds-hardest-game-2/index.html&title=Worlds Hardes Game 2"
   },
+  {
+    "title": "Gun Mayhem",
+    "description": "Become the best shooter of them all",
+    "tags": ["Action", "Arcade", "shooter"],
+    "image": "https://kbhgames.com/wp-content/uploads/2011/05/Gun-Mayhem.jpg",
+    "url": "play.html?game=guns/index.html&title=Gun Mayhem"
+  },
     {
       "title": "Bunny Island",
       "description": "Explore the whimsical world of Bunny Island, a charming and fun adventure",
@@ -69,6 +83,13 @@
       "image": "https://assets.funnygames.org/9/113559/96003/1024x1024/moto-x3m-winter.webp",
       "url": "play.html?game=/motowinter/index.html&title=Motox3m-Winter"
     },
+    {
+    "title": "Tetris",
+    "description": "Mind Ridding Puzzle, one of the first games",
+    "tags": ["Action", "Arcade", "Puzzle"],
+    "image": "https://m.media-amazon.com/images/I/61M3rDwh4qL.png",
+    "url": "play.html?game=tetris/index.html&title=Tetris"
+  },
     {
       "title": "Crossy Road",
       "description": "Jump and dodge your way through endless obstacles in Crossy Road",
