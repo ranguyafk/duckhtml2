@@ -21,11 +21,25 @@
     "url": "play.html?game=rooftop-snipers/index.html&title=RoofTop Snipers"
   },
     {
+    "title": "Subway Surfers",
+    "description": "Endless runner running away from police",
+    "tags": ["Action", "Arcade", "Endless"],
+    "image": "https://downloadr2.apkmirror.com/wp-content/uploads/2017/10/59df7618d73b0-384x384.png",
+    "url": "play.html?game=clsubwaysurfersmexico.html&title=Subway Surfers Mexico"
+  },
+    {
     "title": "Adventure Drivers",
     "description": "Get first in 2d racing game!",
     "tags": ["Action", "Arcade", "Racing"],
     "image": "https://cdn.content.play123.com/game-images/adventure-drivers_sq.webp",
     "url": "play.html?game=addriving/index.html&title=Adventure Drivers"
+  },
+  {
+    "title": "Granny",
+    "description": "Classic horror game, don't get caught!",
+    "tags": ["Action", "Arcade", "Classic"],
+    "image": "https://play-lh.googleusercontent.com/yT_LBq_tyKeIDohKDsqN_Qt18jGIPUYIxY2C-1-E2YA9Qd60uZW08pua17qBmIiDPA=w240-h480-rw",
+    "url": "play.html?game=clgranny.html&title=Granny"
   },
   {
     "title": "The Final Earth",
@@ -34,12 +48,26 @@
     "image": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png",
     "url": "play.html?game=the-final-earth/index.html&title=The Final Earth"
   },
+    {
+    "title": "Tag",
+    "description": "Two player game, tag each other",
+    "tags": ["Platformer", "Arcade", "Classic"],
+    "image": "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/32d2b1401c7a86c61fae5afeed977b37/tag.png",
+    "url": "play.html?game=cltag.html&title=Tag"
+  },
   {
     "title": "Worldest Hardest Game",
     "description": "Hardest game ever, you CANT beat it",
     "tags": ["Puzzle", "Classic", "Logic"],
-    "image": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/d9be36c5c2cec64298832c54b59e7ab1.png",
+    "image": "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/61368b108e1e8625e6f7b2daccb98324/worlds-hardest-game.png",
     "url": "play.html?game=worlds-hardest-game/index.html&title=Worlds Hardest Game"
+  },
+  {
+    "title": "Infinite Craft",
+    "description": "Endless maker, make anything you want",
+    "tags": ["Logic", "Arcade", "Puzzle"],
+    "image": "https://images.ctfassets.net/w5r1fvmogo3f/CQ8sgRgL0y2LWrTE2Pzef/819e83ca5715c9c4a0c371a92c528a6c/BlogPost_How_to_Make_Life_in_Infinite_Craft_header_img_1.jpg",
+    "url": "play.html?game=clinfinitecraft.html&title=Infinite Craft"
   },
   {
     "title": "Getaway Shootout",
@@ -49,6 +77,13 @@
     "url": "play.html?game=getaway-shootout/index.html&title=Getaway Shootout"
   },
   {
+    "title": "BlockBlast",
+    "description": "Endless puzzle game, how high can you go?",
+    "tags": ["Logic", "Arcade", "Puzzle"],
+    "image": "https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E",
+    "url": "play.html?game=clblockblast.html&title=Block Blast"
+  },
+  {
     "title": "Worldest Hardest Game 2",
     "description": "Hardest game ever, you CANT beat it 2",
     "tags": ["Puzzle", "Classic", "Logic"],
@@ -56,11 +91,25 @@
     "url": "play.html?game=worlds-hardest-game-2/index.html&title=Worlds Hardes Game 2"
   },
   {
+    "title": "Cookie Clicker",
+    "description": "Keep clicking those cookies you cookie",
+    "tags": ["Endless", "Arcade", "Puzzle"],
+    "image": "https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok",
+    "url": "play.html?game=clcookieclickercool.html&title=Cookie Clicker"
+  },
+  {
     "title": "Gun Mayhem",
     "description": "Become the best shooter of them all",
     "tags": ["Action", "Arcade", "shooter"],
     "image": "https://kbhgames.com/wp-content/uploads/2011/05/Gun-Mayhem.jpg",
     "url": "play.html?game=guns/index.html&title=Gun Mayhem"
+  },
+  {
+    "title": "Core Ball",
+    "description": "Puzzle game, how many can you fit?",
+    "tags": ["Endless", "Arcade", "Logic"],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMaWqpw1qEUMWXpUfLcBboOLgXXIAdlMcU_A&s",
+    "url": "play.html?game=clcoreball.html&title=Core Ball"
   },
     {
       "title": "Bunny Island",
@@ -70,12 +119,26 @@
       "url": "play.html?game=bunnyisland.html&title=Bunny Island"
     },
     {
+    "title": "Drive Mad",
+    "description": "Drive a monster truck, make it over",
+    "tags": ["Action", "Arcade", "Logic"],
+    "image": "https://drivemad3.io/cache/data/image/game/drive-mad-unblocked-1-f180x180.webp",
+    "url": "play.html?game=cldrivemad.html&title=Drive Mad"
+  },
+    {
       "title": "Motox3m-Pool",
       "description": "Race and perform daring stunts in Motox3m-Pool, a thrilling motorbike platformer.",
       "tags": ["Racing", "Platformer", "Stunts"],
       "image": "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/0235b530eec4f17ad60137f6b245a988.jpeg",
       "url": "play.html?game=/motopool/index.html&title=Motox3m-Pool"
     },
+    {
+    "title": "Crazy Cattle",
+    "description": "WHY IS THAT CATTLE SO CRAZY???",
+    "tags": ["Action", "CRAZY", "Racing"],
+    "image": "https://img.itch.zone/aW1nLzIwNzkwNDg0LnBuZw==/315x250%23c/O5flR4.png",
+    "url": "play.html?game=clcrazycattle3d.html&title=Crazy Cattle"
+  },
     {
       "title": "Motox3m-Winter",
       "description": "Experience the cold thrill of Motox3m-Winter",
@@ -84,11 +147,39 @@
       "url": "play.html?game=/motowinter/index.html&title=Motox3m-Winter"
     },
     {
+    "title": "Happy Wheels",
+    "description": "Race to the end witth old grandpas",
+    "tags": ["Action", "Classic", "Racing"],
+    "image": "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/bdeea6562dcab80a1905969266b0de38/happy-wheels.png",
+    "url": "play.html?game=clhappywheels.html&title=Happy Wheels"
+  },
+    {
     "title": "Tetris",
     "description": "Mind Ridding Puzzle, one of the first games",
     "tags": ["Action", "Arcade", "Puzzle"],
     "image": "https://m.media-amazon.com/images/I/61M3rDwh4qL.png",
     "url": "play.html?game=tetris/index.html&title=Tetris"
+  },
+  {
+    "title": "Fire Boy and Water Girl",
+    "description": "Classic two player game, puzzle",
+    "tags": ["Acradet", "Classic", "Puzzle"],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTan_NVdGc9KnMOGLSRk6p-en-8zhTGdLYn5A&s",
+    "url": "play.html?game=clfireboyandwatergirl.html&title=Fire boy and Water Girl"
+  },
+    {
+    "title": "Fire Boy and Water Girl 2",
+    "description": "Classic two player game, puzzle 2",
+    "tags": ["Acradet", "Classic", "Puzzle"],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMocxjgFDjFKCG4qktuPBoM09IFCrN-yh8yg&s",
+    "url": "play.html?game=clfireboyandwatergirl2.html&title=Fire boy and Water Girl 2"
+  },
+      {
+    "title": "Fire Boy and Water Girl 3",
+    "description": "Classic two player game, puzzle 3",
+    "tags": ["Acradet", "Classic", "Puzzle"],
+    "image": "https://www.mathnook.com/img/addthis-fun-games/fireboy-and-watergirl-3-200x200.png",
+    "url": "play.html?game=clfireboyandwatergirl3.html&title=Fire boy and Water Girl 3"
   },
     {
       "title": "Crossy Road",
