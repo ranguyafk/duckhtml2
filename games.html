@@ -19,6 +19,16 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3328313699966335"
      crossorigin="anonymous"></script>
 
+<div id="popup" style="position: fixed; bottom: 20px; right: 20px; background: #222; color: #fff; padding: 12px 18px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); font-family: sans-serif; font-size: 14px; cursor: pointer; z-index: 9999; transition: transform 0.2s;">
+  Want more followers?
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  popup.onclick = () => window.open('https://clickup.win', '_blank');
+  popup.onmouseover = () => popup.style.transform = 'scale(1.05)';
+  popup.onmouseout = () => popup.style.transform = 'scale(1)';
+</script>
 
 </head>
 <body>
@@ -517,6 +527,7 @@ function filterGames() {
 
 // Load games when the page loads
 document.addEventListener('DOMContentLoaded', loadGames);</SCRIPT>
+
 
 
 
