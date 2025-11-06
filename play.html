@@ -16,6 +16,43 @@
 /*]]>/* */
 </script>
 
+<div id="popup" style="
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #ff007a, #ffcc00);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.6);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 9999;
+  animation: popupPulse 1.5s infinite alternate, popupSlide 0.6s ease-out;
+  transition: transform 0.2s;
+">
+  🚀 Want more followers?
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  popup.onclick = () => window.open('https://clickup.win', '_blank');
+  popup.onmouseover = () => popup.style.transform = 'scale(1.08)';
+  popup.onmouseout = () => popup.style.transform = 'scale(1)';
+</script>
+
+<style>
+@keyframes popupPulse {
+  from { box-shadow: 0 0 15px rgba(255, 0, 122, 0.4); }
+  to { box-shadow: 0 0 25px rgba(255, 204, 0, 0.8); }
+}
+@keyframes popupSlide {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
