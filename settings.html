@@ -22,11 +22,9 @@
 
   gtag('config', 'G-8X677NPBRV');
 </script>
-<script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-(function(){var m=window,p="fb972fba699a8b4a493d5c656aa0f735",r=[["siteId",548+255*89+5171571],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],a=["d3d3LnhhZHNtYXJ0LmNvbS9PSlpNYXQvaXJhdmVuLm1pbi5qcw==","ZDExZW5xMnJ5bXkweWwuY2xvdWRmcm9udC5uZXQvS1Mvbkh1T2VZL2pUZXoubWluLmNzcw=="],d=-1,q,h,t=function(){clearTimeout(h);d++;if(a[d]&&!(1785982133000<(new Date).getTime()&&1<d)){q=m.document.createElement("script");q.type="text/javascript";q.async=!0;var u=m.document.getElementsByTagName("script")[0];q.src="https://"+atob(a[d]);q.crossOrigin="anonymous";q.onerror=t;q.onload=function(){clearTimeout(h);m[p.slice(0,16)+p.slice(0,16)]||t()};h=setTimeout(t,5E3);u.parentNode.insertBefore(q,u)}};if(!m[p]){try{Object.freeze(m[p]=r)}catch(e){}t()}})();
-/*]]>/* */
-</script>
+
+
+  
 <div id="popup" style="
   position: fixed;
   bottom: 25px;
@@ -566,6 +564,101 @@
   }
 
 </style>
+<!-- Include Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- Background overlay -->
+<div id="overlay" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 9998;
+  display: none;
+"></div>
+
+<!-- Popup Ad Container -->
+<div id="adPopup" style="
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+  width: 340px;
+  display: none;
+  font-family: 'Press Start 2P', cursive;
+  animation: popupFade 0.5s ease-out;
+">
+
+  <p id="adMessage" style="font-size: 12px; margin-bottom: 15px;">
+    Please enjoy this ad for <span id="timer">5</span> seconds...
+  </p>
+
+  <!-- AdForGames.com code begin -->
+  <script>
+    var afg = {};
+    afg.u = 6289;
+    afg.s = 9;
+    document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+  </script>
+  <!-- AdForGames.com code end -->
+
+  <button id="closeAd" style="
+    display: none;
+    margin-top: 15px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #000;
+  ">✕ Close</button>
+</div>
+
+<style>
+  @keyframes popupFade {
+    from { transform: translate(-50%, -60%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+</style>
+
+<script>
+  const adPopup = document.getElementById('adPopup');
+  const timerEl = document.getElementById('timer');
+  const closeBtn = document.getElementById('closeAd');
+  const adMessage = document.getElementById('adMessage');
+  const overlay = document.getElementById('overlay');
+  
+  let timeLeft = 5;
+  overlay.style.display = 'block';
+  adPopup.style.display = 'block';
+  
+  const countdown = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+    
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      adMessage.textContent = "You can now close the ad.";
+      closeBtn.style.display = 'inline-block';
+    }
+  }, 1000);
+
+  closeBtn.addEventListener('click', () => {
+    adPopup.style.display = 'none';
+    overlay.style.display = 'none';
+  });
+</script>
 
 <script>
 
